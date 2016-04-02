@@ -1,0 +1,13 @@
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\SOADCI.exe.config
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\SOADCI.exe
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\SOADCI.pdb
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.Inicio.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.Properties.Resources.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.RegistrarCliente.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.csproj.GenerateResource.Cache
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.exe
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.pdb
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\DatabaseLocal.mdf
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\DatabaseLocal_log.ldf
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.csprojResolveAssemblyReference.cache
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.ConsultarCliente.resources
