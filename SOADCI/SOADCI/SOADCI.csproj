@@ -74,6 +74,7 @@
     <Compile Include="ConsultarCliente.Designer.cs">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globales.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
