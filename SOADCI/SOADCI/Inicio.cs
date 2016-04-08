@@ -20,14 +20,20 @@ namespace SOADCI
         private void button1_Click(object sender, EventArgs e)
         {
             RegistrarCliente reg = new RegistrarCliente();
-            reg.Show();
+
+            reg.ShowDialog();
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             ConsultarCliente con = new ConsultarCliente();
-            con.Show();
+            con.ShowDialog();
+        }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

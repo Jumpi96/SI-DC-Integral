@@ -30,6 +30,7 @@ namespace SOADCI
         public Cliente(int numero,String nombre,String domicilio,String telFijo, String telCel, String correo, int tipo,
             int modPor)
         {
+            Nombre = nombre;
             Numero = numero;
             Domicilio = domicilio;
             TelFijo = telFijo;

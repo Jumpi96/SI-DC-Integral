@@ -62,6 +62,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Inicio";
             this.Text = "SOA DC Integral";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.ResumeLayout(false);
 
         }

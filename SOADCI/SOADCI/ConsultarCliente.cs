@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
 
 namespace SOADCI
 {
@@ -18,12 +20,18 @@ namespace SOADCI
         public ConsultarCliente()
         {
             InitializeComponent();
-
+            toolTips();
 
         }
 
+        private void toolTips() {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(button5, "Directorio");
+            toolTip.SetToolTip(button6, "Eliminar");
+        }
+
         private void ConsultarCliente_Load(object sender, EventArgs e)
-        {   
+        {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposCliente' table. You can move, or remove it, as needed.
             this.tiposClienteTableAdapter.Fill(this.databaseLocalDataSet.TiposCliente);
 
@@ -77,7 +85,7 @@ namespace SOADCI
 
         private void actualizarCliente(int Numero)
         {
-            
+
         }
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -94,22 +102,6 @@ namespace SOADCI
             if (dataGridView1.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = this.dataGridView1.SelectedRows[0];
-                textBox8.Text = ((Int32)row.Cells["Tipo"].Value).ToString();
-                textBox1.Text = ((Int32)row.Cells["Numero"].Value).ToString();
-                textBox3.Text = (String)row.Cells["Nombre"].Value;
-                textBox4.Text = (String)row.Cells["Domicilio"].Value;
-                textBox5.Text = (String)row.Cells["TelFijo"].Value;
-                textBox6.Text = (String)row.Cells["TelCel"].Value;
-                textBox7.Text = (String)row.Cells["Correo"].Value;
-
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count != 0)
-            {
-                DataGridViewRow row = this.dataGridView1.SelectedRows[0];
 
                 int tipo = (Int32)row.Cells["Tipo"].Value;
                 int numero = (Int32)row.Cells["Numero"].Value;
@@ -121,7 +113,7 @@ namespace SOADCI
                 int modPor = (Int32)row.Cells["ModPor"].Value;
 
 
-                elegido = new Cliente(numero,nombre,domicilio,telFijo,telCel,correo,tipo,modPor);
+                elegido = new Cliente(numero, nombre, domicilio, telFijo, telCel, correo, tipo, modPor);
 
 
                 textBox8.Text = elegido.Tipo.ToString();
@@ -132,10 +124,15 @@ namespace SOADCI
                 textBox6.Text = elegido.TelCel;
                 textBox7.Text = elegido.Correo;
 
-                button5.Enabled=true;
-                cadena = Globales.PATH + "\\" + elegido.Nombre + "\\";
-
+                button5.Enabled = true;
+                button6.Enabled = true;
+                cadena = Globales.PATH + "\\" + elegido.Nombre + '\\';
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -145,7 +142,11 @@ namespace SOADCI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(cadena); //PROBLEMA CON ETA MIERDA
+            System.Diagnostics.Process.Start("explorer.exe", cadena); //PROBLEMA CON EsTA MIERDA
         }
+
+
     }
+
+    
 }
