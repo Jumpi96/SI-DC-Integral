@@ -103,7 +103,7 @@ namespace SOADCI
             {
                 DataGridViewRow row = this.dataGridView1.SelectedRows[0];
 
-                int tipo = (Int32)row.Cells["Tipo"].Value;
+                TipoCliente tipo = new TipoCliente((Int32)row.Cells["Tipo"].Value);
                 int numero = (Int32)row.Cells["Numero"].Value;
                 String nombre = (String)row.Cells["Nombre"].Value;
                 String domicilio = (String)row.Cells["Domicilio"].Value;
@@ -116,7 +116,7 @@ namespace SOADCI
                 elegido = new Cliente(numero, nombre, domicilio, telFijo, telCel, correo, tipo, modPor);
 
 
-                textBox8.Text = elegido.Tipo.ToString();
+                comboBox2.Text = elegido.Tipo.Descripcion;
                 textBox1.Text = elegido.Numero.ToString();
                 textBox3.Text = elegido.Nombre;
                 textBox4.Text = elegido.Domicilio;
@@ -137,7 +137,27 @@ namespace SOADCI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // EDITAR
+            DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(elegido.Numero);
+
+            clientesRow.Tipo=(int)comboBox2.SelectedValue;
+            clientesRow.Nombre = textBox3.Text;
+            clientesRow.Domicilio = textBox4.Text;
+            clientesRow.TelFijo = textBox5.Text;
+            clientesRow.TelCel = textBox6.Text;
+            clientesRow.Correo = textBox7.Text;
+
+            try
+            {
+                this.Validate();
+                this.clientesBindingSource.EndEdit();
+                this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
+                MessageBox.Show("El cliente ha sido editado.");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Error: el cliente no pudo ser editado.");
+            }
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -145,7 +165,31 @@ namespace SOADCI
             System.Diagnostics.Process.Start("explorer.exe", cadena); //PROBLEMA CON EsTA MIERDA
         }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(elegido.Numero);
 
+            clientesRow.Delete();
+
+            try
+            {
+                this.Validate();
+                this.clientesBindingSource.EndEdit();
+                this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
+                MessageBox.Show("El cliente ha sido eliminado.");
+                comboBox2.Text = "";
+                textBox1.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Error: el cliente no pudo ser eliminado.");
+            }
+        }
     }
 
     

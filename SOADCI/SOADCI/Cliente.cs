@@ -15,7 +15,7 @@ namespace SOADCI
         private String telFijo;
         private String telCel;
         private String correo;
-        private int tipo;
+        private TipoCliente tipo;
         private int modPor;
 
         public int Numero { get { return numero; } set { numero = value; } }
@@ -24,10 +24,10 @@ namespace SOADCI
         public String TelFijo { get { return telFijo; } set { telFijo = value; } }
         public String TelCel { get { return telCel; } set { telCel = value; } }
         public String Correo { get { return correo; } set { correo = value; } }
-        public int Tipo { get { return tipo; } set { tipo = value; } }
+        public TipoCliente Tipo { get { return tipo; } set { tipo = value; } }
         public int ModPor { get { return modPor; } set { modPor = value; } }
 
-        public Cliente(int numero,String nombre,String domicilio,String telFijo, String telCel, String correo, int tipo,
+        public Cliente(int numero,String nombre,String domicilio,String telFijo, String telCel, String correo, TipoCliente tipo,
             int modPor)
         {
             Nombre = nombre;

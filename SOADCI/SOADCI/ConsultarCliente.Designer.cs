@@ -51,9 +51,9 @@
             this.ModPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -71,7 +71,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tiposClienteTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
             this.clientesTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
-            this.button6 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -98,10 +98,10 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.comboBox2);
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.button4);
-            this.splitContainer1.Panel2.Controls.Add(this.textBox8);
             this.splitContainer1.Panel2.Controls.Add(this.textBox7);
             this.splitContainer1.Panel2.Controls.Add(this.textBox6);
             this.splitContainer1.Panel2.Controls.Add(this.textBox5);
@@ -310,6 +310,18 @@
             this.clientesBindingSource.DataMember = "Clientes";
             this.clientesBindingSource.DataSource = this.databaseLocalDataSet;
             // 
+            // button6
+            // 
+            this.button6.Enabled = false;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(117, 305);
+            this.button6.Name = "button6";
+            this.button6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button6.Size = new System.Drawing.Size(75, 44);
+            this.button6.TabIndex = 23;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // button5
             // 
             this.button5.Enabled = false;
@@ -331,15 +343,6 @@
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox8.Location = new System.Drawing.Point(67, 38);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(150, 20);
-            this.textBox8.TabIndex = 20;
             // 
             // textBox7
             // 
@@ -474,16 +477,16 @@
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
-            // button6
+            // comboBox2
             // 
-            this.button6.Enabled = false;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(117, 305);
-            this.button6.Name = "button6";
-            this.button6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button6.Size = new System.Drawing.Size(75, 44);
-            this.button6.TabIndex = 23;
-            this.button6.UseVisualStyleBackColor = true;
+            this.comboBox2.DataSource = this.tiposClienteBindingSource;
+            this.comboBox2.DisplayMember = "Descripcion";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(67, 37);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(182, 21);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.ValueMember = "Numero";
             // 
             // ConsultarCliente
             // 
@@ -538,7 +541,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -556,5 +558,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
