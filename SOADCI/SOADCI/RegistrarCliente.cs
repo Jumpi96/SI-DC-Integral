@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +40,7 @@ namespace SOADCI
                 MessageBox.Show("Ingrese un nombre para el cliente.");
             else
             {
-                //CREAR CARPETA 
+                Directory.CreateDirectory(@Globales.PATH+"\\"+newClientesRow.Nombre);
 
 
                 databaseLocalDataSet.Clientes.Rows.Add(newClientesRow);
@@ -50,6 +51,7 @@ namespace SOADCI
                     this.clientesBindingSource.EndEdit();
                     this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
                     MessageBox.Show("El cliente ha sido registrado.");
+                    this.Close();
                 }
                 catch (System.Exception ex)
                 {

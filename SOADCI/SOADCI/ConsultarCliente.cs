@@ -148,10 +148,14 @@ namespace SOADCI
 
             try
             {
+                if(elegido.Nombre != clientesRow.Nombre)
+                    Directory.Move(Globales.PATH + "\\" + elegido.Nombre, Globales.PATH + "\\" + clientesRow.Nombre);
                 this.Validate();
                 this.clientesBindingSource.EndEdit();
                 this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
+                elegido = new Cliente(clientesRow.Numero, clientesRow.Nombre, clientesRow.Domicilio, clientesRow.TelFijo, clientesRow.TelCel, clientesRow.Correo, new TipoCliente(clientesRow.Tipo), 1);
                 MessageBox.Show("El cliente ha sido editado.");
+
             }
             catch (System.Exception ex)
             {
