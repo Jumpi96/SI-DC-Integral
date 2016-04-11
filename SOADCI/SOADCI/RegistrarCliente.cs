@@ -39,6 +39,9 @@ namespace SOADCI
                 MessageBox.Show("Ingrese un nombre para el cliente.");
             else
             {
+                //CREAR CARPETA 
+
+
                 databaseLocalDataSet.Clientes.Rows.Add(newClientesRow);
 
                 try

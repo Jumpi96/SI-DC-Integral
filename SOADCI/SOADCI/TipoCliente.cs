@@ -26,8 +26,15 @@ namespace SOADCI
         public TipoCliente (int num)
         {
 
+            DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
+            DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter customersTableAdapter1;
+            customersTableAdapter1 = new DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
+            customersTableAdapter1.Fill(databaseLocalDataSet.TiposCliente);
+            DatabaseLocalDataSet.TiposClienteRow tiposClienteRow = databaseLocalDataSet.TiposCliente.FindByNumero(num);
+
+
             Numero = num;
-            Descripcion = "Nostrasladamus";
+            Descripcion = tiposClienteRow.Descripcion;
             llenarLista(num);
         }
 

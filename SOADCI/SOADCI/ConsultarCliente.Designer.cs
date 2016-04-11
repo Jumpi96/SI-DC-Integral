@@ -35,6 +35,7 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tiposClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposCliente2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -81,6 +82,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposCliente2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
@@ -159,6 +161,11 @@
             // 
             this.tiposClienteBindingSource.DataMember = "TiposCliente";
             this.tiposClienteBindingSource.DataSource = this.databaseLocalDataSet;
+
+            // tiposCliente2BindingSource
+            // 
+            this.tiposCliente2BindingSource.DataMember = "TiposCliente";
+            this.tiposCliente2BindingSource.DataSource = this.databaseLocalDataSet;
             // 
             // databaseLocalDataSet
             // 
@@ -479,7 +486,7 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.tiposClienteBindingSource;
+            this.comboBox2.DataSource = this.tiposCliente2BindingSource;
             this.comboBox2.DisplayMember = "Descripcion";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(67, 37);
@@ -508,6 +515,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposCliente2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
@@ -524,6 +532,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private DatabaseLocalDataSet databaseLocalDataSet;
         private System.Windows.Forms.BindingSource tiposClienteBindingSource;
+        private System.Windows.Forms.BindingSource tiposCliente2BindingSource;
         private DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private DatabaseLocalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;

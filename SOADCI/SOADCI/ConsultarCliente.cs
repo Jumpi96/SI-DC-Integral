@@ -162,7 +162,7 @@ namespace SOADCI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", cadena); //PROBLEMA CON EsTA MIERDA
+            System.Diagnostics.Process.Start("explorer.exe", cadena);
         }
 
         private void button6_Click(object sender, EventArgs e)
