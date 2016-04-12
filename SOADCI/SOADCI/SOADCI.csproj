@@ -101,6 +101,12 @@
     <Compile Include="RegistrarCliente.Designer.cs">
       <DependentUpon>RegistrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarContacto.Designer.cs">
+      <DependentUpon>RegistrarContacto.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipoCliente.cs" />
     <Compile Include="TipoObra.cs" />
     <Compile Include="Usuario.cs" />
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="RegistrarCliente.resx">
       <DependentUpon>RegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarContacto.resx">
+      <DependentUpon>RegistrarContacto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DatabaseLocalDataSet.xsc">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>

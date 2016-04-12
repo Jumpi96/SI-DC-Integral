@@ -40,6 +40,24 @@ namespace SOADCI
             ModPor = modPor;
         }
 
+        public Cliente(int numCliente)
+        {
+            DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
+            DatabaseLocalDataSetTableAdapters.ClientesTableAdapter customersTableAdapter1;
+            customersTableAdapter1 = new DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
+            customersTableAdapter1.Fill(databaseLocalDataSet.Clientes);
+            DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(numCliente);
+
+
+            Numero = numCliente;
+            Domicilio = clientesRow.Domicilio;
+            TelFijo = clientesRow.TelFijo;
+            TelCel = clientesRow.TelCel;
+            Correo = clientesRow.Correo;
+            Tipo = new TipoCliente(clientesRow.Tipo);
+            ModPor = clientesRow.ModPor;
+        }
+
         
 
     }
