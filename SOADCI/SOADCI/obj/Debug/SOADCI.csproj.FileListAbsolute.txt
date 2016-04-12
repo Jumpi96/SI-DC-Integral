@@ -13,3 +13,4 @@ D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.csproj
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.ConsultarCliente.resources
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.ConsultarContactos.resources
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.RegistrarContacto.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.ConsultarObra.resources

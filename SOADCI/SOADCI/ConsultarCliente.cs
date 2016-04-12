@@ -205,11 +205,24 @@ namespace SOADCI
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            ConsultarObra cons = new ConsultarObra();
-            cons.LoadOrders(elegido);
-            cons.ShowDialog();
+            if (dataGridView2.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = this.dataGridView2.SelectedRows[0];
+
+                Cliente cliente = new Cliente((int)(row.Cells[2].Value));
+                int num = (int)row.Cells[0].Value;
+                String nom = (String)row.Cells[1].Value;
+                TipoObra tip = new TipoObra((int)row.Cells[3].Value);
+                int modPor = (int)row.Cells[5].Value;
+
+                Obra obra = new Obra(num, nom, cliente, tip, modPor);
+
+                ConsultarObra cons = new ConsultarObra();
+                cons.LoadOrders(obra);
+                cons.ShowDialog();
+            }
         }
     }
 

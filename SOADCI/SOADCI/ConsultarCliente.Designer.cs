@@ -52,6 +52,12 @@
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button7 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -78,12 +84,6 @@
             this.clientesTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
             this.obrasTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
             this.presupuestosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -251,6 +251,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(284, 157);
             this.dataGridView1.TabIndex = 0;
@@ -342,11 +343,61 @@
             this.modPorDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.obrasBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(360, 37);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(259, 312);
             this.dataGridView2.TabIndex = 25;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeroClienteDataGridViewTextBoxColumn
+            // 
+            this.numeroClienteDataGridViewTextBoxColumn.DataPropertyName = "NumeroCliente";
+            this.numeroClienteDataGridViewTextBoxColumn.HeaderText = "NumeroCliente";
+            this.numeroClienteDataGridViewTextBoxColumn.Name = "numeroClienteDataGridViewTextBoxColumn";
+            this.numeroClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroClienteDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tipoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // modPorDataGridViewTextBoxColumn
+            // 
+            this.modPorDataGridViewTextBoxColumn.DataPropertyName = "ModPor";
+            this.modPorDataGridViewTextBoxColumn.HeaderText = "ModPor";
+            this.modPorDataGridViewTextBoxColumn.Name = "modPorDataGridViewTextBoxColumn";
+            this.modPorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modPorDataGridViewTextBoxColumn.Visible = false;
             // 
             // obrasBindingSource
             // 
@@ -555,53 +606,6 @@
             // presupuestosTableAdapter
             // 
             this.presupuestosTableAdapter.ClearBeforeFill = true;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroClienteDataGridViewTextBoxColumn
-            // 
-            this.numeroClienteDataGridViewTextBoxColumn.DataPropertyName = "NumeroCliente";
-            this.numeroClienteDataGridViewTextBoxColumn.HeaderText = "NumeroCliente";
-            this.numeroClienteDataGridViewTextBoxColumn.Name = "numeroClienteDataGridViewTextBoxColumn";
-            this.numeroClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroClienteDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tipoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // modPorDataGridViewTextBoxColumn
-            // 
-            this.modPorDataGridViewTextBoxColumn.DataPropertyName = "ModPor";
-            this.modPorDataGridViewTextBoxColumn.HeaderText = "ModPor";
-            this.modPorDataGridViewTextBoxColumn.Name = "modPorDataGridViewTextBoxColumn";
-            this.modPorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modPorDataGridViewTextBoxColumn.Visible = false;
             // 
             // ConsultarCliente
             // 
