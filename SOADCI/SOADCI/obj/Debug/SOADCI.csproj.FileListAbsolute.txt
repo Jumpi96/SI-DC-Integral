@@ -11,3 +11,4 @@ D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\DatabaseLocal
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\DatabaseLocal_log.ldf
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.csprojResolveAssemblyReference.cache
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.ConsultarCliente.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.ConsultarContactos.resources

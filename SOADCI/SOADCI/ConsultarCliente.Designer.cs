@@ -35,7 +35,6 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tiposClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposCliente2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,6 +51,9 @@
             this.ModPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button7 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tiposCliente2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -72,7 +74,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tiposClienteTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
             this.clientesTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -82,10 +83,10 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposCliente2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposCliente2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -100,6 +101,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button7);
             this.splitContainer1.Panel2.Controls.Add(this.comboBox2);
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
@@ -118,7 +120,6 @@
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.button3);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(771, 372);
             this.splitContainer1.SplitterDistance = 239;
             this.splitContainer1.TabIndex = 0;
@@ -161,11 +162,6 @@
             // 
             this.tiposClienteBindingSource.DataMember = "TiposCliente";
             this.tiposClienteBindingSource.DataSource = this.databaseLocalDataSet;
-
-            // tiposCliente2BindingSource
-            // 
-            this.tiposCliente2BindingSource.DataMember = "TiposCliente";
-            this.tiposCliente2BindingSource.DataSource = this.databaseLocalDataSet;
             // 
             // databaseLocalDataSet
             // 
@@ -317,6 +313,34 @@
             this.clientesBindingSource.DataMember = "Clientes";
             this.clientesBindingSource.DataSource = this.databaseLocalDataSet;
             // 
+            // button7
+            // 
+            this.button7.Enabled = false;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(198, 305);
+            this.button7.Name = "button7";
+            this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button7.Size = new System.Drawing.Size(75, 44);
+            this.button7.TabIndex = 24;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.tiposCliente2BindingSource;
+            this.comboBox2.DisplayMember = "Descripcion";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(67, 37);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(182, 21);
+            this.comboBox2.TabIndex = 7;
+            this.comboBox2.ValueMember = "Numero";
+            // 
+            // tiposCliente2BindingSource
+            // 
+            this.tiposCliente2BindingSource.DataMember = "TiposCliente";
+            this.tiposCliente2BindingSource.DataSource = this.databaseLocalDataSet;
+            // 
             // button6
             // 
             this.button6.Enabled = false;
@@ -343,7 +367,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(297, 237);
+            this.button4.Location = new System.Drawing.Point(383, 237);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 21;
@@ -461,7 +485,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(378, 237);
+            this.button3.Location = new System.Drawing.Point(302, 237);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 0;
@@ -484,17 +508,6 @@
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.DataSource = this.tiposCliente2BindingSource;
-            this.comboBox2.DisplayMember = "Descripcion";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(67, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(182, 21);
-            this.comboBox2.TabIndex = 7;
-            this.comboBox2.ValueMember = "Numero";
-            // 
             // ConsultarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,10 +528,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposCliente2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposCliente2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -568,5 +581,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button7;
     }
 }

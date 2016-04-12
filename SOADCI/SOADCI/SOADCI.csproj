@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cliente.cs" />
+    <Compile Include="ConsultarContactos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarContactos.Designer.cs">
+      <DependentUpon>ConsultarContactos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contacto.cs" />
     <Compile Include="DatabaseLocalDataSet.cs">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
@@ -101,6 +107,9 @@
     <EmbeddedResource Include="ConsultarCliente.resx">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarContactos.resx">
+      <DependentUpon>ConsultarContactos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +121,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegistrarCliente.resx">
       <DependentUpon>RegistrarCliente.cs</DependentUpon>
@@ -151,6 +161,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseLocal.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\plus32.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

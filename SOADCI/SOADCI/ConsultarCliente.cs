@@ -28,6 +28,7 @@ namespace SOADCI
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(button5, "Directorio");
             toolTip.SetToolTip(button6, "Eliminar");
+            toolTip.SetToolTip(button7, "Contactos");
         }
 
         private void ConsultarCliente_Load(object sender, EventArgs e)
@@ -83,14 +84,6 @@ namespace SOADCI
 
         }
 
-        private void actualizarCliente(int Numero)
-        {
-
-        }
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -126,6 +119,7 @@ namespace SOADCI
 
                 button5.Enabled = true;
                 button6.Enabled = true;
+                button7.Enabled = true;
                 cadena = Globales.PATH + "\\" + elegido.Nombre + '\\';
             }
         }
@@ -193,6 +187,14 @@ namespace SOADCI
             {
                 MessageBox.Show("Error: el cliente no pudo ser eliminado.");
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ConsultarContactos con = new ConsultarContactos();
+            con.LoadOrders(elegido);
+            con.ShowDialog();
+
         }
     }
 

@@ -5668,9 +5668,9 @@ SELECT Numero, Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor FROM Cli
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT Numero, Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor FROM dbo." +
-                "Clientes WHERE Nombre = @NombreEscrito";
+                "Clientes WHERE Nombre = @Nom";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreEscrito", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5715,13 +5715,13 @@ SELECT Numero, Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor FROM Cli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy2(DatabaseLocalDataSet.ClientesDataTable dataTable, string NombreEscrito) {
+        public virtual int FillBy2(DatabaseLocalDataSet.ClientesDataTable dataTable, string Nom) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((NombreEscrito == null)) {
-                throw new global::System.ArgumentNullException("NombreEscrito");
+            if ((Nom == null)) {
+                throw new global::System.ArgumentNullException("Nom");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NombreEscrito));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Nom));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6182,12 +6182,18 @@ SELECT Numero, Nombre, Descripcion, NumeroCliente, Telefono, Correo, ModPor FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Numero, Nombre, Descripcion, NumeroCliente, Telefono, Correo, ModPor FROM " +
                 "dbo.Contactos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Numero, Nombre, Descripcion, NumeroCliente, Telefono, Correo, ModPor FROM " +
+                "dbo.Contactos WHERE NumeroCliente = @NumCliente";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6209,6 +6215,32 @@ SELECT Numero, Nombre, Descripcion, NumeroCliente, Telefono, Correo, ModPor FROM
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DatabaseLocalDataSet.ContactosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DatabaseLocalDataSet.ContactosDataTable dataTable = new DatabaseLocalDataSet.ContactosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DatabaseLocalDataSet.ContactosDataTable dataTable, int NumCliente) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NumCliente));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DatabaseLocalDataSet.ContactosDataTable GetDataBy(int NumCliente) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NumCliente));
             DatabaseLocalDataSet.ContactosDataTable dataTable = new DatabaseLocalDataSet.ContactosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
