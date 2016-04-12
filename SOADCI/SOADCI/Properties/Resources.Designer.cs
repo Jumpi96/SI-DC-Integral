@@ -63,9 +63,29 @@ namespace SOADCI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap home32 {
+            get {
+                object obj = ResourceManager.GetObject("home32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus32 {
             get {
                 object obj = ResourceManager.GetObject("plus32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user32 {
+            get {
+                object obj = ResourceManager.GetObject("user32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

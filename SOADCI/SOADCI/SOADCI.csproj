@@ -170,6 +170,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseLocal.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\home32.png" />
+    <None Include="Resources\user32.png" />
     <None Include="Resources\plus32.png" />
   </ItemGroup>
   <ItemGroup>

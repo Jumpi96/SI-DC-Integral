@@ -17,6 +17,7 @@ namespace SOADCI
 
         private Cliente elegido;
         private String cadena;
+
         public ConsultarCliente()
         {
             InitializeComponent();
@@ -33,6 +34,9 @@ namespace SOADCI
 
         private void ConsultarCliente_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseLocalDataSet.Presupuestos' table. You can move, or remove it, as needed.
+            this.presupuestosTableAdapter.Fill(this.databaseLocalDataSet.Presupuestos);
+
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposCliente' table. You can move, or remove it, as needed.
             this.tiposClienteTableAdapter.Fill(this.databaseLocalDataSet.TiposCliente);
 
@@ -121,6 +125,10 @@ namespace SOADCI
                 button6.Enabled = true;
                 button7.Enabled = true;
                 cadena = Globales.PATH + "\\" + elegido.Nombre + '\\';
+
+                // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
+                
+                this.obrasTableAdapter.FillObrasPorCliente(this.databaseLocalDataSet.Obras,elegido.Numero);
             }
         }
 
@@ -195,6 +203,13 @@ namespace SOADCI
             con.LoadOrders(elegido);
             con.ShowDialog();
 
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ConsultarObra cons = new ConsultarObra();
+            cons.LoadOrders(elegido);
+            cons.ShowDialog();
         }
     }
 
