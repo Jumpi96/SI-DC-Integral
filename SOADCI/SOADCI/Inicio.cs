@@ -33,7 +33,13 @@ namespace SOADCI
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RegistrarObra regO = new RegistrarObra();
+            regO.ShowDialog();
         }
     }
 }

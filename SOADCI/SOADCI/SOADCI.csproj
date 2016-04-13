@@ -113,6 +113,12 @@
     <Compile Include="RegistrarContacto.Designer.cs">
       <DependentUpon>RegistrarContacto.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarObra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarObra.Designer.cs">
+      <DependentUpon>RegistrarObra.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipoCliente.cs" />
     <Compile Include="TipoObra.cs" />
     <Compile Include="Usuario.cs" />
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrarContacto.resx">
       <DependentUpon>RegistrarContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarObra.resx">
+      <DependentUpon>RegistrarObra.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DatabaseLocalDataSet.xsc">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
