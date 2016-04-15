@@ -181,6 +181,7 @@ namespace SOADCI
             clientesRow.Delete();
 
             elegido.borrarObrasAsociadas();
+            elegido.borrarContactosAsociados();
 
             try
             {

@@ -31,9 +31,32 @@ namespace SOADCI
             Nombre = nombre;
             Descripcion = descripcion;
             Cliente = cliente;
-            telefono = telCel;
+            Telefono = telCel;
             Correo = correo;
             ModPor = modPor;
+        }
+
+        public Contacto(int num) {
+            DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
+            DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
+            contactosTableAdapter = new DatabaseLocalDataSetTableAdapters.ContactosTableAdapter();
+            contactosTableAdapter.Fill(databaseLocalDataSet.Contactos);
+            DatabaseLocalDataSet.ContactosRow contactosRow = databaseLocalDataSet.Contactos.FindByNumero(num);
+
+            Numero = num;
+            Nombre = contactosRow.Nombre;
+            Descripcion = contactosRow.Descripcion;
+            Cliente = new Cliente(contactosRow.NumeroCliente);
+            Telefono = contactosRow.Telefono;
+            Correo = contactosRow.Correo;
+            ModPor = contactosRow.ModPor;
+
+        }
+
+        public void Borrar()
+        {
+            DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter = new DatabaseLocalDataSetTableAdapters.ContactosTableAdapter();
+            contactosTableAdapter.Delete(numero,nombre,descripcion,cliente.Numero,telefono,correo,modPor);
         }
     }
 }

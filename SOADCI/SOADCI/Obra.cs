@@ -9,6 +9,7 @@ namespace SOADCI
     class Obra
     {
         DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
+        DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
 
         private int numero;
         private String nombre;
@@ -33,7 +34,6 @@ namespace SOADCI
 
         public Obra (int num)
         {
-            DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
             obrasTableAdapter = new DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
             obrasTableAdapter.Fill(databaseLocalDataSet.Obras);
             DatabaseLocalDataSet.ObrasRow obrasRow = databaseLocalDataSet.Obras.FindByNumero(num);
@@ -59,6 +59,11 @@ namespace SOADCI
                 pres = new Presupuesto(row.Numero);
                 pres.Borrar();
             }
+        }
+
+        public void Borrar()
+        {
+            obrasTableAdapter.Delete(numero,nombre,cliente.Numero,tipo.Numero,modPor);
         }
 
     }

@@ -8,33 +8,32 @@ namespace SOADCI
 {
     class Presupuesto
     {
+        DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter = new DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
 
         private int numero;
         private String nombre;
         private DateTime fecha;
         private int modPor;
-        private int numObra;          
+        private Obra obra;          
 
         public int Numero { get { return numero; } set { numero = value; } }
         public String Nombre { get { return nombre; } set { nombre = value; } }
         public DateTime Fecha { get { return fecha; } set { fecha = value; } }
         public int ModPor { get { return modPor; } set { modPor = value; } }
-        public int NumObra { get { return numObra; } set { numObra = value; } }
+        public Obra Obra { get { return obra; } set { obra = value; } }
 
-        public Presupuesto (int numero, String nombre, DateTime fecha, int numObra, int modPor)
+        public Presupuesto (int numero, String nombre, DateTime fecha, Obra obra, int modPor)
         {
             Numero = numero;
             Nombre = nombre;
             Fecha = fecha;
             ModPor = modPor;
-            NumObra = numObra;
+            Obra = obra;
         }
 
         public Presupuesto (int num)
         {
             DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-            DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
-            presupuestosTableAdapter = new DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
             presupuestosTableAdapter.Fill(databaseLocalDataSet.Presupuestos);
             DatabaseLocalDataSet.PresupuestosRow presupuestosRow = databaseLocalDataSet.Presupuestos.FindByNumero(num);
 
@@ -48,6 +47,7 @@ namespace SOADCI
 
         public void Borrar()
         {
+            presupuestosTableAdapter.Delete(numero,nombre,fecha,obra.Numero,modPor); 
 
         }
     }

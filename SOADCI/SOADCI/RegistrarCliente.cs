@@ -34,6 +34,7 @@ namespace SOADCI
             newClientesRow.TelFijo = textBox3.Text;
             newClientesRow.TelCel = textBox4.Text;
             newClientesRow.Tipo = (int)comboBox1.SelectedValue;
+            newClientesRow.Correo = textBox5.Text;
             newClientesRow.ModPor = 1; // Usuario
 
             if (newClientesRow.Nombre == "")
