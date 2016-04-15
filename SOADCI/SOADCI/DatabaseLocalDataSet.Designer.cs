@@ -5653,7 +5653,7 @@ SELECT Numero, Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor FROM Cli
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Numero, Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor FROM dbo." +
@@ -5676,6 +5676,31 @@ SELECT Numero, Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor FROM Cli
                 "Clientes WHERE Nombre = @Nom";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"UPDATE [dbo].[Clientes] SET [Nombre] = @Nombre, [Domicilio] = @Domicilio, [TelFijo] = @TelFijo, [TelCel] = @TelCel, [Correo] = @Correo, [Tipo] = @Tipo, [ModPor] = @ModPor WHERE (([Numero] = @Original_Numero) AND ([Nombre] = @Original_Nombre) AND ((@IsNull_Domicilio = 1 AND [Domicilio] IS NULL) OR ([Domicilio] = @Original_Domicilio)) AND ((@IsNull_TelFijo = 1 AND [TelFijo] IS NULL) OR ([TelFijo] = @Original_TelFijo)) AND ((@IsNull_TelCel = 1 AND [TelCel] IS NULL) OR ([TelCel] = @Original_TelCel)) AND ((@IsNull_Correo = 1 AND [Correo] IS NULL) OR ([Correo] = @Original_Correo)) AND ([Tipo] = @Original_Tipo) AND ([ModPor] = @Original_ModPor));
+SELECT Numero, Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor FROM Clientes WHERE (Numero = @Numero)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Domicilio", global::System.Data.SqlDbType.NVarChar, 60, global::System.Data.ParameterDirection.Input, 0, 0, "Domicilio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TelFijo", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "TelFijo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TelCel", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "TelCel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Correo", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "Correo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModPor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ModPor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Domicilio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Domicilio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Domicilio", global::System.Data.SqlDbType.NVarChar, 60, global::System.Data.ParameterDirection.Input, 0, 0, "Domicilio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TelFijo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TelFijo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TelFijo", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "TelFijo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TelCel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TelCel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TelCel", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "TelCel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Correo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Correo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Correo", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "Correo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModPor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ModPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6015,6 +6040,139 @@ SELECT Numero, Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor FROM Cli
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Nombre, string Domicilio, string TelFijo, string TelCel, string Correo, int Tipo, int ModPor, int Original_Numero, string Original_Nombre, string Original_Domicilio, string Original_TelFijo, string Original_TelCel, string Original_Correo, int Original_Tipo, int Original_ModPor) {
             return this.Update(Nombre, Domicilio, TelFijo, TelCel, Correo, Tipo, ModPor, Original_Numero, Original_Nombre, Original_Domicilio, Original_TelFijo, Original_TelCel, Original_Correo, Original_Tipo, Original_ModPor, Original_Numero);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(
+                    string Nombre, 
+                    string Domicilio, 
+                    string TelFijo, 
+                    string TelCel, 
+                    string Correo, 
+                    int Tipo, 
+                    int ModPor, 
+                    int Original_Numero, 
+                    string Original_Nombre, 
+                    global::System.Nullable<int> IsNull_Domicilio, 
+                    string Original_Domicilio, 
+                    global::System.Nullable<int> IsNull_TelFijo, 
+                    string Original_TelFijo, 
+                    global::System.Nullable<int> IsNull_TelCel, 
+                    string Original_TelCel, 
+                    global::System.Nullable<int> IsNull_Correo, 
+                    string Original_Correo, 
+                    int Original_Tipo, 
+                    int Original_ModPor, 
+                    int Numero) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((Nombre == null)) {
+                throw new global::System.ArgumentNullException("Nombre");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Nombre));
+            }
+            if ((Domicilio == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Domicilio));
+            }
+            if ((TelFijo == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(TelFijo));
+            }
+            if ((TelCel == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(TelCel));
+            }
+            if ((Correo == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(Correo));
+            }
+            command.Parameters[5].Value = ((int)(Tipo));
+            command.Parameters[6].Value = ((int)(ModPor));
+            command.Parameters[7].Value = ((int)(Original_Numero));
+            if ((Original_Nombre == null)) {
+                throw new global::System.ArgumentNullException("Original_Nombre");
+            }
+            else {
+                command.Parameters[8].Value = ((string)(Original_Nombre));
+            }
+            if ((IsNull_Domicilio.HasValue == true)) {
+                command.Parameters[9].Value = ((int)(IsNull_Domicilio.Value));
+            }
+            else {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Domicilio == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[10].Value = ((string)(Original_Domicilio));
+            }
+            if ((IsNull_TelFijo.HasValue == true)) {
+                command.Parameters[11].Value = ((int)(IsNull_TelFijo.Value));
+            }
+            else {
+                command.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_TelFijo == null)) {
+                command.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[12].Value = ((string)(Original_TelFijo));
+            }
+            if ((IsNull_TelCel.HasValue == true)) {
+                command.Parameters[13].Value = ((int)(IsNull_TelCel.Value));
+            }
+            else {
+                command.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_TelCel == null)) {
+                command.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[14].Value = ((string)(Original_TelCel));
+            }
+            if ((IsNull_Correo.HasValue == true)) {
+                command.Parameters[15].Value = ((int)(IsNull_Correo.Value));
+            }
+            else {
+                command.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Correo == null)) {
+                command.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[16].Value = ((string)(Original_Correo));
+            }
+            command.Parameters[17].Value = ((int)(Original_Tipo));
+            command.Parameters[18].Value = ((int)(Original_ModPor));
+            command.Parameters[19].Value = ((int)(Numero));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

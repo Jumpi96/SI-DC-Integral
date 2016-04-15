@@ -151,7 +151,10 @@ namespace SOADCI
             try
             {
                 if(elegido.Nombre != clientesRow.Nombre)
-                    Directory.Move(Globales.PATH + "\\" + elegido.Nombre, Globales.PATH + "\\" + clientesRow.Nombre);
+                {
+                    cadena = Globales.PATH + "\\" + clientesRow.Nombre;
+                    Directory.Move(Globales.PATH + "\\" + elegido.Nombre, cadena);
+                }
                 this.Validate();
                 this.clientesBindingSource.EndEdit();
                 this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
@@ -177,11 +180,14 @@ namespace SOADCI
 
             clientesRow.Delete();
 
+            elegido.borrarObrasAsociadas();
+
             try
             {
                 this.Validate();
                 this.clientesBindingSource.EndEdit();
                 this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
+                Directory.Delete(cadena,true);
                 MessageBox.Show("El cliente ha sido eliminado.");
                 comboBox2.Text = "";
                 textBox1.Text = "";

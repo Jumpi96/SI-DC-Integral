@@ -155,11 +155,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Cliente);
+            this.Controls.Add(this.textBox2);
             this.Name = "RegistrarObra";
             this.Text = "Registrar Obra";
             this.Load += new System.EventHandler(this.RegistrarObra_Load);

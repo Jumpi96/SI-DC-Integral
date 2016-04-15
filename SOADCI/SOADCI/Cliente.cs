@@ -27,7 +27,7 @@ namespace SOADCI
         public TipoCliente Tipo { get { return tipo; } set { tipo = value; } }
         public int ModPor { get { return modPor; } set { modPor = value; } }
 
-        public Cliente(int numero,String nombre,String domicilio,String telFijo, String telCel, String correo, TipoCliente tipo,
+        public Cliente(int numero, String nombre, String domicilio, String telFijo, String telCel, String correo, TipoCliente tipo,
             int modPor)
         {
             Nombre = nombre;
@@ -48,7 +48,7 @@ namespace SOADCI
             customersTableAdapter1.Fill(databaseLocalDataSet.Clientes);
             DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(numCliente);
 
-
+            Nombre = clientesRow.Nombre;
             Numero = numCliente;
             Domicilio = clientesRow.Domicilio;
             TelFijo = clientesRow.TelFijo;
@@ -58,7 +58,13 @@ namespace SOADCI
             ModPor = clientesRow.ModPor;
         }
 
-        
+        public void borrarObrasAsociadas()
+        {
+
+        }
+
+
+
 
     }
 }
