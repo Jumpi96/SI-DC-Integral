@@ -67,10 +67,12 @@ namespace SOADCI
             obrasTableAdapter.FillObrasPorCliente(databaseLocalDataSet.Obras, this.Numero);
             Obra obra;
 
-            foreach (DatabaseLocalDataSet.ObrasRow row in databaseLocalDataSet.Obras.Rows)
-            {
-                obra = new Obra(row.Numero);
-                obra.Borrar();
+            if(databaseLocalDataSet.Obras.Count != 0) { 
+                foreach (DatabaseLocalDataSet.ObrasRow row in databaseLocalDataSet.Obras.Rows)
+                {
+                    obra = new Obra(row.Numero);
+                    obra.Borrar();
+                }
             }
 
         }
@@ -82,10 +84,13 @@ namespace SOADCI
             contactosTableAdapter.FillContactosPorCliente(databaseLocalDataSet.Contactos, this.Numero);
             Contacto contacto;
 
-            foreach (DatabaseLocalDataSet.ObrasRow row in databaseLocalDataSet.Obras.Rows)
+            if (databaseLocalDataSet.Contactos.Count != 0)
             {
-                contacto = new Contacto(row.Numero);
-                contacto.Borrar();
+                foreach (DatabaseLocalDataSet.ObrasRow row in databaseLocalDataSet.Obras.Rows)
+                {
+                    contacto = new Contacto(row.Numero);
+                    contacto.Borrar();
+                }
             }
 
         }

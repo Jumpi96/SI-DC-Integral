@@ -74,6 +74,12 @@
     <Compile Include="ConsultarObra.Designer.cs">
       <DependentUpon>ConsultarObra.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarObraPorTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarObraPorTipo.Designer.cs">
+      <DependentUpon>ConsultarObraPorTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contacto.cs" />
     <Compile Include="DatabaseLocalDataSet.cs">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarObra.resx">
       <DependentUpon>ConsultarObra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarObraPorTipo.resx">
+      <DependentUpon>ConsultarObraPorTipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -188,6 +197,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseLocal.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\linedpaperpencil32.png" />
     <None Include="Resources\home32.png" />
     <None Include="Resources\user32.png" />
     <None Include="Resources\plus32.png" />

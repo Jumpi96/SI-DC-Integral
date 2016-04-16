@@ -47,7 +47,7 @@ namespace SOADCI
 
         public void Borrar()
         {
-            presupuestosTableAdapter.Delete(numero,nombre,fecha,obra.Numero,modPor); 
+            presupuestosTableAdapter.DeleteByNumero(numero); 
 
         }
     }

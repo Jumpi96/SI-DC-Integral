@@ -63,7 +63,7 @@ namespace SOADCI
 
         public void Borrar()
         {
-            obrasTableAdapter.Delete(numero,nombre,cliente.Numero,tipo.Numero,modPor);
+            obrasTableAdapter.DeleteByNumero(numero);
         }
 
     }

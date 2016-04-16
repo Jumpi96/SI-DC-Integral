@@ -197,6 +197,7 @@ namespace SOADCI
                 textBox5.Text = "";
                 textBox6.Text = "";
                 textBox7.Text = "";
+                this.obrasTableAdapter.FillObrasPorCliente(this.databaseLocalDataSet.Obras, 0);
             }
             catch (System.Exception ex)
             {

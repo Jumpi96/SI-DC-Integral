@@ -41,5 +41,11 @@ namespace SOADCI
             RegistrarObra regO = new RegistrarObra();
             regO.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ConsultarObraPorTipo consu = new ConsultarObraPorTipo();
+            consu.showDialog();
+        }
     }
 }

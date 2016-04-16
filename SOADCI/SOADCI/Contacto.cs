@@ -9,6 +9,9 @@ namespace SOADCI
     class Contacto
     {
 
+        DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
+        DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
+
         private int numero;
         private String nombre;
         private String descripcion;
@@ -37,8 +40,7 @@ namespace SOADCI
         }
 
         public Contacto(int num) {
-            DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-            DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
+            databaseLocalDataSet = new DatabaseLocalDataSet(); 
             contactosTableAdapter = new DatabaseLocalDataSetTableAdapters.ContactosTableAdapter();
             contactosTableAdapter.Fill(databaseLocalDataSet.Contactos);
             DatabaseLocalDataSet.ContactosRow contactosRow = databaseLocalDataSet.Contactos.FindByNumero(num);
@@ -55,8 +57,7 @@ namespace SOADCI
 
         public void Borrar()
         {
-            DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter = new DatabaseLocalDataSetTableAdapters.ContactosTableAdapter();
-            contactosTableAdapter.Delete(numero,nombre,descripcion,cliente.Numero,telefono,correo,modPor);
+            contactosTableAdapter.DeleteByNumero(numero);
         }
     }
 }

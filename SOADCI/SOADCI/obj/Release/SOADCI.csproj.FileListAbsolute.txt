@@ -1,0 +1,17 @@
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\DatabaseLocal.mdf
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\DatabaseLocal_log.ldf
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\SOADCI.exe.config
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\SOADCI.exe
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\SOADCI.pdb
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.ConsultarCliente.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.ConsultarContactos.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.ConsultarObra.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.Inicio.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.Properties.Resources.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.RegistrarCliente.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.RegistrarContacto.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.RegistrarObra.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.csproj.GenerateResource.Cache
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.exe
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.pdb
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.csprojResolveAssemblyReference.cache
