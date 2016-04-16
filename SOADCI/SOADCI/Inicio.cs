@@ -45,7 +45,13 @@ namespace SOADCI
         private void button5_Click(object sender, EventArgs e)
         {
             ConsultarObraPorTipo consu = new ConsultarObraPorTipo();
-            consu.showDialog();
+            consu.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            RegistrarPresupuesto regP = new RegistrarPresupuesto();
+            regP.ShowDialog();
         }
     }
 }

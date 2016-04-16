@@ -21,6 +21,7 @@ namespace SOADCI
         public ConsultarObra()
         {
             InitializeComponent();
+            toolTips();
             obrasTableAdapter = new DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).BeginInit();
@@ -29,6 +30,15 @@ namespace SOADCI
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).EndInit();
 
         }
+
+        private void toolTips()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(button5, "Directorio");
+            toolTip.SetToolTip(button6, "Eliminar");
+            toolTip.SetToolTip(button3, "Registrar presupuesto");
+        }
+
 
         private void ConsultarObra_Load(object sender, EventArgs e)
         {
@@ -110,6 +120,13 @@ namespace SOADCI
             {
                 MessageBox.Show("Error: la obra no pudo ser editada.");
             }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RegistrarPresupuesto regPre = new RegistrarPresupuesto();
+            regPre.ShowDialog();
 
         }
     }

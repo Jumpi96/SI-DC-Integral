@@ -101,5 +101,7 @@ namespace SOADCI
                 MessageBox.Show("El cliente ingresado no existe");
             }
         }
+
+
     }
 }
