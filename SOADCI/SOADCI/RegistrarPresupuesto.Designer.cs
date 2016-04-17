@@ -37,12 +37,12 @@
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.clientesTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
-            this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.obrasTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
@@ -92,6 +92,7 @@
             this.comboBox1.Size = new System.Drawing.Size(167, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "Numero";
+            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // clientesBindingSource
             // 
@@ -114,6 +115,12 @@
             this.comboBox2.Size = new System.Drawing.Size(167, 21);
             this.comboBox2.TabIndex = 5;
             this.comboBox2.ValueMember = "Numero";
+            this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
+            // 
+            // obrasBindingSource
+            // 
+            this.obrasBindingSource.DataMember = "Obras";
+            this.obrasBindingSource.DataSource = this.databaseLocalDataSet;
             // 
             // label3
             // 
@@ -156,11 +163,6 @@
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // obrasBindingSource
-            // 
-            this.obrasBindingSource.DataMember = "Obras";
-            this.obrasBindingSource.DataSource = this.databaseLocalDataSet;
             // 
             // obrasTableAdapter
             // 

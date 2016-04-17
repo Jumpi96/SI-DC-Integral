@@ -41,6 +41,8 @@ namespace SOADCI
             comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
 
+            dateTimePicker1.Value = DateTime.Now;
+
         }
 
 
@@ -63,7 +65,27 @@ namespace SOADCI
                 clienteCorrecto = true;
                 comboBox2.Enabled = true;
                 // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
-                this.obrasTableAdapter.Fill(this.databaseLocalDataSet.Obras); // query nueva
+                this.obrasTableAdapter.FillByCliente(this.databaseLocalDataSet.Obras,(int)comboBox1.SelectedValue); // query nueva
+
+            }
+        }
+
+        private void comboBox2_Leave(object sender, EventArgs e)
+        {
+            String ingresado = comboBox2.Text;
+
+            DataRow[] foundRows;
+            foundRows = databaseLocalDataSet.Tables["Obras"].Select("Nombre Like '" + ingresado + "'");
+
+            if (foundRows.Length == 0)
+            {
+                MessageBox.Show("La obra ingresada no existe");
+                obraCorrecta = false;
+                comboBox2.Text = "";
+            }
+            else
+            {
+                obraCorrecta = true;
 
             }
         }
