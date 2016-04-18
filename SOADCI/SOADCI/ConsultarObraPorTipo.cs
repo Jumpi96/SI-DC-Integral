@@ -16,5 +16,16 @@ namespace SOADCI
         {
             InitializeComponent();
         }
+
+        private void ConsultarObraPorTipo_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
+            this.obrasTableAdapter.Fill(this.databaseLocalDataSet.Obras);
+            // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposCliente' table. You can move, or remove it, as needed.
+            this.tiposClienteTableAdapter.Fill(this.databaseLocalDataSet.TiposCliente);
+            // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
+            this.tiposObraTableAdapter.Fill(this.databaseLocalDataSet.TiposObra);
+
+        }
     }
 }

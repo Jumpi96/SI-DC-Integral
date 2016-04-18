@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,19 @@ namespace SOADCI
         private Obra obra;
         private Boolean clienteCorrecto;
         private Boolean obraCorrecta;
+        private System.Windows.Forms.BindingSource presupuestosBindingSource;
+        private DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
 
         public RegistrarPresupuesto()
         {
             InitializeComponent();
+
+            presupuestosTableAdapter = new DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
+            this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
+            this.presupuestosBindingSource.DataMember = "Presupuestos";
+            this.presupuestosBindingSource.DataSource = this.databaseLocalDataSet;
+            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
 
         }
 
@@ -65,7 +75,7 @@ namespace SOADCI
                 clienteCorrecto = true;
                 comboBox2.Enabled = true;
                 // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
-                this.obrasTableAdapter.FillByCliente(this.databaseLocalDataSet.Obras,(int)comboBox1.SelectedValue); // query nueva
+                this.obrasTableAdapter.FillByCliente(this.databaseLocalDataSet.Obras, ((SOADCI.DatabaseLocalDataSet.ClientesRow)foundRows[0]).Numero);
 
             }
         }
@@ -94,7 +104,30 @@ namespace SOADCI
         {
             if (clienteCorrecto == true && obraCorrecta == true)
             {
-               // Cargar todas las cosas
+                DatabaseLocalDataSet.PresupuestosRow newPresupuestosRow = databaseLocalDataSet.Presupuestos.NewPresupuestosRow();
+
+                newPresupuestosRow.Nombre = textBox1.Text;
+                newPresupuestosRow.Fecha = dateTimePicker1.Value;
+                newPresupuestosRow.NumeroObra = (int)comboBox2.SelectedValue;
+                newPresupuestosRow.ModPor = 1; // usuario
+
+                Obra temp = new Obra(newPresupuestosRow.NumeroObra);
+                Directory.CreateDirectory(@Globales.PATH + "\\" + (new Cliente(temp.Cliente.Numero)).Nombre + "\\" + temp.Nombre + "\\" + newPresupuestosRow.Nombre);
+
+                databaseLocalDataSet.Presupuestos.Rows.Add(newPresupuestosRow);
+
+                try
+                {
+                    this.Validate();
+                    this.presupuestosBindingSource.EndEdit();
+                    this.presupuestosTableAdapter.Update(this.databaseLocalDataSet.Presupuestos);
+                    MessageBox.Show("El presupuesto ha sido registrado.");
+                    this.Close();
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show("Error: el presupuesto no pudo ser ingresado.");
+                }
             }
             else
             {
