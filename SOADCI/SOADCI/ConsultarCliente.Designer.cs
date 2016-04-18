@@ -362,6 +362,7 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(259, 312);
             this.dataGridView2.TabIndex = 25;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
             // numeroDataGridViewTextBoxColumn
@@ -399,7 +400,7 @@
             // Descripcion
             // 
             this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.HeaderText = "Tipo de Obra";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
             // 

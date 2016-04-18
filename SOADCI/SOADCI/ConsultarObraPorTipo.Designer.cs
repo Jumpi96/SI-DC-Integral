@@ -30,29 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
-            this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tiposClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposClienteTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.obrasTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
             this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tiposClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposObraTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tiposClienteTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.obrasTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -66,14 +67,74 @@
             this.nombreDataGridViewTextBoxColumn,
             this.numeroClienteDataGridViewTextBoxColumn,
             this.tipoDataGridViewTextBoxColumn,
-            this.modPorDataGridViewTextBoxColumn});
+            this.modPorDataGridViewTextBoxColumn,
+            this.Nombre});
             this.dataGridView1.DataSource = this.obrasBindingSource;
-            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(273, 12);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeroClienteDataGridViewTextBoxColumn
+            // 
+            this.numeroClienteDataGridViewTextBoxColumn.DataPropertyName = "NumeroCliente";
+            this.numeroClienteDataGridViewTextBoxColumn.HeaderText = "NumeroCliente";
+            this.numeroClienteDataGridViewTextBoxColumn.Name = "numeroClienteDataGridViewTextBoxColumn";
+            this.numeroClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroClienteDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // modPorDataGridViewTextBoxColumn
+            // 
+            this.modPorDataGridViewTextBoxColumn.DataPropertyName = "ModPor";
+            this.modPorDataGridViewTextBoxColumn.HeaderText = "ModPor";
+            this.modPorDataGridViewTextBoxColumn.Name = "modPorDataGridViewTextBoxColumn";
+            this.modPorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modPorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre1";
+            this.Nombre.HeaderText = "Cliente";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // obrasBindingSource
+            // 
+            this.obrasBindingSource.DataMember = "Obras";
+            this.obrasBindingSource.DataSource = this.databaseLocalDataSet;
+            // 
+            // databaseLocalDataSet
+            // 
+            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
+            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -95,10 +156,10 @@
             this.comboBox1.TabIndex = 2;
             this.comboBox1.ValueMember = "Numero";
             // 
-            // databaseLocalDataSet
+            // tiposClienteBindingSource
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tiposClienteBindingSource.DataMember = "TiposCliente";
+            this.tiposClienteBindingSource.DataSource = this.databaseLocalDataSet;
             // 
             // tiposObraBindingSource
             // 
@@ -129,11 +190,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Tipo de obra";
             // 
-            // tiposClienteBindingSource
-            // 
-            this.tiposClienteBindingSource.DataMember = "TiposCliente";
-            this.tiposClienteBindingSource.DataSource = this.databaseLocalDataSet;
-            // 
             // tiposClienteTableAdapter
             // 
             this.tiposClienteTableAdapter.ClearBeforeFill = true;
@@ -146,6 +202,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -155,53 +212,11 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // obrasBindingSource
-            // 
-            this.obrasBindingSource.DataMember = "Obras";
-            this.obrasBindingSource.DataSource = this.databaseLocalDataSet;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // obrasTableAdapter
             // 
             this.obrasTableAdapter.ClearBeforeFill = true;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroClienteDataGridViewTextBoxColumn
-            // 
-            this.numeroClienteDataGridViewTextBoxColumn.DataPropertyName = "NumeroCliente";
-            this.numeroClienteDataGridViewTextBoxColumn.HeaderText = "NumeroCliente";
-            this.numeroClienteDataGridViewTextBoxColumn.Name = "numeroClienteDataGridViewTextBoxColumn";
-            this.numeroClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // modPorDataGridViewTextBoxColumn
-            // 
-            this.modPorDataGridViewTextBoxColumn.DataPropertyName = "ModPor";
-            this.modPorDataGridViewTextBoxColumn.HeaderText = "ModPor";
-            this.modPorDataGridViewTextBoxColumn.Name = "modPorDataGridViewTextBoxColumn";
-            this.modPorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modPorDataGridViewTextBoxColumn.Visible = false;
             // 
             // ConsultarObraPorTipo
             // 
@@ -219,10 +234,10 @@
             this.Text = "ConsultarObraPorTipo";
             this.Load += new System.EventHandler(this.ConsultarObraPorTipo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +264,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modPorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

@@ -126,7 +126,10 @@ namespace SOADCI
         private void button3_Click(object sender, EventArgs e)
         {
             RegistrarPresupuesto regPre = new RegistrarPresupuesto();
+            regPre.LoadOrders(obra);
             regPre.ShowDialog();
+            this.presupuestosTableAdapter.FillByObra(this.databaseLocalDataSet.Presupuestos, obra.Numero);
+
 
         }
     }

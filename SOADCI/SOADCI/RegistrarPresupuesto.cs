@@ -35,6 +35,14 @@ namespace SOADCI
         internal void LoadOrders(Obra ob)
         {
             obra = ob;
+            comboBox1.SelectedText = obra.Cliente.Nombre;
+            clienteCorrecto = true;
+            comboBox2.Enabled = true;
+            // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
+            this.obrasTableAdapter.FillByCliente(this.databaseLocalDataSet.Obras, obra.Cliente.Numero);
+            comboBox2.SelectedText = obra.Nombre;
+            obraCorrecta = true;
+
         }
 
 

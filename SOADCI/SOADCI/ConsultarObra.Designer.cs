@@ -34,11 +34,6 @@
             this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
             this.presupuestosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroObraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,6 +50,11 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroObraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,9 +82,9 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numeroDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
+            this.numeroDataGridViewTextBoxColumn,
             this.numeroObraDataGridViewTextBoxColumn,
             this.modPorDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.presupuestosBindingSource;
@@ -93,44 +93,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(240, 233);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroObraDataGridViewTextBoxColumn
-            // 
-            this.numeroObraDataGridViewTextBoxColumn.DataPropertyName = "NumeroObra";
-            this.numeroObraDataGridViewTextBoxColumn.HeaderText = "NumeroObra";
-            this.numeroObraDataGridViewTextBoxColumn.Name = "numeroObraDataGridViewTextBoxColumn";
-            this.numeroObraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroObraDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // modPorDataGridViewTextBoxColumn
-            // 
-            this.modPorDataGridViewTextBoxColumn.DataPropertyName = "ModPor";
-            this.modPorDataGridViewTextBoxColumn.HeaderText = "ModPor";
-            this.modPorDataGridViewTextBoxColumn.Name = "modPorDataGridViewTextBoxColumn";
-            this.modPorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modPorDataGridViewTextBoxColumn.Visible = false;
             // 
             // button6
             // 
@@ -273,6 +235,44 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // numeroObraDataGridViewTextBoxColumn
+            // 
+            this.numeroObraDataGridViewTextBoxColumn.DataPropertyName = "NumeroObra";
+            this.numeroObraDataGridViewTextBoxColumn.HeaderText = "NumeroObra";
+            this.numeroObraDataGridViewTextBoxColumn.Name = "numeroObraDataGridViewTextBoxColumn";
+            this.numeroObraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroObraDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // modPorDataGridViewTextBoxColumn
+            // 
+            this.modPorDataGridViewTextBoxColumn.DataPropertyName = "ModPor";
+            this.modPorDataGridViewTextBoxColumn.HeaderText = "ModPor";
+            this.modPorDataGridViewTextBoxColumn.Name = "modPorDataGridViewTextBoxColumn";
+            this.modPorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modPorDataGridViewTextBoxColumn.Visible = false;
+            // 
             // ConsultarObra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,11 +310,6 @@
         private System.Windows.Forms.BindingSource presupuestosBindingSource;
         private DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroObraDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modPorDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
@@ -331,5 +326,10 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroObraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modPorDataGridViewTextBoxColumn;
     }
 }

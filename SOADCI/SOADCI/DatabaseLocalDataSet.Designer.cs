@@ -6714,7 +6714,7 @@ SELECT Numero, Nombre, NumeroCliente, Tipo, ModPor FROM Obras WHERE (Numero = @N
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Numero, Nombre, NumeroCliente, Tipo, ModPor FROM dbo.Obras";
@@ -6738,6 +6738,23 @@ FROM            Obras INNER JOIN
 WHERE        (Obras.NumeroCliente = @NumCli)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumCli", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        Obras.Numero, Obras.Nombre, Obras.NumeroCliente, Clientes.Tipo, Clientes.Nombre AS Nombre1, TiposCliente.Numero AS Expr1, TiposCliente.Descripcion, Obras.Tipo AS Expr2, Obras.ModPor
+FROM            Obras INNER JOIN
+                         Clientes ON Obras.NumeroCliente = Clientes.Numero INNER JOIN
+                         TiposCliente ON Clientes.Tipo = TiposCliente.Numero
+WHERE        (TiposCliente.Numero = @NumeroTipo)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroTipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Expr1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT        Obras.Numero, Obras.Nombre, Obras.ModPor, Obras.Tipo, Obras.NumeroC" +
+                "liente, Clientes.Nombre\r\nFROM            Obras INNER JOIN\r\n                     " +
+                "    Clientes ON Obras.NumeroCliente = Clientes.Numero\r\nWHERE        (Obras.Tipo " +
+                "= @Numero)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6785,6 +6802,34 @@ WHERE        (Obras.NumeroCliente = @NumCli)";
         public virtual int FillObrasPorCliente(DatabaseLocalDataSet.ObrasDataTable dataTable, int NumCli) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NumCli));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillObrasPorTipoCliente(DatabaseLocalDataSet.ObrasDataTable dataTable, int NumeroTipo) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NumeroTipo));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillObrasPorTipoObra(DatabaseLocalDataSet.ObrasDataTable dataTable, int Numero) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Numero));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
