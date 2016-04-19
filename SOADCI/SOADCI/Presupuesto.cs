@@ -8,6 +8,7 @@ namespace SOADCI
 {
     class Presupuesto
     {
+        DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
         DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter = new DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
 
         private int numero;
@@ -33,7 +34,6 @@ namespace SOADCI
 
         public Presupuesto (int num)
         {
-            DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
             presupuestosTableAdapter.Fill(databaseLocalDataSet.Presupuestos);
             DatabaseLocalDataSet.PresupuestosRow presupuestosRow = databaseLocalDataSet.Presupuestos.FindByNumero(num);
 
@@ -42,6 +42,21 @@ namespace SOADCI
             Fecha = presupuestosRow.Fecha;
             ModPor = presupuestosRow.ModPor;
             Obra = new Obra(presupuestosRow.NumeroObra);
+        }
+
+        public void BorrarPagosAsociados()
+        {
+            DatabaseLocalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
+            pagosTableAdapter = new DatabaseLocalDataSetTableAdapters.PagosTableAdapter();
+            pagosTableAdapter.FillByPresupuesto(databaseLocalDataSet.Pagos, this.Numero);
+
+            Pago pago;
+
+            foreach (DatabaseLocalDataSet.PagosRow row in databaseLocalDataSet.Pagos.Rows)
+            {
+                pago = new Pago(row.Numero);
+                pago.Borrar();
+            }
         }
 
 

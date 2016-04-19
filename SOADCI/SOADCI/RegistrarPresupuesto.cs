@@ -30,6 +30,8 @@ namespace SOADCI
             this.presupuestosBindingSource.DataSource = this.databaseLocalDataSet;
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
 
+
+
         }
 
         internal void LoadOrders(Obra ob)

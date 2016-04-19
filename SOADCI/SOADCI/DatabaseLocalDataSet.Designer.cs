@@ -514,7 +514,7 @@ namespace SOADCI {
             this.Relations.Add(this.relationFK_Pagos_ToPresupuestos);
             this.relationFK_Pagos_ToUsuarios = new global::System.Data.DataRelation("FK_Pagos_ToUsuarios", new global::System.Data.DataColumn[] {
                         this.tableUsuarios.NumeroColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePagos.CreadoPorColumn}, false);
+                        this.tablePagos.ModPorColumn}, false);
             this.Relations.Add(this.relationFK_Pagos_ToUsuarios);
             this.relationFK_Presupuestos_ToObras = new global::System.Data.DataRelation("FK_Presupuestos_ToObras", new global::System.Data.DataColumn[] {
                         this.tableObras.NumeroColumn}, new global::System.Data.DataColumn[] {
@@ -2047,7 +2047,7 @@ namespace SOADCI {
             
             private global::System.Data.DataColumn columnMonto;
             
-            private global::System.Data.DataColumn columnCreadoPor;
+            private global::System.Data.DataColumn columnModPor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2116,9 +2116,9 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CreadoPorColumn {
+            public global::System.Data.DataColumn ModPorColumn {
                 get {
-                    return this.columnCreadoPor;
+                    return this.columnModPor;
                 }
             }
             
@@ -2206,7 +2206,7 @@ namespace SOADCI {
                 this.columnFecha = base.Columns["Fecha"];
                 this.columnNumeroPresupuesto = base.Columns["NumeroPresupuesto"];
                 this.columnMonto = base.Columns["Monto"];
-                this.columnCreadoPor = base.Columns["CreadoPor"];
+                this.columnModPor = base.Columns["ModPor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2220,8 +2220,8 @@ namespace SOADCI {
                 base.Columns.Add(this.columnNumeroPresupuesto);
                 this.columnMonto = new global::System.Data.DataColumn("Monto", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMonto);
-                this.columnCreadoPor = new global::System.Data.DataColumn("CreadoPor", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCreadoPor);
+                this.columnModPor = new global::System.Data.DataColumn("ModPor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModPor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNumero}, true));
                 this.columnNumero.AutoIncrement = true;
@@ -2233,7 +2233,7 @@ namespace SOADCI {
                 this.columnFecha.AllowDBNull = false;
                 this.columnNumeroPresupuesto.AllowDBNull = false;
                 this.columnMonto.AllowDBNull = false;
-                this.columnCreadoPor.AllowDBNull = false;
+                this.columnModPor.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4416,12 +4416,12 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CreadoPor {
+            public int ModPor {
                 get {
-                    return ((int)(this[this.tablePagos.CreadoPorColumn]));
+                    return ((int)(this[this.tablePagos.ModPorColumn]));
                 }
                 set {
-                    this[this.tablePagos.CreadoPorColumn] = value;
+                    this[this.tablePagos.ModPorColumn] = value;
                 }
             }
             
@@ -7126,7 +7126,7 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
             tableMapping.ColumnMappings.Add("NumeroPresupuesto", "NumeroPresupuesto");
             tableMapping.ColumnMappings.Add("Monto", "Monto");
-            tableMapping.ColumnMappings.Add("CreadoPor", "CreadoPor");
+            tableMapping.ColumnMappings.Add("CreadoPor", "ModPor");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -7176,11 +7176,22 @@ SELECT Numero, Fecha, NumeroPresupuesto, Monto, CreadoPor FROM Pagos WHERE (Nume
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Numero, Fecha, NumeroPresupuesto, Monto, CreadoPor FROM dbo.Pagos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Pagos] WHERE (([Numero] = @Original_Numero))";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Numero, Fecha, NumeroPresupuesto, Monto, CreadoPor FROM dbo.Pagos WHERE Nu" +
+                "meroPresupuesto = @Parametro";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parametro", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroPresupuesto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7205,6 +7216,20 @@ SELECT Numero, Fecha, NumeroPresupuesto, Monto, CreadoPor FROM Pagos WHERE (Nume
             DatabaseLocalDataSet.PagosDataTable dataTable = new DatabaseLocalDataSet.PagosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPresupuesto(DatabaseLocalDataSet.PagosDataTable dataTable, int Parametro) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Parametro));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7324,6 +7349,30 @@ SELECT Numero, Fecha, NumeroPresupuesto, Monto, CreadoPor FROM Pagos WHERE (Nume
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(System.DateTime Fecha, int NumeroPresupuesto, decimal Monto, int CreadoPor, int Original_Numero, System.DateTime Original_Fecha, int Original_NumeroPresupuesto, decimal Original_Monto, int Original_CreadoPor) {
             return this.Update(Fecha, NumeroPresupuesto, Monto, CreadoPor, Original_Numero, Original_Fecha, Original_NumeroPresupuesto, Original_Monto, Original_CreadoPor, Original_Numero);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteByNumero(int Original_Numero) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(Original_Numero));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

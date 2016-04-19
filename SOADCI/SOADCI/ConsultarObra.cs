@@ -15,8 +15,11 @@ namespace SOADCI
     {
         private Obra obra;
         private String cadena;
+
         private System.Windows.Forms.BindingSource obrasBindingSource;
         private DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
+        
+
 
         public ConsultarObra()
         {
@@ -56,8 +59,8 @@ namespace SOADCI
             this.Text = "Consultar Obra - " + obra.Nombre;
             this.presupuestosTableAdapter.FillByObra(this.databaseLocalDataSet.Presupuestos,obra.Numero);
             cadena = Globales.PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre;
-            textBox1.Text = obra.Numero.ToString();
-            textBox2.Text = obra.Cliente.Nombre;
+            textBox2.Text = obra.Numero.ToString();
+            textBox1.Text = obra.Cliente.Nombre;
             textBox3.Text = obra.Nombre;
             
         }
@@ -106,8 +109,8 @@ namespace SOADCI
             {
                 if (obra.Nombre != obrasRow.Nombre)
                 {
-                    cadena = Globales.PATH + "\\" + obrasRow.Nombre;
-                    Directory.Move(Globales.PATH + "\\" + obrasRow.Nombre, cadena);
+                    cadena = Globales.PATH + "\\" + obra.Cliente.Nombre + "\\" + obrasRow.Nombre;
+                    Directory.Move(Globales.PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre, cadena);
                 }
                 this.Validate();
                 this.obrasBindingSource.EndEdit();
@@ -131,6 +134,26 @@ namespace SOADCI
             this.presupuestosTableAdapter.FillByObra(this.databaseLocalDataSet.Presupuestos, obra.Numero);
 
 
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = this.dataGridView1.SelectedRows[0];
+
+                int numero= (int)row.Cells[2].Value;
+                String nombre= (String)row.Cells[1].Value;
+                DateTime fecha=(DateTime)row.Cells[0].Value;
+                int modPor= (int)row.Cells[4].Value; ;
+
+                Presupuesto presu = new Presupuesto(numero,nombre,fecha,obra,modPor);
+
+                ConsultarPresupuesto cons = new ConsultarPresupuesto();
+                cons.LoadOrders(presu);
+                cons.ShowDialog();
+                this.presupuestosTableAdapter.FillByObra(this.databaseLocalDataSet.Presupuestos, obra.Numero);
+            }
         }
     }
 }

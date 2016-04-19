@@ -101,7 +101,6 @@ namespace SOADCI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Editar contacto
             DatabaseLocalDataSet.ContactosRow contactosRow = databaseLocalDataSet.Contactos.FindByNumero(contacto.Numero);
 
             contactosRow.Nombre = textBox1.Text;
