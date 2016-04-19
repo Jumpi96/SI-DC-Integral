@@ -20,3 +20,8 @@ D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.Consul
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.csprojResolveAssemblyReference.cache
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.ConsultarPagos.resources
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.RegistrarPago.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.EmitirInformePresupuestos.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.FormEmitirInforme.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\RdlCompile.cache
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\RdlCompile.compiled
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\Microsoft.ReportViewer.WinForms.dll
