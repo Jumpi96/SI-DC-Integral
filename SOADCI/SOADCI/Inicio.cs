@@ -53,5 +53,11 @@ namespace SOADCI
             RegistrarPresupuesto regP = new RegistrarPresupuesto();
             regP.ShowDialog();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormEmitirInforme fei = new FormEmitirInforme();
+            fei.ShowDialog();
+        }
     }
 }

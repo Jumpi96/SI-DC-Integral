@@ -107,6 +107,12 @@
     <Compile Include="ConsultarCliente.Designer.cs">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmitirInformePresupuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmitirInformePresupuestos.Designer.cs">
+      <DependentUpon>EmitirInformePresupuestos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Globales.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -198,6 +204,7 @@
     <EmbeddedResource Include="RegistrarPresupuesto.resx">
       <DependentUpon>RegistrarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="DatabaseLocalDataSet.xsc">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
     </None>
