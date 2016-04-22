@@ -17,6 +17,7 @@ namespace SOADCI
 
         private Cliente elegido;
         private String cadena;
+        private Boolean primeraEleccion=true;
 
         public ConsultarCliente()
         {
@@ -96,6 +97,17 @@ namespace SOADCI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (primeraEleccion == true)
+            {
+                comboBox2.Enabled = true;
+                textBox3.ReadOnly = false;
+                textBox4.ReadOnly = false;
+                textBox5.ReadOnly = false;
+                textBox6.ReadOnly = false;
+                textBox7.ReadOnly = false;
+                primeraEleccion = false;
+            }
+
             if (dataGridView1.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = this.dataGridView1.SelectedRows[0];
@@ -197,6 +209,13 @@ namespace SOADCI
                 textBox5.Text = "";
                 textBox6.Text = "";
                 textBox7.Text = "";
+                primeraEleccion = true;
+                comboBox2.Enabled = false;
+                textBox3.ReadOnly = true;
+                textBox4.ReadOnly = true;
+                textBox5.ReadOnly = true;
+                textBox6.ReadOnly = true;
+                textBox7.ReadOnly = true;
                 this.obrasTableAdapter.FillObrasPorCliente(this.databaseLocalDataSet.Obras, 0);
             }
             catch (System.Exception ex)
@@ -239,6 +258,11 @@ namespace SOADCI
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

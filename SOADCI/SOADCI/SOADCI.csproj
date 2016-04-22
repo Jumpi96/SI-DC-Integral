@@ -52,6 +52,7 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -219,7 +220,7 @@
     <EmbeddedResource Include="RegistrarPresupuesto.resx">
       <DependentUpon>RegistrarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="InformePresupuestos.rdlc" />
     <None Include="DatabaseLocalDataSet.xsc">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
     </None>

@@ -4,6 +4,10 @@
 
     partial class DatabaseLocalDataSet
     {
+        partial class TableDataTable
+        {
+        }
+
         partial class TiposObraDataTable
         {
         }

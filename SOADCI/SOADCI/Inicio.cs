@@ -59,5 +59,10 @@ namespace SOADCI
             FormEmitirInforme fei = new FormEmitirInforme();
             fei.ShowDialog();
         }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

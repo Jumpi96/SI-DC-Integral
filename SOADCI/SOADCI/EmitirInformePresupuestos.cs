@@ -21,7 +21,7 @@ namespace SOADCI
         }
 
         private void EmitirInformePresupuestos_Load(object sender, EventArgs e)
-        {
+        {            
             // TODO: This line of code loads data into the 'DatabaseLocalDataSet.Presupuestos' table. You can move, or remove it, as needed.
             this.PresupuestosTableAdapter.FillByFecha(this.DatabaseLocalDataSet.Presupuestos,fechaInicio.ToString(),fechaFin.ToString());
 
@@ -32,6 +32,11 @@ namespace SOADCI
         {
             fechaInicio = fechaDesde;
             fechaFin = fechaHasta;   
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

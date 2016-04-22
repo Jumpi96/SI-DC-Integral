@@ -63,6 +63,7 @@ namespace SOADCI
 
         public void Borrar()
         {
+            borrarPresupuestosAsociados();
             obrasTableAdapter.DeleteByNumero(numero);
         }
 
