@@ -188,39 +188,43 @@ namespace SOADCI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(elegido.Numero);
-
-            clientesRow.Delete();
-
-            elegido.borrarObrasAsociadas();
-            elegido.borrarContactosAsociados();
-
-            try
+            if (MessageBox.Show("¿Está seguro que desea eliminar el cliente?", "Eliminar cliente", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
             {
-                this.Validate();
-                this.clientesBindingSource.EndEdit();
-                this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
-                Directory.Delete(cadena,true);
-                MessageBox.Show("El cliente ha sido eliminado.");
-                comboBox2.Text = "";
-                textBox1.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                primeraEleccion = true;
-                comboBox2.Enabled = false;
-                textBox3.ReadOnly = true;
-                textBox4.ReadOnly = true;
-                textBox5.ReadOnly = true;
-                textBox6.ReadOnly = true;
-                textBox7.ReadOnly = true;
-                this.obrasTableAdapter.FillObrasPorCliente(this.databaseLocalDataSet.Obras, 0);
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show("Error: el cliente no pudo ser eliminado.");
+                DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(elegido.Numero);
+
+                clientesRow.Delete();
+
+                elegido.borrarObrasAsociadas();
+                elegido.borrarContactosAsociados();
+
+                try
+                {
+                    this.Validate();
+                    this.clientesBindingSource.EndEdit();
+                    this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
+                    Directory.Delete(cadena,true);
+                    MessageBox.Show("El cliente ha sido eliminado.", "Eliminar cliente");
+                    comboBox2.Text = "";
+                    textBox1.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                    textBox7.Text = "";
+                    primeraEleccion = true;
+                    comboBox2.Enabled = false;
+                    textBox3.ReadOnly = true;
+                    textBox4.ReadOnly = true;
+                    textBox5.ReadOnly = true;
+                    textBox6.ReadOnly = true;
+                    textBox7.ReadOnly = true;
+                    this.obrasTableAdapter.FillObrasPorCliente(this.databaseLocalDataSet.Obras, 0);
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show("Error: el cliente no pudo ser eliminado.");
+                }
             }
         }
 

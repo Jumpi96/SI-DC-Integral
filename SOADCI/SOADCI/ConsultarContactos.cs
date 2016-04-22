@@ -18,8 +18,17 @@ namespace SOADCI
         public ConsultarContactos()
         {
             InitializeComponent();
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
+            textBox3.ReadOnly = true;
+            textBox4.ReadOnly = true;
         }
-
+        private void toolTips()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(button4, "Eliminar contacto");
+            toolTip.SetToolTip(button2, "Registrar contacto");
+        }
         private void ConsultarContactos_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Contactos' table. You can move, or remove it, as needed.
@@ -60,6 +69,10 @@ namespace SOADCI
 
             button3.Enabled = true;
             button4.Enabled = true;
+            textBox1.ReadOnly = false;
+            textBox2.ReadOnly = false;
+            textBox3.ReadOnly = false;
+            textBox4.ReadOnly = false;
 
         }
 
@@ -75,28 +88,36 @@ namespace SOADCI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.ContactosRow contactosRow = databaseLocalDataSet.Contactos.FindByNumero(contacto.Numero);
-            contactosRow.Delete();
-
-            try
+            if (MessageBox.Show("¿Está seguro que desea eliminar el contacto?", "Eliminar contacto",
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Validate();
-                this.contactosBindingSource.EndEdit();
-                this.contactosTableAdapter.Update(this.databaseLocalDataSet.Contactos);
-                MessageBox.Show("El contacto ha sido eliminado.");
-                textBox2.Text = "";
-                textBox1.Text = "";
-                textBox3.Text = "";
-                textBox4.Text = "";
-                this.contactosTableAdapter.FillBy(this.databaseLocalDataSet.Contactos, cliente.Numero);
-                button3.Enabled = false;
-                button4.Enabled = false;
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show("Error: el contacto no pudo ser eliminado.");
-            }
+                DatabaseLocalDataSet.ContactosRow contactosRow = databaseLocalDataSet.Contactos.FindByNumero(contacto.Numero);
+                contactosRow.Delete();
 
+                try
+                {
+                    this.Validate();
+                    this.contactosBindingSource.EndEdit();
+                    this.contactosTableAdapter.Update(this.databaseLocalDataSet.Contactos);
+                    MessageBox.Show("El contacto ha sido eliminado.");
+                    textBox2.Text = "";
+                    textBox1.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    this.contactosTableAdapter.FillBy(this.databaseLocalDataSet.Contactos, cliente.Numero);
+                    button3.Enabled = false;
+                    button4.Enabled = false;
+
+                    textBox1.ReadOnly = true;
+                    textBox2.ReadOnly = true;
+                    textBox3.ReadOnly = true;
+                    textBox4.ReadOnly = true;
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show("Error: el contacto no pudo ser eliminado.");
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

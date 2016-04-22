@@ -56,7 +56,7 @@ namespace SOADCI
         {
 
             obra = ob;
-            this.Text = "Consultar Obra - " + obra.Nombre;
+            this.Text = "Consultar obra - " + obra.Nombre;
             this.presupuestosTableAdapter.FillByObra(this.databaseLocalDataSet.Presupuestos,obra.Numero);
             cadena = Globales.PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre;
             textBox2.Text = obra.Numero.ToString();
@@ -77,24 +77,28 @@ namespace SOADCI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.ObrasRow obrasRow = databaseLocalDataSet.Obras.FindByNumero(obra.Numero);
-
-            obrasRow.Delete();
-
-            obra.borrarPresupuestosAsociados();
-
-            try
+            if (MessageBox.Show("¿Está seguro que desea eliminar la obra?", "Eliminar obra",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                this.Validate();
-                this.obrasBindingSource.EndEdit();
-                this.obrasTableAdapter.Update(this.databaseLocalDataSet.Obras);
-                Directory.Delete(cadena, true);
-                MessageBox.Show("La obra ha sido eliminada.");
-                this.Close();
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show("Error: la obra no pudo ser eliminada.");
+                DatabaseLocalDataSet.ObrasRow obrasRow = databaseLocalDataSet.Obras.FindByNumero(obra.Numero);
+
+                obrasRow.Delete();
+
+                obra.borrarPresupuestosAsociados();
+
+                try
+                {
+                    this.Validate();
+                    this.obrasBindingSource.EndEdit();
+                    this.obrasTableAdapter.Update(this.databaseLocalDataSet.Obras);
+                    Directory.Delete(cadena, true);
+                    MessageBox.Show("La obra ha sido eliminada.");
+                    this.Close();
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show("Error: la obra no pudo ser eliminada.");
+                }
             }
         }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarObra));
             this.Cliente = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -105,17 +106,18 @@
             this.textBox2.Location = new System.Drawing.Point(66, 70);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(251, 20);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 3;
             // 
             // comboBox2
             // 
             this.comboBox2.DataSource = this.tiposObraBindingSource;
             this.comboBox2.DisplayMember = "Descripcion";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(66, 43);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 8;
+            this.comboBox2.TabIndex = 2;
             this.comboBox2.ValueMember = "Numero";
             // 
             // tiposObraBindingSource
@@ -129,20 +131,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(278, 115);
+            this.button1.Location = new System.Drawing.Point(278, 109);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(359, 115);
+            this.button2.Location = new System.Drawing.Point(359, 109);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -151,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 150);
+            this.ClientSize = new System.Drawing.Size(454, 150);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox2);
@@ -160,8 +162,14 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Cliente);
             this.Controls.Add(this.textBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(470, 189);
+            this.MinimumSize = new System.Drawing.Size(470, 189);
             this.Name = "RegistrarObra";
-            this.Text = "Registrar Obra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Registrar obra";
             this.Load += new System.EventHandler(this.RegistrarObra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();

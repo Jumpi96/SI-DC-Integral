@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarPresupuesto));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -72,7 +73,7 @@
             this.textBox1.Location = new System.Drawing.Point(63, 103);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(214, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -90,8 +91,9 @@
             this.comboBox1.Location = new System.Drawing.Point(63, 23);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(167, 21);
-            this.comboBox1.TabIndex = 4;
+            this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "Numero";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
             // clientesBindingSource
@@ -113,7 +115,7 @@
             this.comboBox2.Location = new System.Drawing.Point(63, 50);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(167, 21);
-            this.comboBox2.TabIndex = 5;
+            this.comboBox2.TabIndex = 2;
             this.comboBox2.ValueMember = "Numero";
             this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
@@ -145,17 +147,17 @@
             this.button1.Location = new System.Drawing.Point(291, 147);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(372, 147);
+            this.button2.Location = new System.Drawing.Point(373, 147);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -172,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 182);
+            this.ClientSize = new System.Drawing.Size(464, 182);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
@@ -183,8 +185,14 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(480, 221);
+            this.MinimumSize = new System.Drawing.Size(480, 221);
             this.Name = "RegistrarPresupuesto";
-            this.Text = "RegistrarPresupuesto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Registrar presupuesto";
             this.Load += new System.EventHandler(this.RegistrarPresupuesto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();

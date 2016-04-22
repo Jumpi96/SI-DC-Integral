@@ -63,6 +63,16 @@ namespace SOADCI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _128_x_128 {
+            get {
+                object obj = ResourceManager.GetObject("128 x 128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap home32 {
             get {
                 object obj = ResourceManager.GetObject("home32", resourceCulture);
@@ -76,6 +86,26 @@ namespace SOADCI.Properties {
         internal static System.Drawing.Bitmap linedpaperpencil32 {
             get {
                 object obj = ResourceManager.GetObject("linedpaperpencil32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoGrande {
+            get {
+                object obj = ResourceManager.GetObject("LogoGrande", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

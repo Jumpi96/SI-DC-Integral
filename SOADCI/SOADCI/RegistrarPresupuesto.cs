@@ -44,6 +44,7 @@ namespace SOADCI
             this.obrasTableAdapter.FillByCliente(this.databaseLocalDataSet.Obras, obra.Cliente.Numero);
             comboBox2.SelectedText = obra.Nombre;
             obraCorrecta = true;
+            this.ActiveControl = textBox1;
 
         }
 
@@ -146,6 +147,11 @@ namespace SOADCI
                 else
                     MessageBox.Show("La obra ingresada no existe");
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
