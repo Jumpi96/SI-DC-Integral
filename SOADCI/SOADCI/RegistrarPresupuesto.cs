@@ -127,6 +127,9 @@ namespace SOADCI
 
                 databaseLocalDataSet.Presupuestos.Rows.Add(newPresupuestosRow);
 
+                Presupuesto nuePre = new Presupuesto(newPresupuestosRow.Numero, newPresupuestosRow.Nombre, newPresupuestosRow.Fecha, temp, newPresupuestosRow.ModPor);
+                nuePre.crearCarpetas();
+
                 try
                 {
                     this.Validate();

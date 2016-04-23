@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,6 +65,20 @@ namespace SOADCI
         {
             presupuestosTableAdapter.DeleteByNumero(numero); 
 
+        }
+
+        public void crearCarpetas()
+        {
+            DatabaseLocalDataSetTableAdapters.CarpetasTableAdapter carpetasTableAdapter;
+            carpetasTableAdapter = new DatabaseLocalDataSetTableAdapters.CarpetasTableAdapter();
+            carpetasTableAdapter.FillByTipo(databaseLocalDataSet.Carpetas, this.Obra.Tipo.Numero);
+
+            String cadena= @Globales.PATH + "\\" + Obra.Cliente.Nombre + "\\" + Obra.Nombre + "\\" + this.Nombre;
+
+            foreach (DatabaseLocalDataSet.CarpetasRow row in databaseLocalDataSet.Carpetas.Rows)
+            {
+                Directory.CreateDirectory(cadena + "\\" + row.Nombre);
+            }
         }
     }
 }
