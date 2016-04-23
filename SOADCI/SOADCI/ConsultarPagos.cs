@@ -18,6 +18,7 @@ namespace SOADCI
         public ConsultarPagos()
         {
             InitializeComponent();
+            textBox2.ReadOnly = true;
             
         }
 
@@ -56,6 +57,7 @@ namespace SOADCI
 
             button3.Enabled = true;
             button4.Enabled = true;
+            textBox2.ReadOnly = false;
 
         }
 
@@ -71,13 +73,13 @@ namespace SOADCI
                 this.pagosBindingSource.EndEdit();
                 this.pagosTableAdapter.Update(this.databaseLocalDataSet.Pagos);
                 pago.Monto = (float)pagosRow.Monto;
-                MessageBox.Show("El pago ha sido editado.");
+                MessageBox.Show("El pago ha sido editado.", "Modificar pago");
                 this.pagosTableAdapter.FillByPresupuesto(this.databaseLocalDataSet.Pagos, presupuesto.Numero);
 
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("Error: el pago no pudo ser editado.");
+                MessageBox.Show("Error: el pago no pudo ser editado.", "Modificar pago");
             }
         }
 
@@ -97,9 +99,18 @@ namespace SOADCI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            pago.Borrar();
-            MessageBox.Show("El pago ha sido eliminado.");
-            this.pagosTableAdapter.FillByPresupuesto(this.databaseLocalDataSet.Pagos, presupuesto.Numero);
+            if (MessageBox.Show("¿Está seguro que desea eliminar el pago?", "Eliminar pago",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            { 
+                pago.Borrar();
+                MessageBox.Show("El pago ha sido eliminado.","Eliminar pago");
+                this.pagosTableAdapter.FillByPresupuesto(this.databaseLocalDataSet.Pagos, presupuesto.Numero);
+                textBox2.Text = "";
+                textBox2.ReadOnly = true;
+                textBox1.Text = "";
+                button3.Enabled = false;
+                button4.Enabled = false;
+            }
         }
     }
 }

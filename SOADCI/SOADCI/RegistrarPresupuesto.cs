@@ -77,7 +77,7 @@ namespace SOADCI
             if (foundRows.Length == 0)
             {
                 this.clientesTableAdapter.Fill(this.databaseLocalDataSet.Clientes);
-                MessageBox.Show("El cliente ingresado no existe");
+                MessageBox.Show("El cliente ingresado no existe", "Registrar presupuesto");
                 clienteCorrecto = false;
                 comboBox2.Enabled = false;
             }
@@ -100,7 +100,7 @@ namespace SOADCI
 
             if (foundRows.Length == 0)
             {
-                MessageBox.Show("La obra ingresada no existe");
+                MessageBox.Show("La obra ingresada no existe", "Registrar presupuesto");
                 obraCorrecta = false;
                 comboBox2.Text = "";
             }
@@ -132,7 +132,7 @@ namespace SOADCI
                     this.Validate();
                     this.presupuestosBindingSource.EndEdit();
                     this.presupuestosTableAdapter.Update(this.databaseLocalDataSet.Presupuestos);
-                    MessageBox.Show("El presupuesto ha sido registrado.");
+                    MessageBox.Show("El presupuesto ha sido registrado.", "Registrar presupuesto");
                     this.Close();
                 }
                 catch (System.Exception ex)
@@ -143,9 +143,9 @@ namespace SOADCI
             else
             {
                 if(clienteCorrecto==false)
-                    MessageBox.Show("El cliente ingresado no existe");
+                    MessageBox.Show("El cliente ingresado no existe", "Registrar presupuesto");
                 else
-                    MessageBox.Show("La obra ingresada no existe");
+                    MessageBox.Show("La obra ingresada no existe", "Registrar presupuesto");
             }
         }
 

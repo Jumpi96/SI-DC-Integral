@@ -30,7 +30,7 @@ namespace SOADCI
         internal void LoadOrders(Presupuesto pre)
         {
             presupuesto = pre;
-            this.Text = "Registrar Pago - " + pre.Nombre;
+            this.Text = "Registrar pago - " + pre.Nombre;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -40,14 +40,17 @@ namespace SOADCI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.PagosRow PagosRow = databaseLocalDataSet.Pagos.NewPagosRow();
+            if (textBox2.Text != "")
+            {
+
+                DatabaseLocalDataSet.PagosRow PagosRow = databaseLocalDataSet.Pagos.NewPagosRow();
 
 
-            PagosRow.Fecha = dateTimePicker1.Value;
-            PagosRow.Monto = Convert.ToDecimal(textBox2.Text);
-            PagosRow.NumeroPresupuesto = presupuesto.Numero;
-            PagosRow.ModPor = 1; // Usuario
-            
+                PagosRow.Fecha = dateTimePicker1.Value;
+                PagosRow.Monto = Convert.ToDecimal(textBox2.Text);
+                PagosRow.NumeroPresupuesto = presupuesto.Numero;
+                PagosRow.ModPor = 1; // Usuario
+
 
                 databaseLocalDataSet.Pagos.Rows.Add(PagosRow);
 
@@ -63,7 +66,10 @@ namespace SOADCI
                 {
                     MessageBox.Show("Error: el pago no pudo ser ingresado.");
                 }
-            
+            }
+            else
+                MessageBox.Show("Ingrese un monto válido.", "Registrar pago");
+
         }
     }
 }

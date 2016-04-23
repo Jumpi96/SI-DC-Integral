@@ -29,7 +29,7 @@ namespace SOADCI
         {
             presupuesto = pres;
 
-            this.Text = "Consultar Presupuesto - "+pres.Nombre;
+            this.Text = "Consultar presupuesto - "+pres.Nombre;
             textBox2.Text = pres.Numero.ToString();
             textBox3.Text = pres.Nombre;
             textBox4.Text = pres.Obra.Cliente.Nombre;
@@ -80,7 +80,7 @@ namespace SOADCI
                 this.bindingSource1.EndEdit();
                 this.presupuestosTableAdapter.Update(this.databaseLocalDataSet.Presupuestos);
                 presupuesto.Nombre = presupuestosRow.Nombre;
-                MessageBox.Show("El presupuesto ha sido editado.");
+                MessageBox.Show("El presupuesto ha sido editado.", "Modificar presupuesto");
 
             }
             catch (System.Exception ex)
@@ -91,10 +91,14 @@ namespace SOADCI
 
         private void button6_Click(object sender, EventArgs e)
         {
-            presupuesto.BorrarPagosAsociados();
-            presupuesto.Borrar();
-            MessageBox.Show("El presupuesto ha sido eliminado.");
-            this.Close();
+            if (MessageBox.Show("¿Está seguro que desea eliminar el presupuesto?", "Eliminar presupuesto",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            { 
+                presupuesto.BorrarPagosAsociados();
+                presupuesto.Borrar();
+                MessageBox.Show("El presupuesto ha sido eliminado.", "Eliminar presupuesto");
+                this.Close();
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
