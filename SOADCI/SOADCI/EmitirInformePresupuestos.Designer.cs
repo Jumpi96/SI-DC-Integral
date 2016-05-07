@@ -31,26 +31,16 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmitirInformePresupuestos));
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.PresupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DatabaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PresupuestosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
             this.TableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PresupuestosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
             this.TableTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TableTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.PresupuestosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseLocalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TableBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PresupuestosBindingSource
-            // 
-            this.PresupuestosBindingSource.DataMember = "Presupuestos";
-            this.PresupuestosBindingSource.DataSource = this.DatabaseLocalDataSet;
-            // 
-            // DatabaseLocalDataSet
-            // 
-            this.DatabaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.DatabaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -66,14 +56,24 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // PresupuestosTableAdapter
+            // PresupuestosBindingSource
             // 
-            this.PresupuestosTableAdapter.ClearBeforeFill = true;
+            this.PresupuestosBindingSource.DataMember = "Presupuestos";
+            this.PresupuestosBindingSource.DataSource = this.DatabaseLocalDataSet;
+            // 
+            // DatabaseLocalDataSet
+            // 
+            this.DatabaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
+            this.DatabaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // TableBindingSource
             // 
             this.TableBindingSource.DataMember = "Table";
             this.TableBindingSource.DataSource = this.DatabaseLocalDataSet;
+            // 
+            // PresupuestosTableAdapter
+            // 
+            this.PresupuestosTableAdapter.ClearBeforeFill = true;
             // 
             // TableTableAdapter
             // 

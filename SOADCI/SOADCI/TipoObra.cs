@@ -10,17 +10,14 @@ namespace SOADCI
     {
         private int numero;
         private String descripcion;
-        private List<int> arregloCarpetas = new List<int>();
 
         public int Numero { get { return numero; } set { numero = value; } }
         public String Descripcion { get { return descripcion; } set { descripcion = value; } }
-        public List<int> ArregloCarpetas { get { return arregloCarpetas; } set { arregloCarpetas = value; } }
 
-        public TipoObra(int numero, String descripcion, List<int> arregloCarpetas)
+        public TipoObra(int numero, String descripcion)
         {
             Numero = numero;
             Descripcion = descripcion;
-            ArregloCarpetas = arregloCarpetas;
         }
 
         public TipoObra(int num)
@@ -35,12 +32,7 @@ namespace SOADCI
 
             Numero = num;
             Descripcion = tiposObraRow.Descripcion;
-            llenarLista(num);
         }
 
-        private void llenarLista(int num)
-        {
-
-        }
     }
 }

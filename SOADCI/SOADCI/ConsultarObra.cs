@@ -149,9 +149,10 @@ namespace SOADCI
                 int numero= (int)row.Cells[2].Value;
                 String nombre= (String)row.Cells[1].Value;
                 DateTime fecha=(DateTime)row.Cells[0].Value;
-                int modPor= (int)row.Cells[4].Value; ;
+                int modPor= (int)row.Cells[4].Value;
+                Estado estado = new Estado((int)row.Cells[3].Value);
 
-                Presupuesto presu = new Presupuesto(numero,nombre,fecha,obra,modPor);
+                Presupuesto presu = new Presupuesto(numero,nombre,fecha,obra,modPor,estado);
 
                 ConsultarPresupuesto cons = new ConsultarPresupuesto();
                 cons.LoadOrders(presu);

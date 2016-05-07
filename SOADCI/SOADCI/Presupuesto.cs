@@ -16,21 +16,24 @@ namespace SOADCI
         private String nombre;
         private DateTime fecha;
         private int modPor;
-        private Obra obra;          
+        private Obra obra;
+        private Estado estado;          
 
         public int Numero { get { return numero; } set { numero = value; } }
         public String Nombre { get { return nombre; } set { nombre = value; } }
         public DateTime Fecha { get { return fecha; } set { fecha = value; } }
         public int ModPor { get { return modPor; } set { modPor = value; } }
         public Obra Obra { get { return obra; } set { obra = value; } }
+        public Estado Estado { get { return estado; } set { estado = value; } }
 
-        public Presupuesto (int numero, String nombre, DateTime fecha, Obra obra, int modPor)
+        public Presupuesto (int numero, String nombre, DateTime fecha, Obra obra, int modPor, Estado estado)
         {
             Numero = numero;
             Nombre = nombre;
             Fecha = fecha;
             ModPor = modPor;
             Obra = obra;
+            Estado = estado;
         }
 
         public Presupuesto (int num)
@@ -43,6 +46,7 @@ namespace SOADCI
             Fecha = presupuestosRow.Fecha;
             ModPor = presupuestosRow.ModPor;
             Obra = new Obra(presupuestosRow.NumeroObra);
+            Estado = new Estado(presupuestosRow.Estado);
         }
 
         public void BorrarPagosAsociados()
@@ -79,6 +83,13 @@ namespace SOADCI
             {
                 Directory.CreateDirectory(cadena + "\\" + row.Nombre);
             }
+        }
+
+        public void Imprimir()
+        {
+            EmitirReportePresupuesto rep = new EmitirReportePresupuesto();
+            rep.LoadOrders(this);
+            rep.ShowDialog();
         }
     }
 }

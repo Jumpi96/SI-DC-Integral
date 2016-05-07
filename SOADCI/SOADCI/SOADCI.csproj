@@ -103,22 +103,28 @@
     <Compile Include="DatabaseLocalDataSet.cs">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseLocalDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultarCliente.Designer.cs">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseLocalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EmitirInformePresupuestos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmitirInformePresupuestos.Designer.cs">
       <DependentUpon>EmitirInformePresupuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmitirReportePresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmitirReportePresupuesto.Designer.cs">
+      <DependentUpon>EmitirReportePresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEmitirInforme.cs">
       <SubType>Form</SubType>
@@ -169,6 +175,7 @@
       <DependentUpon>RegistrarPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="TipoCliente.cs" />
+    <Compile Include="Estado.cs" />
     <Compile Include="TipoObra.cs" />
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="ConsultarCliente.resx">
@@ -192,9 +199,13 @@
     <EmbeddedResource Include="EmitirInformePresupuestos.resx">
       <DependentUpon>EmitirInformePresupuestos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmitirReportePresupuesto.resx">
+      <DependentUpon>EmitirReportePresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEmitirInforme.resx">
       <DependentUpon>FormEmitirInforme.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformePresupuestos.rdlc" />
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,14 +234,13 @@
     <EmbeddedResource Include="RegistrarPresupuesto.resx">
       <DependentUpon>RegistrarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InformePresupuestos.rdlc" />
     <None Include="DatabaseLocalDataSet.xsc">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
     </None>
     <None Include="DatabaseLocalDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseLocalDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>DatabaseLocalDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="DatabaseLocalDataSet.xss">
       <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>

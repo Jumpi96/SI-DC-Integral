@@ -9,18 +9,15 @@ namespace SOADCI
     class TipoCliente
     {
         private int numero;
-        private String descripcion;
-        private List<int> arregloCarpetas = new List<int>();
+        private String descripcion;        
 
         public int Numero { get { return numero; } set { numero = value; } }
         public String Descripcion { get { return descripcion; } set { descripcion = value; } }
-        public List<int> ArregloCarpetas { get { return arregloCarpetas; } set { arregloCarpetas = value; } }
 
-        public TipoCliente (int numero, String descripcion, List<int> arregloCarpetas)
+        public TipoCliente (int numero, String descripcion)
         {
             Numero = numero;
             Descripcion = descripcion;
-            ArregloCarpetas = arregloCarpetas;
         }
 
         public TipoCliente (int num)
@@ -35,12 +32,7 @@ namespace SOADCI
 
             Numero = num;
             Descripcion = tiposClienteRow.Descripcion;
-            llenarLista(num);
         }
 
-        private void llenarLista(int num)
-        {
-
-        }
     }
 }

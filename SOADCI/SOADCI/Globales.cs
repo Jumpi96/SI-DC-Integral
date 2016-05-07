@@ -8,6 +8,8 @@ namespace SOADCI
 {
     public static class Globales
     {
-        public const String PATH = "D:"+"\\"+"Desarrollo-Programación"+"\\"+"SI DC Integral"+"\\"+"Raíz";
+        public const String PATH = "\\"+"Server"+"\\"+"SOA DC Integral";
     }
 }
+
+// S2009Daniel

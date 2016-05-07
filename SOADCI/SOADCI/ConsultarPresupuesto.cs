@@ -48,6 +48,9 @@ namespace SOADCI
 
         private void ConsultarPresupuesto_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseLocalDataSet.Estados' table. You can move, or remove it, as needed.
+            this.estadosTableAdapter.Fill(this.databaseLocalDataSet.Estados);
+            comboBox1.SelectedValue = presupuesto.Estado.Numero;
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Presupuestos' table. You can move, or remove it, as needed.
             this.presupuestosTableAdapter.Fill(this.databaseLocalDataSet.Presupuestos);
 
@@ -68,6 +71,7 @@ namespace SOADCI
             DatabaseLocalDataSet.PresupuestosRow presupuestosRow = databaseLocalDataSet.Presupuestos.FindByNumero(presupuesto.Numero);
 
             presupuestosRow.Nombre = textBox3.Text;
+            presupuestosRow.Estado = (int)comboBox1.SelectedValue;
 
             try
             {
