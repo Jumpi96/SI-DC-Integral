@@ -31,7 +31,7 @@ namespace SOADCI
         private void ConsultarPagos_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Pagos' table. You can move, or remove it, as needed.
-            this.pagosTableAdapter.FillByPresupuesto(this.databaseLocalDataSet.Pagos, presupuesto.Numero);
+            this.pagosTableAdapter.FillByPresupuesto(this.databaseFinalDataSet.Pagos, presupuesto.Numero);
 
         }
 
@@ -47,7 +47,7 @@ namespace SOADCI
                 int numero = (int)(listBox1.SelectedItem as DataRowView)["Numero"];
                 DateTime fecha = (DateTime)(listBox1.SelectedItem as DataRowView)["Fecha"];
                 float monto = (float)Convert.ToDecimal((listBox1.SelectedItem as DataRowView)["Monto"]);
-                int modPor = (int)(listBox1.SelectedItem as DataRowView)["ModPor"];
+                int modPor = (int)(listBox1.SelectedItem as DataRowView)["CreadoPor"];
 
                 pago = new Pago(numero,fecha,monto,presupuesto,modPor);
 
@@ -63,7 +63,7 @@ namespace SOADCI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.PagosRow pagosRow = databaseLocalDataSet.Pagos.FindByNumero(pago.Numero);
+            DatabaseFinalDataSet.PagosRow pagosRow = databaseFinalDataSet.Pagos.FindByNumero(pago.Numero);
 
             pagosRow.Monto = Convert.ToDecimal(textBox2.Text); // controlar esto
 
@@ -71,10 +71,10 @@ namespace SOADCI
             {
                 this.Validate();
                 this.pagosBindingSource.EndEdit();
-                this.pagosTableAdapter.Update(this.databaseLocalDataSet.Pagos);
+                this.pagosTableAdapter.Update(this.databaseFinalDataSet.Pagos);
                 pago.Monto = (float)pagosRow.Monto;
                 MessageBox.Show("El pago ha sido editado.", "Modificar pago");
-                this.pagosTableAdapter.FillByPresupuesto(this.databaseLocalDataSet.Pagos, presupuesto.Numero);
+                this.pagosTableAdapter.FillByPresupuesto(this.databaseFinalDataSet.Pagos, presupuesto.Numero);
 
             }
             catch (System.Exception ex)
@@ -93,7 +93,7 @@ namespace SOADCI
             RegistrarPago regPago = new RegistrarPago();
             regPago.LoadOrders(presupuesto);
             regPago.ShowDialog();
-            this.pagosTableAdapter.FillByPresupuesto(this.databaseLocalDataSet.Pagos, presupuesto.Numero);
+            this.pagosTableAdapter.FillByPresupuesto(this.databaseFinalDataSet.Pagos, presupuesto.Numero);
 
         }
 
@@ -104,7 +104,7 @@ namespace SOADCI
             { 
                 pago.Borrar();
                 MessageBox.Show("El pago ha sido eliminado.","Eliminar pago");
-                this.pagosTableAdapter.FillByPresupuesto(this.databaseLocalDataSet.Pagos, presupuesto.Numero);
+                this.pagosTableAdapter.FillByPresupuesto(this.databaseFinalDataSet.Pagos, presupuesto.Numero);
                 textBox2.Text = "";
                 textBox2.ReadOnly = true;
                 textBox1.Text = "";

@@ -37,10 +37,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
-            this.pagosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PagosTableAdapter();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
+            this.pagosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PagosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox2
@@ -98,12 +98,12 @@
             // bindingSource1
             // 
             this.bindingSource1.DataMember = "Pagos";
-            this.bindingSource1.DataSource = this.databaseLocalDataSet;
+            this.bindingSource1.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pagosTableAdapter
             // 
@@ -128,7 +128,7 @@
             this.Text = "Registrar pago";
             this.Load += new System.EventHandler(this.RegistrarPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,7 +142,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private DatabaseLocalDataSet databaseLocalDataSet;
-        private DatabaseLocalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
+        private DatabaseFinalDataSet databaseFinalDataSet;
+        private DatabaseFinalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
     }
 }

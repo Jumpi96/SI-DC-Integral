@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -39,9 +40,18 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
+            this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
+            this.NomObra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -144,11 +154,54 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "SOA DC Integral - v. 1.0";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomObra,
+            this.NomCliente});
+            this.dataGridView1.Location = new System.Drawing.Point(277, 82);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(454, 150);
+            this.dataGridView1.TabIndex = 11;
+            // 
+            // presupuestosBindingSource
+            // 
+            this.presupuestosBindingSource.DataMember = "Presupuestos";
+            this.presupuestosBindingSource.DataSource = this.databaseFinalDataSet;
+            // 
+            // databaseLocalDataSet
+            // 
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // presupuestosTableAdapter
+            // 
+            this.presupuestosTableAdapter.ClearBeforeFill = true;
+            // 
+            // NomObra
+            // 
+            this.NomObra.DataPropertyName = "NomObra";
+            this.NomObra.HeaderText = "Obra";
+            this.NomObra.Name = "NomObra";
+            this.NomObra.ReadOnly = true;
+            // 
+            // NomCliente
+            // 
+            this.NomCliente.DataPropertyName = "NomCliente";
+            this.NomCliente.HeaderText = "Cliente";
+            this.NomCliente.Name = "NomCliente";
+            this.NomCliente.ReadOnly = true;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -170,6 +223,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +243,12 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private DatabaseFinalDataSet databaseFinalDataSet;
+        private System.Windows.Forms.BindingSource presupuestosBindingSource;
+        private DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomObra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomCliente;
     }
 }
 

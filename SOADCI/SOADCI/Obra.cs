@@ -8,8 +8,8 @@ namespace SOADCI
 {
     class Obra
     {
-        DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-        DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
+        DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+        DatabaseFinalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
 
         private int numero;
         private String nombre;
@@ -34,9 +34,9 @@ namespace SOADCI
 
         public Obra (int num)
         {
-            obrasTableAdapter = new DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
-            obrasTableAdapter.Fill(databaseLocalDataSet.Obras);
-            DatabaseLocalDataSet.ObrasRow obrasRow = databaseLocalDataSet.Obras.FindByNumero(num);
+            obrasTableAdapter = new DatabaseFinalDataSetTableAdapters.ObrasTableAdapter();
+            obrasTableAdapter.Fill(databaseFinalDataSet.Obras);
+            DatabaseFinalDataSet.ObrasRow obrasRow = databaseFinalDataSet.Obras.FindByNumero(num);
 
             Numero = num;
             Nombre = obrasRow.Nombre;
@@ -48,13 +48,13 @@ namespace SOADCI
 
         public void borrarPresupuestosAsociados()
         {
-            DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
-            presupuestosTableAdapter = new DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
-            presupuestosTableAdapter.FillByObra(databaseLocalDataSet.Presupuestos,this.Numero);
+            DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
+            presupuestosTableAdapter = new DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
+            presupuestosTableAdapter.FillByObra(databaseFinalDataSet.Presupuestos,this.Numero);
 
             Presupuesto pres;
 
-            foreach(DatabaseLocalDataSet.PresupuestosRow row in databaseLocalDataSet.Presupuestos.Rows)
+            foreach(DatabaseFinalDataSet.PresupuestosRow row in databaseFinalDataSet.Presupuestos.Rows)
             {
                 pres = new Presupuesto(row.Numero);
                 pres.Borrar();

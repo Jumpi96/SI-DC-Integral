@@ -35,7 +35,7 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tiposClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,10 +81,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.tiposClienteTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
-            this.clientesTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
-            this.obrasTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
-            this.presupuestosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
+            this.tiposClienteTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter();
+            this.clientesTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ClientesTableAdapter();
+            this.obrasTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ObrasTableAdapter();
+            this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -94,7 +94,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -182,12 +182,12 @@
             // tiposClienteBindingSource
             // 
             this.tiposClienteBindingSource.DataMember = "TiposCliente";
-            this.tiposClienteBindingSource.DataSource = this.databaseLocalDataSet;
+            this.tiposClienteBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox2
             // 
@@ -333,7 +333,7 @@
             // clientesBindingSource
             // 
             this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.databaseLocalDataSet;
+            this.clientesBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // label10
             // 
@@ -423,7 +423,7 @@
             // obrasBindingSource
             // 
             this.obrasBindingSource.DataMember = "Obras";
-            this.obrasBindingSource.DataSource = this.databaseLocalDataSet;
+            this.obrasBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // button7
             // 
@@ -453,7 +453,7 @@
             // tiposCliente2BindingSource
             // 
             this.tiposCliente2BindingSource.DataMember = "TiposCliente";
-            this.tiposCliente2BindingSource.DataSource = this.databaseLocalDataSet;
+            this.tiposCliente2BindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // button6
             // 
@@ -660,7 +660,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -677,12 +677,12 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource tiposClienteBindingSource;
         private System.Windows.Forms.BindingSource tiposCliente2BindingSource;
-        private DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;
         private System.Windows.Forms.BindingSource clientesBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
@@ -717,8 +717,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.BindingSource obrasBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
-        private DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;

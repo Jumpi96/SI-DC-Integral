@@ -9,8 +9,8 @@ namespace SOADCI
     class Contacto
     {
 
-        DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-        DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
+        DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+        DatabaseFinalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
 
         private int numero;
         private String nombre;
@@ -40,10 +40,10 @@ namespace SOADCI
         }
 
         public Contacto(int num) {
-            databaseLocalDataSet = new DatabaseLocalDataSet(); 
-            contactosTableAdapter = new DatabaseLocalDataSetTableAdapters.ContactosTableAdapter();
-            contactosTableAdapter.Fill(databaseLocalDataSet.Contactos);
-            DatabaseLocalDataSet.ContactosRow contactosRow = databaseLocalDataSet.Contactos.FindByNumero(num);
+            databaseFinalDataSet = new DatabaseFinalDataSet(); 
+            contactosTableAdapter = new DatabaseFinalDataSetTableAdapters.ContactosTableAdapter();
+            contactosTableAdapter.Fill(databaseFinalDataSet.Contactos);
+            DatabaseFinalDataSet.ContactosRow contactosRow = databaseFinalDataSet.Contactos.FindByNumero(num);
 
             Numero = num;
             Nombre = contactosRow.Nombre;

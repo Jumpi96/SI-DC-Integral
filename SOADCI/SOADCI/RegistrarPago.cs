@@ -23,7 +23,7 @@ namespace SOADCI
         private void RegistrarPago_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Pagos' table. You can move, or remove it, as needed.
-            this.pagosTableAdapter.Fill(this.databaseLocalDataSet.Pagos);
+            this.pagosTableAdapter.Fill(this.databaseFinalDataSet.Pagos);
 
         }
 
@@ -43,22 +43,22 @@ namespace SOADCI
             if (textBox2.Text != "")
             {
 
-                DatabaseLocalDataSet.PagosRow PagosRow = databaseLocalDataSet.Pagos.NewPagosRow();
+                DatabaseFinalDataSet.PagosRow PagosRow = databaseFinalDataSet.Pagos.NewPagosRow();
 
 
                 PagosRow.Fecha = dateTimePicker1.Value;
                 PagosRow.Monto = Convert.ToDecimal(textBox2.Text);
                 PagosRow.NumeroPresupuesto = presupuesto.Numero;
-                PagosRow.ModPor = 1; // Usuario
+                PagosRow.CreadoPor = 1; // Usuario
 
 
-                databaseLocalDataSet.Pagos.Rows.Add(PagosRow);
+                databaseFinalDataSet.Pagos.Rows.Add(PagosRow);
 
                 try
                 {
                     this.Validate();
                     this.bindingSource1.EndEdit();
-                    this.pagosTableAdapter.Update(this.databaseLocalDataSet.Pagos);
+                    this.pagosTableAdapter.Update(this.databaseFinalDataSet.Pagos);
                     MessageBox.Show("El pago ha sido registrado.");
                     this.Close();
                 }

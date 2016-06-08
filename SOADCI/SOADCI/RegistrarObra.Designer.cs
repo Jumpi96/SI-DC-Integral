@@ -33,18 +33,18 @@
             this.Cliente = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
-            this.clientesTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
+            this.clientesTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ClientesTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter();
+            this.tiposObraTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,12 +72,12 @@
             // clientesBindingSource
             // 
             this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.databaseLocalDataSet;
+            this.clientesBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // clientesTableAdapter
             // 
@@ -123,7 +123,7 @@
             // tiposObraBindingSource
             // 
             this.tiposObraBindingSource.DataMember = "TiposObra";
-            this.tiposObraBindingSource.DataSource = this.databaseLocalDataSet;
+            this.tiposObraBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // tiposObraTableAdapter
             // 
@@ -172,7 +172,7 @@
             this.Text = "Registrar obra";
             this.Load += new System.EventHandler(this.RegistrarObra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,15 +183,15 @@
 
         private System.Windows.Forms.Label Cliente;
         private System.Windows.Forms.ComboBox comboBox1;
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource clientesBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.BindingSource tiposObraBindingSource;
-        private DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

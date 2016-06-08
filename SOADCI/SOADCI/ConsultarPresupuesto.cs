@@ -49,10 +49,10 @@ namespace SOADCI
         private void ConsultarPresupuesto_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Estados' table. You can move, or remove it, as needed.
-            this.estadosTableAdapter.Fill(this.databaseLocalDataSet.Estados);
+            this.estadosTableAdapter.Fill(this.databaseFinalDataSet.Estados);
             comboBox1.SelectedValue = presupuesto.Estado.Numero;
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Presupuestos' table. You can move, or remove it, as needed.
-            this.presupuestosTableAdapter.Fill(this.databaseLocalDataSet.Presupuestos);
+            this.presupuestosTableAdapter.Fill(this.databaseFinalDataSet.Presupuestos);
 
         }
 
@@ -68,7 +68,7 @@ namespace SOADCI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.PresupuestosRow presupuestosRow = databaseLocalDataSet.Presupuestos.FindByNumero(presupuesto.Numero);
+            DatabaseFinalDataSet.PresupuestosRow presupuestosRow = databaseFinalDataSet.Presupuestos.FindByNumero(presupuesto.Numero);
 
             presupuestosRow.Nombre = textBox3.Text;
             presupuestosRow.Estado = (int)comboBox1.SelectedValue;
@@ -82,7 +82,7 @@ namespace SOADCI
                 }
                 this.Validate();
                 this.bindingSource1.EndEdit();
-                this.presupuestosTableAdapter.Update(this.databaseLocalDataSet.Presupuestos);
+                this.presupuestosTableAdapter.Update(this.databaseFinalDataSet.Presupuestos);
                 presupuesto.Nombre = presupuestosRow.Nombre;
                 MessageBox.Show("El presupuesto ha sido editado.", "Modificar presupuesto");
 
@@ -97,11 +97,16 @@ namespace SOADCI
         {
             if (MessageBox.Show("¿Está seguro que desea eliminar el presupuesto?", "Eliminar presupuesto",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            { 
-                presupuesto.BorrarPagosAsociados();
-                presupuesto.Borrar();
-                MessageBox.Show("El presupuesto ha sido eliminado.", "Eliminar presupuesto");
-                this.Close();
+            {
+                ControlarContraseña cons = new ControlarContraseña();
+                cons.ShowDialog();
+                if (cons.DialogResult == DialogResult.OK)
+                {
+                    presupuesto.BorrarPagosAsociados();
+                    presupuesto.Borrar();
+                    MessageBox.Show("El presupuesto ha sido eliminado.", "Eliminar presupuesto");
+                    this.Close();
+                }
             }
         }
 

@@ -43,17 +43,17 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tiposClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
+            this.clientesTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ClientesTableAdapter();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter();
-            this.tiposClienteTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
+            this.tiposObraTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
+            this.tiposClienteTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
@@ -165,12 +165,12 @@
             // tiposClienteBindingSource
             // 
             this.tiposClienteBindingSource.DataMember = "TiposCliente";
-            this.tiposClienteBindingSource.DataSource = this.databaseLocalDataSet;
+            this.tiposClienteBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -195,7 +195,7 @@
             // clientesBindingSource
             // 
             this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.databaseLocalDataSet;
+            this.clientesBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // clientesTableAdapter
             // 
@@ -204,12 +204,12 @@
             // clientesBindingSource1
             // 
             this.clientesBindingSource1.DataMember = "Clientes";
-            this.clientesBindingSource1.DataSource = this.databaseLocalDataSet;
+            this.clientesBindingSource1.DataSource = this.databaseFinalDataSet;
             // 
             // tiposObraBindingSource
             // 
             this.tiposObraBindingSource.DataMember = "TiposObra";
-            this.tiposObraBindingSource.DataSource = this.databaseLocalDataSet;
+            this.tiposObraBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // tiposObraTableAdapter
             // 
@@ -246,7 +246,7 @@
             this.Text = "Registrar cliente";
             this.Load += new System.EventHandler(this.RegistrarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
@@ -271,13 +271,13 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource clientesBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.BindingSource clientesBindingSource1;
         private System.Windows.Forms.BindingSource tiposObraBindingSource;
-        private DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
         private System.Windows.Forms.BindingSource tiposClienteBindingSource;
-        private DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;
     }
 }

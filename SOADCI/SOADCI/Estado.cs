@@ -23,11 +23,11 @@ namespace SOADCI
         public Estado(int num)
         {
 
-            DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-            DatabaseLocalDataSetTableAdapters.EstadosTableAdapter customersTableAdapter1;
-            customersTableAdapter1 = new DatabaseLocalDataSetTableAdapters.EstadosTableAdapter();
-            customersTableAdapter1.Fill(databaseLocalDataSet.Estados);
-            DatabaseLocalDataSet.EstadosRow estadoRow = databaseLocalDataSet.Estados.FindByNumero(num);
+            DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+            DatabaseFinalDataSetTableAdapters.EstadosTableAdapter customersTableAdapter1;
+            customersTableAdapter1 = new DatabaseFinalDataSetTableAdapters.EstadosTableAdapter();
+            customersTableAdapter1.Fill(databaseFinalDataSet.Estados);
+            DatabaseFinalDataSet.EstadosRow estadoRow = databaseFinalDataSet.Estados.FindByNumero(num);
 
 
             Numero = num;

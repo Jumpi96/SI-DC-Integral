@@ -38,21 +38,21 @@
             this.modPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tiposClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter();
+            this.tiposObraTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tiposClienteTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
+            this.tiposClienteTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.obrasTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
+            this.obrasTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ObrasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -130,12 +130,12 @@
             // obrasBindingSource
             // 
             this.obrasBindingSource.DataMember = "Obras";
-            this.obrasBindingSource.DataSource = this.databaseLocalDataSet;
+            this.obrasBindingSource.DataSource = this.databaseFinalDataSet;
             // 
-            // databaseLocalDataSet
+            // databaseFinalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -155,18 +155,18 @@
             this.comboBox1.Location = new System.Drawing.Point(31, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBox1.TabIndex = 1;
             this.comboBox1.ValueMember = "Numero";
             // 
             // tiposClienteBindingSource
             // 
             this.tiposClienteBindingSource.DataMember = "TiposCliente";
-            this.tiposClienteBindingSource.DataSource = this.databaseLocalDataSet;
+            this.tiposClienteBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // tiposObraBindingSource
             // 
             this.tiposObraBindingSource.DataMember = "TiposObra";
-            this.tiposObraBindingSource.DataSource = this.databaseLocalDataSet;
+            this.tiposObraBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // tiposObraTableAdapter
             // 
@@ -181,7 +181,7 @@
             this.comboBox2.Location = new System.Drawing.Point(31, 106);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 4;
+            this.comboBox2.TabIndex = 3;
             this.comboBox2.ValueMember = "Numero";
             // 
             // label2
@@ -202,7 +202,7 @@
             this.button1.Location = new System.Drawing.Point(156, 55);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -212,7 +212,7 @@
             this.button2.Location = new System.Drawing.Point(156, 133);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -244,7 +244,7 @@
             this.Load += new System.EventHandler(this.ConsultarObraPorTipo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -257,17 +257,17 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource tiposObraBindingSource;
-        private DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource tiposClienteBindingSource;
-        private DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource obrasBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroClienteDataGridViewTextBoxColumn;

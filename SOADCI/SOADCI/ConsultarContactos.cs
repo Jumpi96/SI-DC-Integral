@@ -32,7 +32,7 @@ namespace SOADCI
         private void ConsultarContactos_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Contactos' table. You can move, or remove it, as needed.
-            this.contactosTableAdapter.FillBy(this.databaseLocalDataSet.Contactos,cliente.Numero);
+            this.contactosTableAdapter.FillContactosPorCliente(this.databaseFinalDataSet.Contactos,cliente.Numero);
 
         }
 
@@ -82,7 +82,7 @@ namespace SOADCI
             RegistrarContacto reg = new RegistrarContacto();
             reg.LoadOrders(cliente);
             reg.ShowDialog();
-            this.contactosTableAdapter.FillBy(this.databaseLocalDataSet.Contactos, cliente.Numero);
+            this.contactosTableAdapter.FillContactosPorCliente(this.databaseFinalDataSet.Contactos, cliente.Numero);
 
         }
 
@@ -91,20 +91,20 @@ namespace SOADCI
             if (MessageBox.Show("¿Está seguro que desea eliminar el contacto?", "Eliminar contacto",
                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                DatabaseLocalDataSet.ContactosRow contactosRow = databaseLocalDataSet.Contactos.FindByNumero(contacto.Numero);
+                DatabaseFinalDataSet.ContactosRow contactosRow = databaseFinalDataSet.Contactos.FindByNumero(contacto.Numero);
                 contactosRow.Delete();
 
                 try
                 {
                     this.Validate();
                     this.contactosBindingSource.EndEdit();
-                    this.contactosTableAdapter.Update(this.databaseLocalDataSet.Contactos);
+                    this.contactosTableAdapter.Update(this.databaseFinalDataSet.Contactos);
                     MessageBox.Show("El contacto ha sido eliminado.");
                     textBox2.Text = "";
                     textBox1.Text = "";
                     textBox3.Text = "";
                     textBox4.Text = "";
-                    this.contactosTableAdapter.FillBy(this.databaseLocalDataSet.Contactos, cliente.Numero);
+                    this.contactosTableAdapter.FillContactosPorCliente(this.databaseFinalDataSet.Contactos, cliente.Numero);
                     button3.Enabled = false;
                     button4.Enabled = false;
 
@@ -122,7 +122,7 @@ namespace SOADCI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.ContactosRow contactosRow = databaseLocalDataSet.Contactos.FindByNumero(contacto.Numero);
+            DatabaseFinalDataSet.ContactosRow contactosRow = databaseFinalDataSet.Contactos.FindByNumero(contacto.Numero);
 
             contactosRow.Nombre = textBox1.Text;
             contactosRow.Descripcion = textBox2.Text;
@@ -133,10 +133,10 @@ namespace SOADCI
             {
                 this.Validate();
                 this.contactosBindingSource.EndEdit();
-                this.contactosTableAdapter.Update(this.databaseLocalDataSet.Contactos);
+                this.contactosTableAdapter.Update(this.databaseFinalDataSet.Contactos);
                 contacto = new Contacto(contactosRow.Numero, contactosRow.Nombre, contactosRow.Descripcion, new Cliente(contactosRow.NumeroCliente), contactosRow.Telefono,  contactosRow.Correo, 1);
                 MessageBox.Show("El contacto ha sido editado.");
-                this.contactosTableAdapter.FillBy(this.databaseLocalDataSet.Contactos, cliente.Numero);
+                this.contactosTableAdapter.FillContactosPorCliente(this.databaseFinalDataSet.Contactos, cliente.Numero);
                 
             }
             catch (System.Exception ex)

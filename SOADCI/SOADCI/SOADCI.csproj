@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -100,8 +100,19 @@
       <DependentUpon>ConsultarPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Contacto.cs" />
-    <Compile Include="DatabaseLocalDataSet.cs">
-      <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
+    <Compile Include="ControlarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlarContraseña.Designer.cs">
+      <DependentUpon>ControlarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseFinalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseLocalDataSetANTERIOR.cs">
+      <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
     </Compile>
     <Compile Include="ConsultarCliente.cs">
       <SubType>Form</SubType>
@@ -109,22 +120,10 @@
     <Compile Include="ConsultarCliente.Designer.cs">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseLocalDataSet1.Designer.cs">
+    <Compile Include="DatabaseLocalDataSetANTERIOR.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EmitirInformePresupuestos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmitirInformePresupuestos.Designer.cs">
-      <DependentUpon>EmitirInformePresupuestos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EmitirReportePresupuesto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmitirReportePresupuesto.Designer.cs">
-      <DependentUpon>EmitirReportePresupuesto.cs</DependentUpon>
+      <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormEmitirInforme.cs">
       <SubType>Form</SubType>
@@ -196,16 +195,12 @@
     <EmbeddedResource Include="ConsultarPresupuesto.resx">
       <DependentUpon>ConsultarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmitirInformePresupuestos.resx">
-      <DependentUpon>EmitirInformePresupuestos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmitirReportePresupuesto.resx">
-      <DependentUpon>EmitirReportePresupuesto.cs</DependentUpon>
+    <EmbeddedResource Include="ControlarContraseña.resx">
+      <DependentUpon>ControlarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEmitirInforme.resx">
       <DependentUpon>FormEmitirInforme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InformePresupuestos.rdlc" />
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,16 +229,27 @@
     <EmbeddedResource Include="RegistrarPresupuesto.resx">
       <DependentUpon>RegistrarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DatabaseLocalDataSet.xsc">
-      <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
+    <None Include="DatabaseFinalDataSet.xsc">
+      <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DatabaseLocalDataSet.xsd">
+    <None Include="DatabaseFinalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatabaseFinalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DatabaseFinalDataSet.xss">
+      <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseLocalDataSetANTERIOR.xsc">
+      <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
+    </None>
+    <None Include="DatabaseLocalDataSetANTERIOR.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>DatabaseLocalDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseLocalDataSetANTERIOR.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DatabaseLocalDataSet.xss">
-      <DependentUpon>DatabaseLocalDataSet.xsd</DependentUpon>
+    <None Include="DatabaseLocalDataSetANTERIOR.xss">
+      <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

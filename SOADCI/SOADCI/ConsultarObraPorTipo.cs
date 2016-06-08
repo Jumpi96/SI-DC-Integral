@@ -20,9 +20,9 @@ namespace SOADCI
         private void ConsultarObraPorTipo_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposCliente' table. You can move, or remove it, as needed.
-            this.tiposClienteTableAdapter.Fill(this.databaseLocalDataSet.TiposCliente);
+            this.tiposClienteTableAdapter.Fill(this.databaseFinalDataSet.TiposCliente);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
-            this.tiposObraTableAdapter.Fill(this.databaseLocalDataSet.TiposObra);
+            this.tiposObraTableAdapter.Fill(this.databaseFinalDataSet.TiposObra);
 
         }
 
@@ -49,12 +49,12 @@ namespace SOADCI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.obrasTableAdapter.FillObrasPorTipoCliente(this.databaseLocalDataSet.Obras, (int)comboBox1.SelectedValue);
+            this.obrasTableAdapter.FillObrasPorTipoCliente(this.databaseFinalDataSet.Obras, (int)comboBox1.SelectedValue);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.obrasTableAdapter.FillObrasPorTipoObra(this.databaseLocalDataSet.Obras, (int)comboBox2.SelectedValue);
+            this.obrasTableAdapter.FillObrasPorTipoObra(this.databaseFinalDataSet.Obras, (int)comboBox2.SelectedValue);
         }
     }
 }

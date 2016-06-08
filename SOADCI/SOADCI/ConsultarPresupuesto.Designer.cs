@@ -46,14 +46,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
-            this.presupuestosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
+            this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estadosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.EstadosTableAdapter();
+            this.estadosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.EstadosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,12 +197,12 @@
             // bindingSource1
             // 
             this.bindingSource1.DataMember = "Presupuestos";
-            this.bindingSource1.DataSource = this.databaseLocalDataSet;
+            this.bindingSource1.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // presupuestosTableAdapter
             // 
@@ -232,7 +232,7 @@
             // estadosBindingSource
             // 
             this.estadosBindingSource.DataMember = "Estados";
-            this.estadosBindingSource.DataSource = this.databaseLocalDataSet;
+            this.estadosBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // estadosTableAdapter
             // 
@@ -268,7 +268,7 @@
             this.Text = "ConsultarPresupuesto";
             this.Load += new System.EventHandler(this.ConsultarPresupuesto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -293,11 +293,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource estadosBindingSource;
-        private DatabaseLocalDataSetTableAdapters.EstadosTableAdapter estadosTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.EstadosTableAdapter estadosTableAdapter;
     }
 }

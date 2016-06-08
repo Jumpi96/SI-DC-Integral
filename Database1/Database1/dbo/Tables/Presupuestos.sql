@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Presupuestos] (
+    [Numero]     INT           IDENTITY (1, 1) NOT NULL,
+    [Nombre]     NVARCHAR (40) NOT NULL,
+    [Fecha]      DATE          NOT NULL,
+    [NumeroObra] INT           NOT NULL,
+    [ModPor]     INT           NOT NULL,
+    PRIMARY KEY CLUSTERED ([Numero] ASC),
+    CONSTRAINT [FK_Presupuestos_ToObras] FOREIGN KEY ([NumeroObra]) REFERENCES [dbo].[Obras] ([Numero]),
+    CONSTRAINT [FK_Presupuestos_ToUsuarios] FOREIGN KEY ([ModPor]) REFERENCES [dbo].[Usuarios] ([Numero])
+);
+

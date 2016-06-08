@@ -17,7 +17,7 @@ namespace SOADCI
         private String cadena;
 
         private System.Windows.Forms.BindingSource obrasBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
         
 
 
@@ -25,11 +25,11 @@ namespace SOADCI
         {
             InitializeComponent();
             toolTips();
-            obrasTableAdapter = new DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
+            obrasTableAdapter = new DatabaseFinalDataSetTableAdapters.ObrasTableAdapter();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).BeginInit();
             this.obrasBindingSource.DataMember = "Obras";
-            this.obrasBindingSource.DataSource = this.databaseLocalDataSet;
+            this.obrasBindingSource.DataSource = this.databaseFinalDataSet;
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).EndInit();
 
         }
@@ -46,9 +46,9 @@ namespace SOADCI
         private void ConsultarObra_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
-            this.tiposObraTableAdapter.Fill(this.databaseLocalDataSet.TiposObra);
+            this.tiposObraTableAdapter.Fill(this.databaseFinalDataSet.TiposObra);
             comboBox1.SelectedValue = obra.Tipo.Numero;
-            this.obrasTableAdapter.Fill(this.databaseLocalDataSet.Obras);
+            this.obrasTableAdapter.Fill(this.databaseFinalDataSet.Obras);
 
         }
 
@@ -57,7 +57,7 @@ namespace SOADCI
 
             obra = ob;
             this.Text = "Consultar obra - " + obra.Nombre;
-            this.presupuestosTableAdapter.FillByObra(this.databaseLocalDataSet.Presupuestos,obra.Numero);
+            this.presupuestosTableAdapter.FillByObra(this.databaseFinalDataSet.Presupuestos,obra.Numero);
             cadena = Globales.PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre;
             textBox2.Text = obra.Numero.ToString();
             textBox1.Text = obra.Cliente.Nombre;
@@ -80,31 +80,36 @@ namespace SOADCI
             if (MessageBox.Show("¿Está seguro que desea eliminar la obra?", "Eliminar obra",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                DatabaseLocalDataSet.ObrasRow obrasRow = databaseLocalDataSet.Obras.FindByNumero(obra.Numero);
-
-                obrasRow.Delete();
-
-                obra.borrarPresupuestosAsociados();
-
-                try
+                ControlarContraseña cons = new ControlarContraseña();
+                cons.ShowDialog();
+                if (cons.DialogResult == DialogResult.OK)
                 {
-                    this.Validate();
-                    this.obrasBindingSource.EndEdit();
-                    this.obrasTableAdapter.Update(this.databaseLocalDataSet.Obras);
-                    Directory.Delete(cadena, true);
-                    MessageBox.Show("La obra ha sido eliminada.");
-                    this.Close();
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show("Error: la obra no pudo ser eliminada.");
+                    DatabaseFinalDataSet.ObrasRow obrasRow = databaseFinalDataSet.Obras.FindByNumero(obra.Numero);
+
+                    obrasRow.Delete();
+
+                    obra.borrarPresupuestosAsociados();
+
+                    try
+                    {
+                        this.Validate();
+                        this.obrasBindingSource.EndEdit();
+                        this.obrasTableAdapter.Update(this.databaseFinalDataSet.Obras);
+                        Directory.Delete(cadena, true);
+                        MessageBox.Show("La obra ha sido eliminada.");
+                        this.Close();
+                    }
+                    catch (System.Exception ex)
+                    {
+                        MessageBox.Show("Error: la obra no pudo ser eliminada.");
+                    }
                 }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.ObrasRow obrasRow = databaseLocalDataSet.Obras.FindByNumero(obra.Numero);
+            DatabaseFinalDataSet.ObrasRow obrasRow = databaseFinalDataSet.Obras.FindByNumero(obra.Numero);
 
             obrasRow.Tipo = (int)comboBox1.SelectedValue;
             obrasRow.Nombre = textBox3.Text;
@@ -118,7 +123,7 @@ namespace SOADCI
                 }
                 this.Validate();
                 this.obrasBindingSource.EndEdit();
-                this.obrasTableAdapter.Update(this.databaseLocalDataSet.Obras);
+                this.obrasTableAdapter.Update(this.databaseFinalDataSet.Obras);
                 obra = new Obra(obra.Numero, obrasRow.Nombre, obra.Cliente, new TipoObra(obrasRow.Tipo), 1);
                 MessageBox.Show("La obra ha sido editada.");
 
@@ -135,7 +140,7 @@ namespace SOADCI
             RegistrarPresupuesto regPre = new RegistrarPresupuesto();
             regPre.LoadOrders(obra);
             regPre.ShowDialog();
-            this.presupuestosTableAdapter.FillByObra(this.databaseLocalDataSet.Presupuestos, obra.Numero);
+            this.presupuestosTableAdapter.FillByObra(this.databaseFinalDataSet.Presupuestos, obra.Numero);
 
 
         }
@@ -157,7 +162,7 @@ namespace SOADCI
                 ConsultarPresupuesto cons = new ConsultarPresupuesto();
                 cons.LoadOrders(presu);
                 cons.ShowDialog();
-                this.presupuestosTableAdapter.FillByObra(this.databaseLocalDataSet.Presupuestos, obra.Numero);
+                this.presupuestosTableAdapter.FillByObra(this.databaseFinalDataSet.Presupuestos, obra.Numero);
             }
         }
     }

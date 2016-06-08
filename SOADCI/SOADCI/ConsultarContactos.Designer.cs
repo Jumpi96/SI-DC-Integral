@@ -33,8 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.contactosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
-            this.contactosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ContactosTableAdapter();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
+            this.contactosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ContactosTableAdapter();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.contactosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -77,12 +77,12 @@
             // contactosBindingSource
             // 
             this.contactosBindingSource.DataMember = "Contactos";
-            this.contactosBindingSource.DataSource = this.databaseLocalDataSet;
+            this.contactosBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // contactosTableAdapter
             // 
@@ -211,7 +211,7 @@
             this.Text = "Contactos";
             this.Load += new System.EventHandler(this.ConsultarContactos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contactosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,9 +221,9 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox1;
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource contactosBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;

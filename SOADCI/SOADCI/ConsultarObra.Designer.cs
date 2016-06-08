@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarObra));
             this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
-            this.presupuestosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
+            this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter();
+            this.tiposObraTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.presupuestosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).BeginInit();
@@ -67,12 +67,12 @@
             // presupuestosBindingSource
             // 
             this.presupuestosBindingSource.DataMember = "Presupuestos";
-            this.presupuestosBindingSource.DataSource = this.databaseLocalDataSet;
+            this.presupuestosBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // presupuestosTableAdapter
             // 
@@ -196,7 +196,7 @@
             // tiposObraBindingSource
             // 
             this.tiposObraBindingSource.DataMember = "TiposObra";
-            this.tiposObraBindingSource.DataSource = this.databaseLocalDataSet;
+            this.tiposObraBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // tiposObraTableAdapter
             // 
@@ -298,7 +298,7 @@
             // presupuestosBindingSource1
             // 
             this.presupuestosBindingSource1.DataMember = "Presupuestos";
-            this.presupuestosBindingSource1.DataSource = this.databaseLocalDataSet;
+            this.presupuestosBindingSource1.DataSource = this.databaseFinalDataSet;
             // 
             // ConsultarObra
             // 
@@ -329,7 +329,7 @@
             this.Text = "Consultar Obra";
             this.Load += new System.EventHandler(this.ConsultarObra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).EndInit();
@@ -339,9 +339,9 @@
         }
 
         #endregion
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource presupuestosBindingSource;
-        private DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -353,7 +353,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource tiposObraBindingSource;
-        private DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox3;

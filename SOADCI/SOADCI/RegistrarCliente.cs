@@ -26,7 +26,7 @@ namespace SOADCI
         private void button2_Click(object sender, EventArgs e)
         {
             
-            DatabaseLocalDataSet.ClientesRow newClientesRow = databaseLocalDataSet.Clientes.NewClientesRow();
+            DatabaseFinalDataSet.ClientesRow newClientesRow = databaseFinalDataSet.Clientes.NewClientesRow();
             
 
             newClientesRow.Nombre = textBox1.Text;
@@ -44,13 +44,13 @@ namespace SOADCI
                 Directory.CreateDirectory(@Globales.PATH+"\\"+newClientesRow.Nombre);
 
 
-                databaseLocalDataSet.Clientes.Rows.Add(newClientesRow);
+                databaseFinalDataSet.Clientes.Rows.Add(newClientesRow);
 
                 try
                 {
                     this.Validate();
                     this.clientesBindingSource.EndEdit();
-                    this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
+                    this.clientesTableAdapter.Update(this.databaseFinalDataSet.Clientes);
                     MessageBox.Show("El cliente ha sido registrado.");
                     this.Close();
                 }
@@ -67,11 +67,11 @@ namespace SOADCI
         private void RegistrarCliente_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposCliente' table. You can move, or remove it, as needed.
-            this.tiposClienteTableAdapter.Fill(this.databaseLocalDataSet.TiposCliente);
+            this.tiposClienteTableAdapter.Fill(this.databaseFinalDataSet.TiposCliente);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
-            this.tiposObraTableAdapter.Fill(this.databaseLocalDataSet.TiposObra);
+            this.tiposObraTableAdapter.Fill(this.databaseFinalDataSet.TiposObra);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Clientes' table. You can move, or remove it, as needed.
-            this.clientesTableAdapter.Fill(this.databaseLocalDataSet.Clientes);
+            this.clientesTableAdapter.Fill(this.databaseFinalDataSet.Clientes);
 
         }
 

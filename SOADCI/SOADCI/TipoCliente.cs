@@ -23,11 +23,11 @@ namespace SOADCI
         public TipoCliente (int num)
         {
 
-            DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-            DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter customersTableAdapter1;
-            customersTableAdapter1 = new DatabaseLocalDataSetTableAdapters.TiposClienteTableAdapter();
-            customersTableAdapter1.Fill(databaseLocalDataSet.TiposCliente);
-            DatabaseLocalDataSet.TiposClienteRow tiposClienteRow = databaseLocalDataSet.TiposCliente.FindByNumero(num);
+            DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+            DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter customersTableAdapter1;
+            customersTableAdapter1 = new DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter();
+            customersTableAdapter1.Fill(databaseFinalDataSet.TiposCliente);
+            DatabaseFinalDataSet.TiposClienteRow tiposClienteRow = databaseFinalDataSet.TiposCliente.FindByNumero(num);
 
 
             Numero = num;

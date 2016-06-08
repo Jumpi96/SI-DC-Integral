@@ -9,7 +9,7 @@ namespace SOADCI
     class Cliente
     {
 
-        DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
+        DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
 
         private int numero;
         private String nombre;
@@ -44,11 +44,11 @@ namespace SOADCI
 
         public Cliente(int numCliente)
         {
-            databaseLocalDataSet = new DatabaseLocalDataSet();
-            DatabaseLocalDataSetTableAdapters.ClientesTableAdapter customersTableAdapter1;
-            customersTableAdapter1 = new DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
-            customersTableAdapter1.Fill(databaseLocalDataSet.Clientes);
-            DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(numCliente);
+            databaseFinalDataSet = new DatabaseFinalDataSet();
+            DatabaseFinalDataSetTableAdapters.ClientesTableAdapter customersTableAdapter1;
+            customersTableAdapter1 = new DatabaseFinalDataSetTableAdapters.ClientesTableAdapter();
+            customersTableAdapter1.Fill(databaseFinalDataSet.Clientes);
+            DatabaseFinalDataSet.ClientesRow clientesRow = databaseFinalDataSet.Clientes.FindByNumero(numCliente);
 
             Nombre = clientesRow.Nombre;
             Numero = numCliente;
@@ -62,13 +62,13 @@ namespace SOADCI
 
         public void borrarObrasAsociadas()
         {
-            DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
-            obrasTableAdapter = new DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
-            obrasTableAdapter.FillObrasPorCliente(databaseLocalDataSet.Obras, this.Numero);
+            DatabaseFinalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
+            obrasTableAdapter = new DatabaseFinalDataSetTableAdapters.ObrasTableAdapter();
+            obrasTableAdapter.FillObrasPorCliente(databaseFinalDataSet.Obras, this.Numero);
             Obra obra;
 
-            if(databaseLocalDataSet.Obras.Count != 0) { 
-                foreach (DatabaseLocalDataSet.ObrasRow row in databaseLocalDataSet.Obras.Rows)
+            if(databaseFinalDataSet.Obras.Count != 0) { 
+                foreach (DatabaseFinalDataSet.ObrasRow row in databaseFinalDataSet.Obras.Rows)
                 {
                     obra = new Obra(row.Numero);
                     obra.Borrar();
@@ -79,14 +79,14 @@ namespace SOADCI
 
         public void borrarContactosAsociados()
         {
-            DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
-            contactosTableAdapter = new DatabaseLocalDataSetTableAdapters.ContactosTableAdapter();
-            contactosTableAdapter.FillContactosPorCliente(databaseLocalDataSet.Contactos, this.Numero);
+            DatabaseFinalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
+            contactosTableAdapter = new DatabaseFinalDataSetTableAdapters.ContactosTableAdapter();
+            contactosTableAdapter.FillContactosPorCliente(databaseFinalDataSet.Contactos, this.Numero);
             Contacto contacto;
 
-            if (databaseLocalDataSet.Contactos.Count != 0)
+            if (databaseFinalDataSet.Contactos.Count != 0)
             {
-                foreach (DatabaseLocalDataSet.ObrasRow row in databaseLocalDataSet.Obras.Rows)
+                foreach (DatabaseFinalDataSet.ContactosRow row in databaseFinalDataSet.Contactos.Rows)
                 {
                     contacto = new Contacto(row.Numero);
                     contacto.Borrar();

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarPagos));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -41,9 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pagosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.PagosTableAdapter();
+            this.pagosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PagosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -61,12 +61,12 @@
             // pagosBindingSource
             // 
             this.pagosBindingSource.DataMember = "Pagos";
-            this.pagosBindingSource.DataSource = this.databaseLocalDataSet;
+            this.pagosBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button2
             // 
@@ -170,7 +170,7 @@
             this.Text = "ConsultarPagos";
             this.Load += new System.EventHandler(this.ConsultarPagos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,8 +187,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource pagosBindingSource;
-        private DatabaseLocalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
     }
 }

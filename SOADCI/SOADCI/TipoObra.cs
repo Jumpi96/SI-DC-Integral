@@ -23,12 +23,11 @@ namespace SOADCI
         public TipoObra(int num)
         {
 
-            DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-            DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter customersTableAdapter1;
-            customersTableAdapter1 = new DatabaseLocalDataSetTableAdapters.TiposObraTableAdapter();
-            customersTableAdapter1.Fill(databaseLocalDataSet.TiposObra);
-            DatabaseLocalDataSet.TiposObraRow tiposObraRow = databaseLocalDataSet.TiposObra.FindByNumero(num);
-
+            DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+            DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter customersTableAdapter1;
+            customersTableAdapter1 = new DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
+            customersTableAdapter1.Fill(databaseFinalDataSet.TiposObra);
+            DatabaseFinalDataSet.TiposObraRow tiposObraRow = databaseFinalDataSet.TiposObra.FindByNumero(num);
 
             Numero = num;
             Descripcion = tiposObraRow.Descripcion;

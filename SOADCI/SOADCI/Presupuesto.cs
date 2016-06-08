@@ -9,8 +9,8 @@ namespace SOADCI
 {
     class Presupuesto
     {
-        DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-        DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter = new DatabaseLocalDataSetTableAdapters.PresupuestosTableAdapter();
+        DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+        DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter = new DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
 
         private int numero;
         private String nombre;
@@ -38,8 +38,8 @@ namespace SOADCI
 
         public Presupuesto (int num)
         {
-            presupuestosTableAdapter.Fill(databaseLocalDataSet.Presupuestos);
-            DatabaseLocalDataSet.PresupuestosRow presupuestosRow = databaseLocalDataSet.Presupuestos.FindByNumero(num);
+            presupuestosTableAdapter.Fill(databaseFinalDataSet.Presupuestos);
+            DatabaseFinalDataSet.PresupuestosRow presupuestosRow = databaseFinalDataSet.Presupuestos.FindByNumero(num);
 
             Numero = num;
             Nombre = presupuestosRow.Nombre;
@@ -51,13 +51,13 @@ namespace SOADCI
 
         public void BorrarPagosAsociados()
         {
-            DatabaseLocalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
-            pagosTableAdapter = new DatabaseLocalDataSetTableAdapters.PagosTableAdapter();
-            pagosTableAdapter.FillByPresupuesto(databaseLocalDataSet.Pagos, this.Numero);
+            DatabaseFinalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
+            pagosTableAdapter = new DatabaseFinalDataSetTableAdapters.PagosTableAdapter();
+            pagosTableAdapter.FillByPresupuesto(databaseFinalDataSet.Pagos, this.Numero);
 
             Pago pago;
 
-            foreach (DatabaseLocalDataSet.PagosRow row in databaseLocalDataSet.Pagos.Rows)
+            foreach (DatabaseFinalDataSet.PagosRow row in databaseFinalDataSet.Pagos.Rows)
             {
                 pago = new Pago(row.Numero);
                 pago.Borrar();
@@ -67,19 +67,20 @@ namespace SOADCI
 
         public void Borrar()
         {
+            this.BorrarPagosAsociados();
             presupuestosTableAdapter.DeleteByNumero(numero); 
 
         }
 
         public void crearCarpetas()
         {
-            DatabaseLocalDataSetTableAdapters.CarpetasTableAdapter carpetasTableAdapter;
-            carpetasTableAdapter = new DatabaseLocalDataSetTableAdapters.CarpetasTableAdapter();
-            carpetasTableAdapter.FillByTipo(databaseLocalDataSet.Carpetas, this.Obra.Tipo.Numero);
+            DatabaseFinalDataSetTableAdapters.CarpetasTableAdapter carpetasTableAdapter;
+            carpetasTableAdapter = new DatabaseFinalDataSetTableAdapters.CarpetasTableAdapter();
+            carpetasTableAdapter.FillByTipo(databaseFinalDataSet.Carpetas, this.Obra.Tipo.Numero);
 
             String cadena= @Globales.PATH + "\\" + Obra.Cliente.Nombre + "\\" + Obra.Nombre + "\\" + this.Nombre;
 
-            foreach (DatabaseLocalDataSet.CarpetasRow row in databaseLocalDataSet.Carpetas.Rows)
+            foreach (DatabaseFinalDataSet.CarpetasRow row in databaseFinalDataSet.Carpetas.Rows)
             {
                 Directory.CreateDirectory(cadena + "\\" + row.Nombre);
             }
@@ -87,9 +88,9 @@ namespace SOADCI
 
         public void Imprimir()
         {
-            EmitirReportePresupuesto rep = new EmitirReportePresupuesto();
+            /*EmitirReportePresupuesto rep = new EmitirReportePresupuesto();
             rep.LoadOrders(this);
-            rep.ShowDialog();
+            rep.ShowDialog();*/
         }
     }
 }

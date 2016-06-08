@@ -8,8 +8,8 @@ namespace SOADCI
 {
     class Pago
     {
-        DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-        DatabaseLocalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter = new DatabaseLocalDataSetTableAdapters.PagosTableAdapter();
+        DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+        DatabaseFinalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter = new DatabaseFinalDataSetTableAdapters.PagosTableAdapter();
 
         private int numero;
         private DateTime fecha;
@@ -34,12 +34,12 @@ namespace SOADCI
 
         public Pago (int num)
         {
-            pagosTableAdapter.Fill(databaseLocalDataSet.Pagos);
-            DatabaseLocalDataSet.PagosRow pagosRow = databaseLocalDataSet.Pagos.FindByNumero(num);
+            pagosTableAdapter.Fill(databaseFinalDataSet.Pagos);
+            DatabaseFinalDataSet.PagosRow pagosRow = databaseFinalDataSet.Pagos.FindByNumero(num);
 
             Numero = num;
             Fecha = pagosRow.Fecha;
-            ModPor = pagosRow.ModPor;
+            ModPor = pagosRow.CreadoPor;
             Presupuesto = new Presupuesto(pagosRow.NumeroPresupuesto);
         }
 

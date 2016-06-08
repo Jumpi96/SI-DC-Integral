@@ -41,9 +41,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet1 = new SOADCI.DatabaseLocalDataSet();
+            this.databaseFinalDataSet1 = new SOADCI.DatabaseFinalDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -133,13 +133,13 @@
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataSource = this.databaseLocalDataSet1;
+            this.bindingSource1.DataSource = this.databaseFinalDataSet1;
             this.bindingSource1.Position = 0;
             // 
             // databaseLocalDataSet1
             // 
-            this.databaseLocalDataSet1.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet1.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RegistrarContacto
             // 
@@ -165,7 +165,7 @@
             this.Text = "Registrar contacto";
             this.Load += new System.EventHandler(this.RegistrarContacto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,7 +183,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private DatabaseLocalDataSet databaseLocalDataSet1;
+        private DatabaseFinalDataSet databaseFinalDataSet1;
         private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

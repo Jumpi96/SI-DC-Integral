@@ -32,9 +32,9 @@ namespace SOADCI
 
             if (fechaDesde <= fechaHasta)
             {
-                EmitirInformePresupuestos emit = new EmitirInformePresupuestos();
+                /* EmitirInformePresupuestos emit = new EmitirInformePresupuestos();
                 emit.LoadOrders(fechaDesde, fechaHasta);
-                emit.ShowDialog();
+                emit.ShowDialog(); */
                 this.Close();
             }
             else

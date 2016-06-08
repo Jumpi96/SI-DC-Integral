@@ -36,21 +36,21 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseLocalDataSet = new SOADCI.DatabaseLocalDataSet();
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.obrasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.clientesTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ClientesTableAdapter();
-            this.obrasTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.ObrasTableAdapter();
+            this.clientesTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ClientesTableAdapter();
+            this.obrasTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ObrasTableAdapter();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.estadosTableAdapter = new SOADCI.DatabaseLocalDataSetTableAdapters.EstadosTableAdapter();
+            this.estadosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.EstadosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -104,12 +104,12 @@
             // clientesBindingSource
             // 
             this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.databaseLocalDataSet;
+            this.clientesBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // databaseLocalDataSet
             // 
-            this.databaseLocalDataSet.DataSetName = "DatabaseLocalDataSet";
-            this.databaseLocalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox2
             // 
@@ -127,7 +127,7 @@
             // obrasBindingSource
             // 
             this.obrasBindingSource.DataMember = "Obras";
-            this.obrasBindingSource.DataSource = this.databaseLocalDataSet;
+            this.obrasBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // label3
             // 
@@ -199,7 +199,7 @@
             // estadosBindingSource
             // 
             this.estadosBindingSource.DataMember = "Estados";
-            this.estadosBindingSource.DataSource = this.databaseLocalDataSet;
+            this.estadosBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // estadosTableAdapter
             // 
@@ -230,7 +230,7 @@
             this.Text = "Registrar presupuesto";
             this.Load += new System.EventHandler(this.RegistrarPresupuesto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseLocalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -250,14 +250,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private DatabaseLocalDataSet databaseLocalDataSet;
+        private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource clientesBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.BindingSource obrasBindingSource;
-        private DatabaseLocalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.ObrasTableAdapter obrasTableAdapter;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.BindingSource estadosBindingSource;
-        private DatabaseLocalDataSetTableAdapters.EstadosTableAdapter estadosTableAdapter;
+        private DatabaseFinalDataSetTableAdapters.EstadosTableAdapter estadosTableAdapter;
     }
 }

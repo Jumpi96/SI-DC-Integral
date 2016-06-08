@@ -36,10 +36,10 @@ namespace SOADCI
         private void ConsultarCliente_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Presupuestos' table. You can move, or remove it, as needed.
-            this.presupuestosTableAdapter.Fill(this.databaseLocalDataSet.Presupuestos);
+            this.presupuestosTableAdapter.Fill(this.databaseFinalDataSet.Presupuestos);
 
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposCliente' table. You can move, or remove it, as needed.
-            this.tiposClienteTableAdapter.Fill(this.databaseLocalDataSet.TiposCliente);
+            this.tiposClienteTableAdapter.Fill(this.databaseFinalDataSet.TiposCliente);
 
         }
 
@@ -58,7 +58,7 @@ namespace SOADCI
         {
             try
             {
-                this.clientesTableAdapter.FillBy(this.databaseLocalDataSet.Clientes, ((int)(System.Convert.ChangeType(comboBox1.SelectedValue, typeof(int)))));
+                this.clientesTableAdapter.FillByTipo(this.databaseFinalDataSet.Clientes, ((int)(System.Convert.ChangeType(comboBox1.SelectedValue, typeof(int)))));
             }
             catch (System.Exception ex)
             {
@@ -70,7 +70,7 @@ namespace SOADCI
         {
             try
             {
-                this.clientesTableAdapter.FillBy2(this.databaseLocalDataSet.Clientes, textBox2.Text);
+                this.clientesTableAdapter.FillByNombre(this.databaseFinalDataSet.Clientes, textBox2.Text);
             }
             catch (System.Exception ex)
             {
@@ -140,7 +140,7 @@ namespace SOADCI
 
                 // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
                 
-                this.obrasTableAdapter.FillObrasPorCliente(this.databaseLocalDataSet.Obras,elegido.Numero);
+                this.obrasTableAdapter.FillObrasPorCliente(this.databaseFinalDataSet.Obras,elegido.Numero);
             }
         }
 
@@ -151,7 +151,7 @@ namespace SOADCI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(elegido.Numero);
+            DatabaseFinalDataSet.ClientesRow clientesRow = databaseFinalDataSet.Clientes.FindByNumero(elegido.Numero);
 
             clientesRow.Tipo=(int)comboBox2.SelectedValue;
             clientesRow.Nombre = textBox3.Text;
@@ -169,7 +169,7 @@ namespace SOADCI
                 }
                 this.Validate();
                 this.clientesBindingSource.EndEdit();
-                this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
+                this.clientesTableAdapter.Update(this.databaseFinalDataSet.Clientes);
                 elegido = new Cliente(clientesRow.Numero, clientesRow.Nombre, clientesRow.Domicilio, clientesRow.TelFijo, clientesRow.TelCel, clientesRow.Correo, new TipoCliente(clientesRow.Tipo), 1);
                 MessageBox.Show("El cliente ha sido editado.");
 
@@ -189,43 +189,47 @@ namespace SOADCI
         private void button6_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea eliminar el cliente?", "Eliminar cliente", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes )
             {
-                DatabaseLocalDataSet.ClientesRow clientesRow = databaseLocalDataSet.Clientes.FindByNumero(elegido.Numero);
+                ControlarContraseña cons = new ControlarContraseña();
+                cons.ShowDialog();
+                if (cons.DialogResult == DialogResult.OK) { 
+                    DatabaseFinalDataSet.ClientesRow clientesRow = databaseFinalDataSet.Clientes.FindByNumero(elegido.Numero);
 
-                clientesRow.Delete();
+                    clientesRow.Delete();
 
-                elegido.borrarObrasAsociadas();
-                elegido.borrarContactosAsociados();
+                    elegido.borrarObrasAsociadas();
+                    elegido.borrarContactosAsociados();
 
-                try
-                {
-                    this.Validate();
-                    this.clientesBindingSource.EndEdit();
-                    this.clientesTableAdapter.Update(this.databaseLocalDataSet.Clientes);
-                    Directory.Delete(cadena,true);
-                    MessageBox.Show("El cliente ha sido eliminado.", "Eliminar cliente");
-                    comboBox2.Text = "";
-                    textBox1.Text = "";
-                    textBox3.Text = "";
-                    textBox4.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    textBox7.Text = "";
-                    primeraEleccion = true;
-                    comboBox2.Enabled = false;
-                    textBox3.ReadOnly = true;
-                    textBox4.ReadOnly = true;
-                    textBox5.ReadOnly = true;
-                    textBox6.ReadOnly = true;
-                    textBox7.ReadOnly = true;
-                    this.obrasTableAdapter.FillObrasPorCliente(this.databaseLocalDataSet.Obras, 0);
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show("Error: el cliente no pudo ser eliminado.");
-                }
+                    try
+                    {
+                        this.Validate();
+                        this.clientesBindingSource.EndEdit();
+                        this.clientesTableAdapter.Update(this.databaseFinalDataSet.Clientes);
+                        Directory.Delete(cadena,true);
+                        MessageBox.Show("El cliente ha sido eliminado.", "Eliminar cliente");
+                        comboBox2.Text = "";
+                        textBox1.Text = "";
+                        textBox3.Text = "";
+                        textBox4.Text = "";
+                        textBox5.Text = "";
+                        textBox6.Text = "";
+                        textBox7.Text = "";
+                        primeraEleccion = true;
+                        comboBox2.Enabled = false;
+                        textBox3.ReadOnly = true;
+                        textBox4.ReadOnly = true;
+                        textBox5.ReadOnly = true;
+                        textBox6.ReadOnly = true;
+                        textBox7.ReadOnly = true;
+                        this.obrasTableAdapter.FillObrasPorCliente(this.databaseFinalDataSet.Obras, 0);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        MessageBox.Show("Error: el cliente no pudo ser eliminado.");
+                    }
             }
+          }
         }
 
         private void button7_Click(object sender, EventArgs e)
