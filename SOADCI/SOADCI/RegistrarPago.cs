@@ -42,7 +42,8 @@ namespace SOADCI
         {
             if (textBox2.Text != "")
             {
-
+                try
+                {
                 DatabaseFinalDataSet.PagosRow PagosRow = databaseFinalDataSet.Pagos.NewPagosRow();
 
 
@@ -54,8 +55,7 @@ namespace SOADCI
 
                 databaseFinalDataSet.Pagos.Rows.Add(PagosRow);
 
-                try
-                {
+                
                     this.Validate();
                     this.bindingSource1.EndEdit();
                     this.pagosTableAdapter.Update(this.databaseFinalDataSet.Pagos);

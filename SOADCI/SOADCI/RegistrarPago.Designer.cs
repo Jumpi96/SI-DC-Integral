@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrarPago));
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new SOADCI.NumericTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,17 +45,18 @@
             // 
             // textBox2
             // 
+            this.textBox2.AllowSpace = false;
             this.textBox2.Location = new System.Drawing.Point(53, 39);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 11;
+            this.textBox2.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(53, 13);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePicker1.TabIndex = 1;
             // 
             // label1
             // 
@@ -80,7 +81,7 @@
             this.button1.Location = new System.Drawing.Point(164, 68);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -90,7 +91,7 @@
             this.button2.Location = new System.Drawing.Point(245, 68);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -100,7 +101,7 @@
             this.bindingSource1.DataMember = "Pagos";
             this.bindingSource1.DataSource = this.databaseFinalDataSet;
             // 
-            // databaseLocalDataSet
+            // databaseFinalDataSet
             // 
             this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
             this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -135,7 +136,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
+        private NumericTextBox textBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

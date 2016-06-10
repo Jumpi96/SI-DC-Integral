@@ -39,7 +39,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pagosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PagosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).BeginInit();
@@ -63,7 +62,7 @@
             this.pagosBindingSource.DataMember = "Pagos";
             this.pagosBindingSource.DataSource = this.databaseFinalDataSet;
             // 
-            // databaseLocalDataSet
+            // databaseFinalDataSet
             // 
             this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
             this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -131,6 +130,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Parent = this;
             this.textBox2.Location = new System.Drawing.Point(365, 98);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(110, 20);
@@ -185,7 +185,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private NumericTextBox textBox2= new NumericTextBox();
+        // private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource pagosBindingSource;
