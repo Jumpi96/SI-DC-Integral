@@ -18,6 +18,7 @@ namespace SOADCI
 
             dateTimePicker1.Value = DateTime.Today.AddDays(-7);
             dateTimePicker2.Value = DateTime.Today;
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -29,18 +30,39 @@ namespace SOADCI
         {
             DateTime fechaDesde = dateTimePicker1.Value;
             DateTime fechaHasta = dateTimePicker2.Value;
+            int estado = (int)comboBox2.SelectedValue;
+            int tipo;
+            if ((int)comboBox1.SelectedValue != -1)
+                tipo = (int)comboBox1.SelectedValue;
+            else
+                tipo = 0;
+
 
             if (fechaDesde <= fechaHasta)
             {
-                /* EmitirInformePresupuestos emit = new EmitirInformePresupuestos();
-                emit.LoadOrders(fechaDesde, fechaHasta);
-                emit.ShowDialog(); */
+                EmitirInformePresupuestos emit = new EmitirInformePresupuestos();
+                emit.LoadOrders(fechaDesde, fechaHasta, estado, tipo);
+                emit.ShowDialog();
                 this.Close();
             }
             else
                 MessageBox.Show("Error: Las fechas ingresadas no son válidas.");
         }
 
+        private void FormEmitirInforme_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'databaseFinalDataSet.Estados' table. You can move, or remove it, as needed.
             
+            this.estadosTableAdapter.Fill(this.databaseFinalDataSet.Estados);
+            this.databaseFinalDataSet.Estados.AddEstadosRow(0, "Todos");
+            comboBox2.SelectedIndex = comboBox2.FindString("Todos");
+
+
+            // TODO: This line of code loads data into the 'databaseFinalDataSet.TiposCliente' table. You can move, or remove it, as needed.
+            this.tiposClienteTableAdapter.Fill(this.databaseFinalDataSet.TiposCliente);
+            this.databaseFinalDataSet.TiposCliente.AddTiposClienteRow("Todos");
+            comboBox1.SelectedIndex = comboBox1.FindString("Todos");
+
+        }
     }
 }

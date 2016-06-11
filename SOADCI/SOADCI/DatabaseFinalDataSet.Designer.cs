@@ -7914,7 +7914,7 @@ SELECT Numero, Nombre, Fecha, NumeroObra, ModPor, Estado FROM Presupuestos WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Numero, Nombre, Fecha, NumeroObra, ModPor, Estado FROM dbo.Presupuestos";
@@ -7926,20 +7926,31 @@ SELECT Numero, Nombre, Fecha, NumeroObra, ModPor, Estado FROM Presupuestos WHERE
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        Presupuestos.Nombre, Presupuestos.Fecha, Clientes.Nombre AS NombreCliente, Obras.Nombre AS NombreObra
+            this._commandCollection[2].CommandText = @"SELECT        Presupuestos.Nombre, Presupuestos.Fecha, Obras.Nombre AS ObraNombre, Clientes.Nombre AS ClienteNombre, Estados.Nombre AS EstadoNombre, Presupuestos.Numero, Presupuestos.NumeroObra, 
+                         Presupuestos.ModPor, Presupuestos.Estado
+FROM            Presupuestos INNER JOIN
+                         Obras ON Presupuestos.NumeroObra = Obras.Numero INNER JOIN
+                         Estados ON Presupuestos.Estado = Estados.Numero INNER JOIN
+                         Clientes ON Obras.NumeroCliente = Clientes.Numero
+WHERE        (Presupuestos.Estado = 1)
+ORDER BY Presupuestos.Fecha";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        Presupuestos.Nombre, Presupuestos.Fecha, Clientes.Nombre AS NombreCliente, Obras.Nombre AS NombreObra
 FROM            Presupuestos INNER JOIN
                          Clientes ON Presupuestos.Numero = Clientes.Numero INNER JOIN
                          Obras ON Presupuestos.NumeroObra = Obras.Numero AND Clientes.Numero = Obras.NumeroCliente
 WHERE        (Presupuestos.Fecha >= @desde) AND (Presupuestos.Fecha <= @hasta)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@desde", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Fecha, ModPor, Nombre, Numero, NumeroObra, Estado FROM Presupuestos WHERE " +
-                "(NumeroObra = @NumObra)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumObra", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroObra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@desde", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT Fecha, ModPor, Nombre, Numero, NumeroObra, Estado FROM Presupuestos WHERE " +
+                "(NumeroObra = @NumObra)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumObra", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroObra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7970,8 +7981,21 @@ WHERE        (Presupuestos.Fecha >= @desde) AND (Presupuestos.Fecha <= @hasta)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByFecha(DatabaseFinalDataSet.PresupuestosDataTable dataTable, string desde, string hasta) {
+        public virtual int FillByEnEspera(DatabaseFinalDataSet.PresupuestosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByFecha(DatabaseFinalDataSet.PresupuestosDataTable dataTable, string desde, string hasta) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((desde == null)) {
                 throw new global::System.ArgumentNullException("desde");
             }
@@ -7996,7 +8020,7 @@ WHERE        (Presupuestos.Fecha >= @desde) AND (Presupuestos.Fecha <= @hasta)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByObra(DatabaseFinalDataSet.PresupuestosDataTable dataTable, int NumObra) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(NumObra));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();

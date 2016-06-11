@@ -16,7 +16,32 @@ namespace SOADCI
         public Inicio()
         {
             InitializeComponent();
+
+            this.presupuestosTableAdapter.FillByEnEspera(this.databaseFinalDataSet.Presupuestos);
         }
+
+        public void pintarFilas()
+        {
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DateTime fecha = (Convert.ToDateTime(row.Cells[2].Value));
+                TimeSpan periodo = DateTime.Today - fecha; 
+                int dias = periodo.Days;
+
+                if (dias >= 21)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Orange;
+                }
+                else
+                    if (dias >= 14)
+                        row.DefaultCellStyle.BackColor = Color.Yellow;
+            }
+        }
+
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,6 +59,7 @@ namespace SOADCI
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            pintarFilas();
           
         }
 
@@ -64,6 +90,38 @@ namespace SOADCI
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = this.dataGridView1.SelectedRows[0];
+
+                int numero = (int)row.Cells[0].Value;
+
+                Presupuesto presu = new Presupuesto(numero);
+
+                ConsultarPresupuesto cons = new ConsultarPresupuesto();
+                cons.LoadOrders(presu);
+                cons.ShowDialog();
+                this.presupuestosTableAdapter.FillByEnEspera(this.databaseFinalDataSet.Presupuestos);
+            }
         }
     }
 }
