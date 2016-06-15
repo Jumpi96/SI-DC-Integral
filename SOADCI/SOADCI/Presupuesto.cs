@@ -88,9 +88,9 @@ namespace SOADCI
 
         public void Imprimir()
         {
-            /*EmitirReportePresupuesto rep = new EmitirReportePresupuesto();
+            EmitirReportePresupuesto rep = new EmitirReportePresupuesto();
             rep.LoadOrders(this);
-            rep.ShowDialog();*/
+            rep.ShowDialog();
         }
     }
 }

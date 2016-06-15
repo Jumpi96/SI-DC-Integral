@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pagosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PagosTableAdapter();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +57,13 @@
             this.listBox1.TabIndex = 1;
             this.listBox1.ValueMember = "Numero";
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // textBox2
+            // 
+            this.textBox2.AllowSpace = false;
+            this.textBox2.Location = new System.Drawing.Point(365, 98);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(110, 20);
+            this.textBox2.TabIndex = 2;
             // 
             // pagosBindingSource
             // 
@@ -128,14 +136,6 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Fecha";
             // 
-            // textBox2
-            // 
-            this.textBox2.Parent = this;
-            this.textBox2.Location = new System.Drawing.Point(365, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(110, 20);
-            this.textBox2.TabIndex = 3;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -149,14 +149,25 @@
             // 
             this.pagosTableAdapter.ClearBeforeFill = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(119, 204);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(156, 23);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Emitir informe de pagos";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // ConsultarPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 236);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
@@ -186,10 +197,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private NumericTextBox textBox2= new NumericTextBox();
-        // private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private DatabaseFinalDataSet databaseFinalDataSet;
         private System.Windows.Forms.BindingSource pagosBindingSource;
         private DatabaseFinalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
+        private System.Windows.Forms.Button button5;
     }
 }

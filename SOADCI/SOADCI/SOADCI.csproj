@@ -109,7 +109,7 @@
     <Compile Include="DatabaseFinalDataSet.cs">
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseFinalDataSet.Designer.cs">
+    <Compile Include="DatabaseFinalDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
@@ -128,6 +128,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EmitirReportePagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmitirReportePagos.Designer.cs">
+      <DependentUpon>EmitirReportePagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmitirReportePresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmitirReportePresupuesto.Designer.cs">
+      <DependentUpon>EmitirReportePresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEmitirInforme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,12 @@
       <DependentUpon>FormEmitirInforme.cs</DependentUpon>
     </Compile>
     <Compile Include="Globales.cs" />
+    <Compile Include="InformePresupuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformePresupuestos.Designer.cs">
+      <DependentUpon>InformePresupuestos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,12 +222,24 @@
     <EmbeddedResource Include="ControlarContraseña.resx">
       <DependentUpon>ControlarContraseña.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmitirReportePagos.resx">
+      <DependentUpon>EmitirReportePagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmitirReportePresupuesto.resx">
+      <DependentUpon>EmitirReportePresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormEmitirInforme.resx">
       <DependentUpon>FormEmitirInforme.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformePagos.rdlc" />
+    <EmbeddedResource Include="InformePresupuestos.resx">
+      <DependentUpon>InformePresupuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfPresupuestos.rdlc" />
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresupuestoCreado.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -240,8 +270,8 @@
     </None>
     <None Include="DatabaseFinalDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatabaseFinalDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>DatabaseFinalDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="DatabaseFinalDataSet.xss">
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>

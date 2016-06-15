@@ -113,5 +113,12 @@ namespace SOADCI
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            EmitirReportePagos emi = new EmitirReportePagos();
+            emi.LoadOrders(presupuesto);
+            emi.ShowDialog();
+            
+        }
     }
 }

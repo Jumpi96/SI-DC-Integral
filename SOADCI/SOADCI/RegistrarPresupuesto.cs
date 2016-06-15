@@ -140,7 +140,7 @@ namespace SOADCI
                     this.presupuestosBindingSource.EndEdit();
                     this.presupuestosTableAdapter.Update(this.databaseFinalDataSet.Presupuestos);
                     MessageBox.Show("El presupuesto ha sido registrado.", "Registrar presupuesto");
-                    // nuePre.Imprimir();
+                    nuePre.Imprimir();
                     this.Close();
                 }
                 catch (System.Exception ex)

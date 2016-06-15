@@ -23,3 +23,8 @@ D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\Microsoft.Rep
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.csprojResolveAssemblyReference.cache
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.exe
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.pdb
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.InformePresupuestos.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\RdlCompile.cache
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\RdlCompile.compiled
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.EmitirReportePresupuesto.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.EmitirReportePagos.resources

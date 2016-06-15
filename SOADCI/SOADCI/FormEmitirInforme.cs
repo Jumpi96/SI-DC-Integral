@@ -40,8 +40,8 @@ namespace SOADCI
 
             if (fechaDesde <= fechaHasta)
             {
-                EmitirInformePresupuestos emit = new EmitirInformePresupuestos();
-                emit.LoadOrders(fechaDesde, fechaHasta, estado, tipo);
+                InformePresupuestos emit = new InformePresupuestos();
+                emit.LoadOrders(estado, tipo,fechaDesde,fechaHasta);
                 emit.ShowDialog();
                 this.Close();
             }

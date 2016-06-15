@@ -41,13 +41,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fillEnEsperaToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillEnEsperaToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.presupuestosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
-            this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
-            this.presupuestosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,14 +50,21 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presupuestosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
+            this.fillEnEsperaToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillEnEsperaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
+            this.presupuestosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.fillEnEsperaToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
+            this.fillEnEsperaToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -201,45 +201,6 @@
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // fillEnEsperaToolStrip
-            // 
-            this.fillEnEsperaToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillEnEsperaToolStripButton});
-            this.fillEnEsperaToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillEnEsperaToolStrip.Name = "fillEnEsperaToolStrip";
-            this.fillEnEsperaToolStrip.Size = new System.Drawing.Size(784, 25);
-            this.fillEnEsperaToolStrip.TabIndex = 12;
-            this.fillEnEsperaToolStrip.Text = "fillEnEsperaToolStrip";
-            // 
-            // fillEnEsperaToolStripButton
-            // 
-            this.fillEnEsperaToolStripButton.Name = "fillEnEsperaToolStripButton";
-            this.fillEnEsperaToolStripButton.Size = new System.Drawing.Size(23, 22);
-            // 
-            // presupuestosBindingSource2
-            // 
-            this.presupuestosBindingSource2.DataMember = "Presupuestos";
-            this.presupuestosBindingSource2.DataSource = this.databaseFinalDataSet;
-            // 
-            // databaseFinalDataSet
-            // 
-            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
-            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // presupuestosBindingSource
-            // 
-            this.presupuestosBindingSource.DataMember = "Presupuestos";
-            this.presupuestosBindingSource.DataSource = this.databaseFinalDataSet;
-            // 
-            // presupuestosTableAdapter
-            // 
-            this.presupuestosTableAdapter.ClearBeforeFill = true;
-            // 
-            // presupuestosBindingSource1
-            // 
-            this.presupuestosBindingSource1.DataMember = "Presupuestos";
-            this.presupuestosBindingSource1.DataSource = this.databaseFinalDataSet;
-            // 
             // Numero
             // 
             this.Numero.DataPropertyName = "Numero";
@@ -308,6 +269,46 @@
             this.ModPor.ReadOnly = true;
             this.ModPor.Visible = false;
             // 
+            // presupuestosBindingSource2
+            // 
+            this.presupuestosBindingSource2.DataMember = "Presupuestos";
+            this.presupuestosBindingSource2.DataSource = this.databaseFinalDataSet;
+            // 
+            // databaseFinalDataSet
+            // 
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fillEnEsperaToolStrip
+            // 
+            this.fillEnEsperaToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillEnEsperaToolStripButton});
+            this.fillEnEsperaToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillEnEsperaToolStrip.Name = "fillEnEsperaToolStrip";
+            this.fillEnEsperaToolStrip.Size = new System.Drawing.Size(784, 25);
+            this.fillEnEsperaToolStrip.TabIndex = 12;
+            this.fillEnEsperaToolStrip.Text = "fillEnEsperaToolStrip";
+            this.fillEnEsperaToolStrip.Visible = false;
+            // 
+            // fillEnEsperaToolStripButton
+            // 
+            this.fillEnEsperaToolStripButton.Name = "fillEnEsperaToolStripButton";
+            this.fillEnEsperaToolStripButton.Size = new System.Drawing.Size(23, 22);
+            // 
+            // presupuestosBindingSource
+            // 
+            this.presupuestosBindingSource.DataMember = "Presupuestos";
+            this.presupuestosBindingSource.DataSource = this.databaseFinalDataSet;
+            // 
+            // presupuestosTableAdapter
+            // 
+            this.presupuestosTableAdapter.ClearBeforeFill = true;
+            // 
+            // presupuestosBindingSource1
+            // 
+            this.presupuestosBindingSource1.DataMember = "Presupuestos";
+            this.presupuestosBindingSource1.DataSource = this.databaseFinalDataSet;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -349,10 +350,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.fillEnEsperaToolStrip.ResumeLayout(false);
-            this.fillEnEsperaToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
+            this.fillEnEsperaToolStrip.ResumeLayout(false);
+            this.fillEnEsperaToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).EndInit();
             this.ResumeLayout(false);
