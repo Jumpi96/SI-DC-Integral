@@ -28,3 +28,7 @@ D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\RdlCompile.ca
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\RdlCompile.compiled
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.EmitirReportePresupuesto.resources
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.EmitirReportePagos.resources
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\SOADCI.exe.manifest
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\SOADCI.application
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.exe.manifest
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.application
