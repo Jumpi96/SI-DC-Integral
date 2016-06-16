@@ -3890,6 +3890,14 @@ namespace SOADCI {
             
             private global::System.Data.DataColumn columnEstado;
             
+            private global::System.Data.DataColumn columnNumeroObra;
+            
+            private global::System.Data.DataColumn columnNombreEstado;
+            
+            private global::System.Data.DataColumn columnModPor;
+            
+            private global::System.Data.DataColumn columnNumero;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public InfPresupuestosDataTable() {
@@ -3973,6 +3981,38 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroObraColumn {
+                get {
+                    return this.columnNumeroObra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreEstadoColumn {
+                get {
+                    return this.columnNombreEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ModPorColumn {
+                get {
+                    return this.columnModPor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NumeroColumn {
+                get {
+                    return this.columnNumero;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4008,7 +4048,7 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InfPresupuestosRow AddInfPresupuestosRow(System.DateTime Fecha, string Nombre, string TipoObra, string Obra, string Cliente, string Estado) {
+            public InfPresupuestosRow AddInfPresupuestosRow(System.DateTime Fecha, string Nombre, string TipoObra, string Obra, string Cliente, string Estado, string NumeroObra, string NombreEstado, string ModPor, string Numero) {
                 InfPresupuestosRow rowInfPresupuestosRow = ((InfPresupuestosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Fecha,
@@ -4016,7 +4056,11 @@ namespace SOADCI {
                         TipoObra,
                         Obra,
                         Cliente,
-                        Estado};
+                        Estado,
+                        NumeroObra,
+                        NombreEstado,
+                        ModPor,
+                        Numero};
                 rowInfPresupuestosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInfPresupuestosRow);
                 return rowInfPresupuestosRow;
@@ -4045,6 +4089,10 @@ namespace SOADCI {
                 this.columnObra = base.Columns["Obra"];
                 this.columnCliente = base.Columns["Cliente"];
                 this.columnEstado = base.Columns["Estado"];
+                this.columnNumeroObra = base.Columns["NumeroObra"];
+                this.columnNombreEstado = base.Columns["NombreEstado"];
+                this.columnModPor = base.Columns["ModPor"];
+                this.columnNumero = base.Columns["Numero"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4062,6 +4110,14 @@ namespace SOADCI {
                 base.Columns.Add(this.columnCliente);
                 this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado);
+                this.columnNumeroObra = new global::System.Data.DataColumn("NumeroObra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroObra);
+                this.columnNombreEstado = new global::System.Data.DataColumn("NombreEstado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreEstado);
+                this.columnModPor = new global::System.Data.DataColumn("ModPor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModPor);
+                this.columnNumero = new global::System.Data.DataColumn("Numero", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumero);
                 this.columnFecha.AllowDBNull = false;
                 this.columnNombre.AllowDBNull = false;
                 this.columnObra.AllowDBNull = false;
@@ -5333,6 +5389,70 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NumeroObra {
+                get {
+                    try {
+                        return ((string)(this[this.tableInfPresupuestos.NumeroObraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumeroObra\' in table \'InfPresupuestos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInfPresupuestos.NumeroObraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreEstado {
+                get {
+                    try {
+                        return ((string)(this[this.tableInfPresupuestos.NombreEstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NombreEstado\' in table \'InfPresupuestos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInfPresupuestos.NombreEstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ModPor {
+                get {
+                    try {
+                        return ((string)(this[this.tableInfPresupuestos.ModPorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ModPor\' in table \'InfPresupuestos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInfPresupuestos.ModPorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Numero {
+                get {
+                    try {
+                        return ((string)(this[this.tableInfPresupuestos.NumeroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Numero\' in table \'InfPresupuestos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInfPresupuestos.NumeroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTipoObraNull() {
                 return this.IsNull(this.tableInfPresupuestos.TipoObraColumn);
             }
@@ -5365,6 +5485,54 @@ namespace SOADCI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEstadoNull() {
                 this[this.tableInfPresupuestos.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroObraNull() {
+                return this.IsNull(this.tableInfPresupuestos.NumeroObraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroObraNull() {
+                this[this.tableInfPresupuestos.NumeroObraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombreEstadoNull() {
+                return this.IsNull(this.tableInfPresupuestos.NombreEstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombreEstadoNull() {
+                this[this.tableInfPresupuestos.NombreEstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsModPorNull() {
+                return this.IsNull(this.tableInfPresupuestos.ModPorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetModPorNull() {
+                this[this.tableInfPresupuestos.ModPorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNumeroNull() {
+                return this.IsNull(this.tableInfPresupuestos.NumeroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNumeroNull() {
+                this[this.tableInfPresupuestos.NumeroColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8468,15 +8636,18 @@ WHERE        (Presupuestos.Fecha >= @desde) AND (Presupuestos.Fecha <= @hasta)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hasta", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        Presupuestos.Numero, Presupuestos.Nombre, Presupuestos.Fecha, Obras.Nombre AS Obra, Clientes.Nombre AS Cliente, TiposObra.Descripcion AS TipoObra
+            this._commandCollection[4].CommandText = @"SELECT        Presupuestos.Numero, Presupuestos.Nombre, Presupuestos.Fecha, Obras.Nombre AS Obra, Clientes.Nombre AS Cliente, TiposObra.Descripcion AS TipoObra, Estados.Nombre AS NombreEstado, 
+                         Presupuestos.Estado, Presupuestos.NumeroObra, Presupuestos.ModPor
 FROM            Presupuestos INNER JOIN
                          Obras ON Presupuestos.NumeroObra = Obras.Numero INNER JOIN
                          Clientes ON Obras.NumeroCliente = Clientes.Numero INNER JOIN
                          TiposObra ON Obras.Tipo = TiposObra.Numero INNER JOIN
-                         Estados ON Presupuestos.Estado = Estados.Numero
-WHERE        ((@Parestado = 0) OR (Estados.Numero = @Parestado)) AND
-						((@Partipo = 0) OR (TiposObra.Numero = @Partipo)) AND
-						((Presupuestos.Fecha >= @Fechainicio) AND (Presupuestos.Fecha <= @Fechafinal))";
+                         Estados ON Presupuestos.Estado = Estados.Numero INNER JOIN
+                         TiposCliente ON Clientes.Tipo = TiposCliente.Numero
+WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fechainicio) AND (Presupuestos.Fecha <= @Fechafinal) OR
+                         (@Parestado = 0) AND (Presupuestos.Fecha >= @Fechainicio) AND (Presupuestos.Fecha <= @Fechafinal) AND (TiposCliente.Numero = @Partipo) OR
+                         (@Partipo = 0) AND (Presupuestos.Fecha >= @Fechainicio) AND (Presupuestos.Fecha <= @Fechafinal) AND (Estados.Numero = @Parestado) OR
+                         (Presupuestos.Fecha >= @Fechainicio) AND (Presupuestos.Fecha <= @Fechafinal) AND (TiposCliente.Numero = @Partipo) AND (Estados.Numero = @Parestado)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Parestado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Partipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>D:\Desarrollo-Programación\SI DC Integral\v1.1\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,6 +26,7 @@
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -49,6 +50,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0BE351570D9AC673E393BB459CB8D88548F2DC32</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SOADCI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
@@ -114,19 +127,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseLocalDataSetANTERIOR.cs">
-      <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultarCliente.Designer.cs">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DatabaseLocalDataSetANTERIOR.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
     </Compile>
     <Compile Include="EmitirReportePagos.cs">
       <SubType>Form</SubType>
@@ -276,17 +281,6 @@
     <None Include="DatabaseFinalDataSet.xss">
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DatabaseLocalDataSetANTERIOR.xsc">
-      <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
-    </None>
-    <None Include="DatabaseLocalDataSetANTERIOR.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>DatabaseLocalDataSetANTERIOR.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DatabaseLocalDataSetANTERIOR.xss">
-      <DependentUpon>DatabaseLocalDataSetANTERIOR.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -296,6 +290,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SOADCI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

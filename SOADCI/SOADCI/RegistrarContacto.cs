@@ -13,8 +13,8 @@ namespace SOADCI
     public partial class RegistrarContacto : Form
     {
         private Cliente cliente;
-        private DatabaseLocalDataSet databaseLocalDataSet = new DatabaseLocalDataSet();
-        private DatabaseLocalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
+        private DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+        private DatabaseFinalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
         private System.Windows.Forms.BindingSource contactosBindingSource;
 
 
@@ -33,12 +33,12 @@ namespace SOADCI
             cliente = cli;
             this.Text = "Contactos - " + cli.Nombre;
 
-            databaseLocalDataSet = new DatabaseLocalDataSet();
-            contactosTableAdapter = new DatabaseLocalDataSetTableAdapters.ContactosTableAdapter();
+            databaseFinalDataSet = new DatabaseFinalDataSet();
+            contactosTableAdapter = new DatabaseFinalDataSetTableAdapters.ContactosTableAdapter();
             this.contactosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.contactosBindingSource)).BeginInit();
             this.contactosBindingSource.DataMember = "Contactos";
-            this.contactosBindingSource.DataSource = this.databaseLocalDataSet;
+            this.contactosBindingSource.DataSource = this.databaseFinalDataSet;
             ((System.ComponentModel.ISupportInitialize)(this.contactosBindingSource)).EndInit();
 
         }
@@ -55,7 +55,7 @@ namespace SOADCI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DatabaseLocalDataSet.ContactosRow ContactosRow = databaseLocalDataSet.Contactos.NewContactosRow();
+            DatabaseFinalDataSet.ContactosRow ContactosRow = databaseFinalDataSet.Contactos.NewContactosRow();
 
 
             ContactosRow.Nombre = textBox1.Text;
@@ -70,13 +70,13 @@ namespace SOADCI
             else
             {
 
-                databaseLocalDataSet.Contactos.Rows.Add(ContactosRow);
+                databaseFinalDataSet.Contactos.Rows.Add(ContactosRow);
 
                 try
                 {
                     this.Validate();
                     this.contactosBindingSource.EndEdit();
-                    this.contactosTableAdapter.Update(this.databaseLocalDataSet.Contactos);
+                    this.contactosTableAdapter.Update(this.databaseFinalDataSet.Contactos);
                     MessageBox.Show("El contacto ha sido registrado.");
                     this.Close();
                 }

@@ -16,7 +16,7 @@
     <Shape ID="DesignTable:TiposCliente" ZOrder="18" X="594" Y="70" Height="115" Width="216" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:TiposObra" ZOrder="17" X="664" Y="725" Height="115" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:Usuarios" ZOrder="16" X="70" Y="70" Height="134" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:InfPresupuestos" ZOrder="2" X="702" Y="1286" Height="143" Width="159" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
+    <Shape ID="DesignTable:InfPresupuestos" ZOrder="2" X="702" Y="1286" Height="219" Width="159" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_Carpetas_TiposObra" ZOrder="15" LineWidth="11">
