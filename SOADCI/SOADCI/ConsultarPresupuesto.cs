@@ -35,7 +35,7 @@ namespace SOADCI
             textBox4.Text = pres.Obra.Cliente.Nombre;
             textBox1.Text = pres.Obra.Nombre;
             textBox5.Text = pres.Fecha.Day+"/"+pres.Fecha.Month+"/"+pres.Fecha.Year;
-            cadena=Globales.PATH + "\\" + pres.Obra.Cliente.Nombre + "\\" + pres.Obra.Nombre+"\\"+pres.Nombre;
+            cadena= Globales.getInstancia().PATH + "\\" + pres.Obra.Cliente.Nombre + "\\" + pres.Obra.Nombre+"\\"+pres.Nombre;
         }
 
         private void toolTips()
@@ -77,8 +77,8 @@ namespace SOADCI
             {
                 if (presupuesto.Nombre != presupuestosRow.Nombre)
                 {
-                    cadena = Globales.PATH + "\\" + presupuesto.Obra.Cliente.Nombre + "\\" + presupuesto.Obra.Nombre + "\\" + presupuestosRow.Nombre;
-                    Directory.Move(Globales.PATH + "\\" + presupuesto.Obra.Cliente.Nombre + "\\" + presupuesto.Obra.Nombre + "\\" + presupuesto.Nombre, cadena);
+                    cadena = Globales.getInstancia().PATH + "\\" + presupuesto.Obra.Cliente.Nombre + "\\" + presupuesto.Obra.Nombre + "\\" + presupuestosRow.Nombre;
+                    Directory.Move(Globales.getInstancia().PATH + "\\" + presupuesto.Obra.Cliente.Nombre + "\\" + presupuesto.Obra.Nombre + "\\" + presupuesto.Nombre, cadena);
                 }
                 this.Validate();
                 this.bindingSource1.EndEdit();

@@ -78,7 +78,7 @@ namespace SOADCI
             carpetasTableAdapter = new DatabaseFinalDataSetTableAdapters.CarpetasTableAdapter();
             carpetasTableAdapter.FillByTipo(databaseFinalDataSet.Carpetas, this.Obra.Tipo.Numero);
 
-            String cadena= @Globales.PATH + "\\" + Obra.Cliente.Nombre + "\\" + Obra.Nombre + "\\" + this.Nombre;
+            String cadena= Globales.getInstancia().PATH + "\\" + Obra.Cliente.Nombre + "\\" + Obra.Nombre + "\\" + this.Nombre;
 
             foreach (DatabaseFinalDataSet.CarpetasRow row in databaseFinalDataSet.Carpetas.Rows)
             {

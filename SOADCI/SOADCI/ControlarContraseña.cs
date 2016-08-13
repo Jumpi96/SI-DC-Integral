@@ -26,7 +26,7 @@ namespace SOADCI
         private void button1_Click(object sender, EventArgs e)
         {
             
-            if (textBox1.Text == Globales.PASS)
+            if (textBox1.Text == Globales.getInstancia().PASS)
                 this.DialogResult = DialogResult.OK;
             else
                 MessageBox.Show("La contraseña es incorrecta", "Autenticación");

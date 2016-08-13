@@ -58,7 +58,7 @@ namespace SOADCI
             obra = ob;
             this.Text = "Consultar obra - " + obra.Nombre;
             this.presupuestosTableAdapter.FillByObra(this.databaseFinalDataSet.Presupuestos,obra.Numero);
-            cadena = Globales.PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre;
+            cadena = Globales.getInstancia().PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre;
             textBox2.Text = obra.Numero.ToString();
             textBox1.Text = obra.Cliente.Nombre;
             textBox3.Text = obra.Nombre;
@@ -118,8 +118,8 @@ namespace SOADCI
             {
                 if (obra.Nombre != obrasRow.Nombre)
                 {
-                    cadena = Globales.PATH + "\\" + obra.Cliente.Nombre + "\\" + obrasRow.Nombre;
-                    Directory.Move(Globales.PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre, cadena);
+                    cadena = Globales.getInstancia().PATH + "\\" + obra.Cliente.Nombre + "\\" + obrasRow.Nombre;
+                    Directory.Move(Globales.getInstancia().PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre, cadena);
                 }
                 this.Validate();
                 this.obrasBindingSource.EndEdit();

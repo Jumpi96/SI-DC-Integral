@@ -136,7 +136,7 @@ namespace SOADCI
                 button5.Enabled = true;
                 button6.Enabled = true;
                 button7.Enabled = true;
-                cadena = Globales.PATH + "\\" + elegido.Nombre + '\\';
+                cadena = Globales.getInstancia().PATH + "\\" + elegido.Nombre + '\\';
 
                 // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
                 
@@ -164,8 +164,8 @@ namespace SOADCI
             {
                 if(elegido.Nombre != clientesRow.Nombre)
                 {
-                    cadena = Globales.PATH + "\\" + clientesRow.Nombre;
-                    Directory.Move(Globales.PATH + "\\" + elegido.Nombre, cadena);
+                    cadena = Globales.getInstancia().PATH + "\\" + clientesRow.Nombre;
+                    Directory.Move(Globales.getInstancia().PATH + "\\" + elegido.Nombre, cadena);
                 }
                 this.Validate();
                 this.clientesBindingSource.EndEdit();

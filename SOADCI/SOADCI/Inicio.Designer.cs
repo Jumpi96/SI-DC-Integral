@@ -36,35 +36,36 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroObra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ObraNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presupuestosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.fillEnEsperaToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillEnEsperaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presupuestosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
             this.presupuestosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.fillEnEsperaToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
-            this.fillEnEsperaToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -129,51 +130,20 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SOADCI.Properties.Resources.linedpaperpencil32;
-            this.pictureBox3.Location = new System.Drawing.Point(51, 229);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SOADCI.Properties.Resources.home32;
-            this.pictureBox2.Location = new System.Drawing.Point(51, 136);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SOADCI.Properties.Resources.user32;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(627, 436);
+            this.label2.Location = new System.Drawing.Point(620, 436);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 16);
+            this.label2.Size = new System.Drawing.Size(152, 16);
             this.label2.TabIndex = 10;
-            this.label2.Text = "SOA DC Integral - v. 1.1";
+            this.label2.Text = "SOA DC Integral - v. 1.11";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
@@ -183,11 +153,11 @@
             this.nombreDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
             this.NumeroObra,
+            this.Estado,
+            this.ModPor,
             this.ObraNombre,
             this.ClienteNombre,
-            this.Estado,
-            this.EstadoNombre,
-            this.ModPor});
+            this.EstadoNombre});
             this.dataGridView1.DataSource = this.presupuestosBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(289, 82);
             this.dataGridView1.MultiSelect = false;
@@ -208,20 +178,6 @@
             this.Numero.Name = "Numero";
             this.Numero.ReadOnly = true;
             this.Numero.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // NumeroObra
             // 
@@ -269,16 +225,6 @@
             this.ModPor.ReadOnly = true;
             this.ModPor.Visible = false;
             // 
-            // presupuestosBindingSource2
-            // 
-            this.presupuestosBindingSource2.DataMember = "Presupuestos";
-            this.presupuestosBindingSource2.DataSource = this.databaseFinalDataSet;
-            // 
-            // databaseFinalDataSet
-            // 
-            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
-            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // fillEnEsperaToolStrip
             // 
             this.fillEnEsperaToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -295,6 +241,81 @@
             this.fillEnEsperaToolStripButton.Name = "fillEnEsperaToolStripButton";
             this.fillEnEsperaToolStripButton.Size = new System.Drawing.Size(23, 22);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(289, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Presupuestos a revisar";
+            // 
+            // button7
+            // 
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(12, 412);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(43, 40);
+            this.button7.TabIndex = 14;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SOADCI.Properties.Resources.linedpaperpencil32;
+            this.pictureBox3.Location = new System.Drawing.Point(51, 229);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SOADCI.Properties.Resources.home32;
+            this.pictureBox2.Location = new System.Drawing.Point(51, 136);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SOADCI.Properties.Resources.user32;
+            this.pictureBox1.Location = new System.Drawing.Point(51, 42);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // presupuestosBindingSource2
+            // 
+            this.presupuestosBindingSource2.DataMember = "Presupuestos";
+            this.presupuestosBindingSource2.DataSource = this.databaseFinalDataSet;
+            // 
+            // databaseFinalDataSet
+            // 
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // presupuestosBindingSource
             // 
             this.presupuestosBindingSource.DataMember = "Presupuestos";
@@ -309,22 +330,13 @@
             this.presupuestosBindingSource1.DataMember = "Presupuestos";
             this.presupuestosBindingSource1.DataSource = this.databaseFinalDataSet;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(289, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Presupuestos a revisar";
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fillEnEsperaToolStrip);
             this.Controls.Add(this.dataGridView1);
@@ -346,14 +358,14 @@
             this.Name = "Inicio";
             this.Text = "Sistema de Ordenamiento de Archivos - SOA DC Integral";
             this.Load += new System.EventHandler(this.Inicio_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.fillEnEsperaToolStrip.ResumeLayout(false);
+            this.fillEnEsperaToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
-            this.fillEnEsperaToolStrip.ResumeLayout(false);
-            this.fillEnEsperaToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -391,6 +403,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModPor;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button7;
     }
 }
 

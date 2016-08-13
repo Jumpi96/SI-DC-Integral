@@ -121,7 +121,14 @@ namespace SOADCI
                 cons.LoadOrders(presu);
                 cons.ShowDialog();
                 this.presupuestosTableAdapter.FillByEnEspera(this.databaseFinalDataSet.Presupuestos);
+                pintarFilas();
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Configuración config = new Configuración();
+            config.ShowDialog();
         }
     }
 }

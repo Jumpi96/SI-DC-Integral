@@ -41,7 +41,7 @@ namespace SOADCI
                 MessageBox.Show("Ingrese un nombre para el cliente.");
             else
             {
-                Directory.CreateDirectory(@Globales.PATH+"\\"+newClientesRow.Nombre);
+                Directory.CreateDirectory(Globales.getInstancia().PATH + "\\"+newClientesRow.Nombre);
 
 
                 databaseFinalDataSet.Clientes.Rows.Add(newClientesRow);

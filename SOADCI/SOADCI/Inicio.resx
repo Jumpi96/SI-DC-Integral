@@ -123,19 +123,19 @@
   <metadata name="NumeroObra.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Estado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ModPor.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="ObraNombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ClienteNombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Estado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="EstadoNombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ModPor.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="presupuestosBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -147,6 +147,26 @@
   <metadata name="fillEnEsperaToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAJCSURBVFhH
+        xZfRUdwwGITpAEpIB9ABPN4bJZAKIB2QDqAD6CDpgHQAHVACJZj9PJbn995a55tJyMM3Plb7r2RbksXJ
+        MAz/lSh+JVHcwm63uxBD4SL5DhFFR+FX4lmcFe1G1AHclLYzgf+qaWtEsaKQJ9E6eS36Q9HhobS9Fv25
+        6YkoVhRQBwBPk/5i+suK/73mOVGsKODaAsHvvuGdw/xkElF0FPJhocdwnjIbe4IKuIt38UN8K1oKP8T4
+        +HVlxTzytxhfYcM7Z7Z7CBPql2nAU2EeMDiu6SnRIbg+rw4fwL0ZEwTG5YU+tae6yvwUUsjaBAPudt4L
+        ErRPvlQPPK3T5t8LABl8kwFeRbfzBr7J7xmL9w+LPyoy+yAO7moV/FYfl+P8QwZm6nfBbP0janF3M1mD
+        Osshl3z6Gb8d1VyNzmPzHQN1lrMATzVH08TP5jsG6ixnAZ5qjqaJfz+AqeBcMPlYinUWv1XfVqgrGcAS
+        JJs+xi06FoIMvpbHbXkr+K1+bwnCniDj2kby27098Fs99PcBGdY2kEb3cNHAZ3WVxYbmhb0ttMGdxdeB
+        PrWnukr+Fqjh0ox84RiUn36AjpjljdQxd5s+TpdxAKBGZimdXhet91p6jGdIXVld5DKYxTyYf6yhAp/N
+        x9JdPVGsKODOAuE2aDylNIfuUm4jihUF+Dscz/+6+rwYv3a6+iDmo3wiihULrGd/P7jUf0zqnPkrp2JW
+        x71pfl6YT7/6fSoYePdEDFHcAuFiHoC3byWKX8dw8glnQpawyTkPFAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="databaseFinalDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="presupuestosBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>186, 17</value>
   </metadata>
@@ -156,7 +176,6 @@
   <metadata name="presupuestosBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>587, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAAAIABoBAAAZgAAACAgAAAAACAAqBAAAM4EAAAwMAAAAAAgAKglAAB2FQAAQEAAAAAA

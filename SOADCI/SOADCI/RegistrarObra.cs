@@ -79,7 +79,7 @@ namespace SOADCI
                 newObrasRow.NumeroCliente = (int)comboBox1.SelectedValue;
                 newObrasRow.ModPor = 1; // Usuario
 
-                Directory.CreateDirectory(@Globales.PATH + "\\" + (new Cliente(newObrasRow.NumeroCliente)).Nombre + "\\" + newObrasRow.Nombre);
+                Directory.CreateDirectory(Globales.getInstancia().PATH + "\\" + (new Cliente(newObrasRow.NumeroCliente)).Nombre + "\\" + newObrasRow.Nombre);
 
                 databaseFinalDataSet.Obras.Rows.Add(newObrasRow);
 

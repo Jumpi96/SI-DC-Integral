@@ -127,7 +127,7 @@ namespace SOADCI
                 newPresupuestosRow.Estado = (int)comboBox3.SelectedValue; // probando
 
                 Obra temp = new Obra(newPresupuestosRow.NumeroObra);
-                Directory.CreateDirectory(@Globales.PATH + "\\" + (new Cliente(temp.Cliente.Numero)).Nombre + "\\" + temp.Nombre + "\\" + newPresupuestosRow.Nombre);
+                Directory.CreateDirectory(Globales.getInstancia().PATH + "\\" + (new Cliente(temp.Cliente.Numero)).Nombre + "\\" + temp.Nombre + "\\" + newPresupuestosRow.Nombre);
 
                 databaseFinalDataSet.Presupuestos.Rows.Add(newPresupuestosRow);
 
