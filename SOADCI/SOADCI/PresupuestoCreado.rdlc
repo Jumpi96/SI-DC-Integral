@@ -71,7 +71,7 @@
         <Top>1.31974cm</Top>
         <Left>0.00001cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.11937cm</Width>
+        <Width>8.10916cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -112,7 +112,7 @@
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>4.4253cm</Top>
         <Height>0.67938cm</Height>
-        <Width>5.11938cm</Width>
+        <Width>8.10917cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -154,7 +154,7 @@
         <Top>2.09613cm</Top>
         <Left>0.00001cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.11937cm</Width>
+        <Width>8.10916cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -196,7 +196,7 @@
         <Top>3.64891cm</Top>
         <Left>0.00001cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.11937cm</Width>
+        <Width>8.10916cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -215,7 +215,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Tipo de obra:</Value>
+                <Value>Tipo de presupuesto:</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -227,7 +227,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=Parameters!TipoObra.Value</Value>
+                <Value>=Parameters!TipoPre.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -237,7 +237,7 @@
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.83724cm</Top>
         <Height>0.63528cm</Height>
-        <Width>5.11938cm</Width>
+        <Width>8.10917cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -250,7 +250,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.00971in</Height>
+    <Height>2.00972in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -283,7 +283,7 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="TipoObra">
+    <ReportParameter Name="TipoPre">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>

@@ -46,9 +46,12 @@
             this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.estadosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.EstadosTableAdapter();
+            this.tiposPresupuestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposPresupuestoTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposPresupuestoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposPresupuestoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -119,17 +122,17 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Tipo de cliente";
+            this.label4.Text = "Tipo de presupuesto";
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.tiposClienteBindingSource;
+            this.comboBox1.DataSource = this.tiposPresupuestoBindingSource;
             this.comboBox1.DisplayMember = "Descripcion";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(95, 94);
+            this.comboBox1.Location = new System.Drawing.Point(122, 94);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(191, 21);
             this.comboBox1.TabIndex = 3;
@@ -155,7 +158,7 @@
             this.comboBox2.DisplayMember = "Nombre";
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(95, 119);
+            this.comboBox2.Location = new System.Drawing.Point(122, 119);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(191, 21);
             this.comboBox2.TabIndex = 4;
@@ -179,6 +182,15 @@
             // estadosTableAdapter
             // 
             this.estadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tiposPresupuestoBindingSource
+            // 
+            this.tiposPresupuestoBindingSource.DataMember = "TiposPresupuesto";
+            this.tiposPresupuestoBindingSource.DataSource = this.databaseFinalDataSet;
+            // 
+            // tiposPresupuestoTableAdapter
+            // 
+            this.tiposPresupuestoTableAdapter.ClearBeforeFill = true;
             // 
             // FormEmitirInforme
             // 
@@ -205,6 +217,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposPresupuestoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +241,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.BindingSource estadosBindingSource;
         private DatabaseFinalDataSetTableAdapters.EstadosTableAdapter estadosTableAdapter;
+        private System.Windows.Forms.BindingSource tiposPresupuestoBindingSource;
+        private DatabaseFinalDataSetTableAdapters.TiposPresupuestoTableAdapter tiposPresupuestoTableAdapter;
     }
 }

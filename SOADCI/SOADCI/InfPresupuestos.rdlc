@@ -109,7 +109,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tipo Obra</Value>
+                              <Value>Tipo</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -326,7 +326,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TipoObra.Value</Value>
+                              <Value>=Fields!TipoPre.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <Color>#4d4d4d</Color>
@@ -668,8 +668,8 @@
           <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="TipoObra">
-          <DataField>TipoObra</DataField>
+        <Field Name="TipoPre">
+          <DataField>TipoPre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Obra">

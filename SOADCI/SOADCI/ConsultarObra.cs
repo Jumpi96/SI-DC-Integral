@@ -153,8 +153,9 @@ namespace SOADCI
                 DateTime fecha=(DateTime)row.Cells[0].Value;
                 int modPor= (int)row.Cells[4].Value;
                 Estado estado = new Estado((int)row.Cells[3].Value);
+                TipoPresupuesto tipo = new TipoPresupuesto((int)row.Cells[5].Value); //Debugear orden de celdas
 
-                Presupuesto presu = new Presupuesto(numero,nombre,fecha,obra,modPor,estado);
+                Presupuesto presu = new Presupuesto(numero,nombre,fecha,obra,modPor,estado,tipo);
 
                 ConsultarPresupuesto cons = new ConsultarPresupuesto();
                 cons.LoadOrders(presu);

@@ -52,9 +52,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.estadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.estadosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.EstadosTableAdapter();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tiposPresupuestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposPresupuestoTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposPresupuestoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposPresupuestoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button7
@@ -160,7 +165,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 137);
+            this.label4.Location = new System.Drawing.Point(21, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 46;
@@ -168,7 +173,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(64, 133);
+            this.textBox5.Location = new System.Drawing.Point(64, 161);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(200, 20);
@@ -176,7 +181,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(261, 195);
+            this.button1.Location = new System.Drawing.Point(262, 211);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -186,7 +191,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(342, 195);
+            this.button2.Location = new System.Drawing.Point(343, 211);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
@@ -199,7 +204,7 @@
             this.bindingSource1.DataMember = "Presupuestos";
             this.bindingSource1.DataSource = this.databaseFinalDataSet;
             // 
-            // databaseLocalDataSet
+            // databaseFinalDataSet
             // 
             this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
             this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -211,7 +216,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 162);
+            this.label6.Location = new System.Drawing.Point(21, 190);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 48;
@@ -223,7 +228,7 @@
             this.comboBox1.DisplayMember = "Nombre";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(64, 159);
+            this.comboBox1.Location = new System.Drawing.Point(64, 187);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
@@ -238,11 +243,43 @@
             // 
             this.estadosTableAdapter.ClearBeforeFill = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 136);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(28, 13);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "Tipo";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.tiposPresupuestoBindingSource;
+            this.comboBox2.DisplayMember = "Descripcion";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(64, 133);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 50;
+            this.comboBox2.ValueMember = "Numero";
+            // 
+            // tiposPresupuestoBindingSource
+            // 
+            this.tiposPresupuestoBindingSource.DataMember = "TiposPresupuesto";
+            this.tiposPresupuestoBindingSource.DataSource = this.databaseFinalDataSet;
+            // 
+            // tiposPresupuestoTableAdapter
+            // 
+            this.tiposPresupuestoTableAdapter.ClearBeforeFill = true;
+            // 
             // ConsultarPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 230);
+            this.ClientSize = new System.Drawing.Size(444, 246);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
@@ -270,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposPresupuestoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +337,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource estadosBindingSource;
         private DatabaseFinalDataSetTableAdapters.EstadosTableAdapter estadosTableAdapter;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource tiposPresupuestoBindingSource;
+        private DatabaseFinalDataSetTableAdapters.TiposPresupuestoTableAdapter tiposPresupuestoTableAdapter;
     }
 }

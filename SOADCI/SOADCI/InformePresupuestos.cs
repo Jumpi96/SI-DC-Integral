@@ -14,7 +14,7 @@ namespace SOADCI
     public partial class InformePresupuestos : Form
     {
         private int estado;
-        private int tipoCliente;
+        private int tipoPre;
         private DateTime fechainicio;
         private DateTime fechafinal;
         public InformePresupuestos()
@@ -25,7 +25,7 @@ namespace SOADCI
         internal void LoadOrders(int est, int tipo, DateTime fechai, DateTime fechaf)
         {
             estado = est;
-            tipoCliente = tipo;
+            tipoPre = tipo;
             fechainicio = fechai;
             fechafinal = fechaf;
         }
@@ -37,21 +37,21 @@ namespace SOADCI
 
             String resto=" ";
 
-            if(estado!=0 && tipoCliente!=0)
-                resto = "- " + ((new TipoCliente(tipoCliente)).Descripcion) + " - " + ((new Estado(estado)).Nombre);
+            if(estado!=0 && tipoPre!=0)
+                resto = "- " + ((new TipoCliente(tipoPre)).Descripcion) + " - " + ((new Estado(estado)).Nombre);
             else
                 if(estado!=0)
                     resto = "- " + ((new Estado(estado)).Nombre);
                 else
-                    if(tipoCliente!=0)
-                        resto = "- " + ((new TipoCliente(tipoCliente)).Descripcion);
+                    if(tipoPre!=0)
+                        resto = "- " + ((new TipoPresupuesto(tipoPre)).Descripcion);
             
             ReportParameter r = new ReportParameter("Resto", resto);
             
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { fi, ff, r });
 
             // TODO: This line of code loads data into the 'DatabaseFinalDataSet.Presupuestos' table. You can move, or remove it, as needed.
-            this.presupuestosTableAdapter.FillByInfPre(this.DatabaseFinalDataSet.Presupuestos,estado,tipoCliente, fechainicio.ToString(),fechafinal.ToString());
+            this.presupuestosTableAdapter.FillByInfPre(this.DatabaseFinalDataSet.Presupuestos,estado,tipoPre, fechainicio.ToString(),fechafinal.ToString());
 
             this.reportViewer1.RefreshReport();
         }

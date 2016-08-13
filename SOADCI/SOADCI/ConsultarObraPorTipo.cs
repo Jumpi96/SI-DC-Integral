@@ -35,10 +35,9 @@ namespace SOADCI
                 Cliente cliente = new Cliente((int)(row.Cells[2].Value));
                 int num = (int)row.Cells[0].Value;
                 String nom = (String)row.Cells[1].Value;
-                TipoObra tip = new TipoObra((int)row.Cells[3].Value);
                 int modPor = (int)row.Cells[4].Value;
 
-                Obra obra = new Obra(num, nom, cliente, tip, modPor);
+                Obra obra = new Obra(num, nom, cliente, modPor);
 
                 ConsultarObra cons = new ConsultarObra();
                 cons.LoadOrders(obra);

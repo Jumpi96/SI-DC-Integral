@@ -17,7 +17,8 @@ namespace SOADCI
         private DateTime fecha;
         private int modPor;
         private Obra obra;
-        private Estado estado;          
+        private Estado estado;
+        private TipoPresupuesto tipo;
 
         public int Numero { get { return numero; } set { numero = value; } }
         public String Nombre { get { return nombre; } set { nombre = value; } }
@@ -25,8 +26,10 @@ namespace SOADCI
         public int ModPor { get { return modPor; } set { modPor = value; } }
         public Obra Obra { get { return obra; } set { obra = value; } }
         public Estado Estado { get { return estado; } set { estado = value; } }
+        public TipoPresupuesto Tipo { get { return tipo; } set { tipo = value; } }
 
-        public Presupuesto (int numero, String nombre, DateTime fecha, Obra obra, int modPor, Estado estado)
+
+        public Presupuesto (int numero, String nombre, DateTime fecha, Obra obra, int modPor, Estado estado, TipoPresupuesto tipo)
         {
             Numero = numero;
             Nombre = nombre;
@@ -34,6 +37,7 @@ namespace SOADCI
             ModPor = modPor;
             Obra = obra;
             Estado = estado;
+            Tipo = tipo;
         }
 
         public Presupuesto (int num)
@@ -47,6 +51,7 @@ namespace SOADCI
             ModPor = presupuestosRow.ModPor;
             Obra = new Obra(presupuestosRow.NumeroObra);
             Estado = new Estado(presupuestosRow.Estado);
+            Tipo = new TipoPresupuesto(presupuestosRow.Tipo);
         }
 
         public void BorrarPagosAsociados()
@@ -76,7 +81,7 @@ namespace SOADCI
         {
             DatabaseFinalDataSetTableAdapters.CarpetasTableAdapter carpetasTableAdapter;
             carpetasTableAdapter = new DatabaseFinalDataSetTableAdapters.CarpetasTableAdapter();
-            carpetasTableAdapter.FillByTipo(databaseFinalDataSet.Carpetas, this.Obra.Tipo.Numero);
+            carpetasTableAdapter.FillByTipo(databaseFinalDataSet.Carpetas, Tipo.Numero);
 
             String cadena= Globales.getInstancia().PATH + "\\" + Obra.Cliente.Nombre + "\\" + Obra.Nombre + "\\" + this.Nombre;
 

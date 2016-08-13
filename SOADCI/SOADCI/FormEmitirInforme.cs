@@ -51,17 +51,13 @@ namespace SOADCI
 
         private void FormEmitirInforme_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseFinalDataSet.TiposPresupuesto' table. You can move, or remove it, as needed.
+            this.tiposPresupuestoTableAdapter.Fill(this.databaseFinalDataSet.TiposPresupuesto);
             // TODO: This line of code loads data into the 'databaseFinalDataSet.Estados' table. You can move, or remove it, as needed.
-            
+
             this.estadosTableAdapter.Fill(this.databaseFinalDataSet.Estados);
             this.databaseFinalDataSet.Estados.AddEstadosRow(0, "Todos");
             comboBox2.SelectedIndex = comboBox2.FindString("Todos");
-
-
-            // TODO: This line of code loads data into the 'databaseFinalDataSet.TiposCliente' table. You can move, or remove it, as needed.
-            this.tiposClienteTableAdapter.Fill(this.databaseFinalDataSet.TiposCliente);
-            this.databaseFinalDataSet.TiposCliente.AddTiposClienteRow("Todos");
-            comboBox1.SelectedIndex = comboBox1.FindString("Todos");
 
         }
     }

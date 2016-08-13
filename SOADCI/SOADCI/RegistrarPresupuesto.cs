@@ -37,7 +37,7 @@ namespace SOADCI
         internal void LoadOrders(Obra ob)
         {
             obra = ob;
-            comboBox1.SelectedText = obra.Cliente.Nombre;
+            comboBox1.Text = obra.Cliente.Nombre; // Estaba SelectedText, probando
             clienteCorrecto = true;
             comboBox2.Enabled = true;
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
@@ -56,6 +56,8 @@ namespace SOADCI
 
         private void RegistrarPresupuesto_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseFinalDataSet.TiposPresupuesto' table. You can move, or remove it, as needed.
+            this.tiposPresupuestoTableAdapter.Fill(this.databaseFinalDataSet.TiposPresupuesto);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Estados' table. You can move, or remove it, as needed.
             this.estadosTableAdapter.Fill(this.databaseFinalDataSet.Estados);
             this.clientesTableAdapter.Fill(this.databaseFinalDataSet.Clientes);
@@ -124,14 +126,15 @@ namespace SOADCI
                 newPresupuestosRow.Fecha = dateTimePicker1.Value;
                 newPresupuestosRow.NumeroObra = (int)comboBox2.SelectedValue;
                 newPresupuestosRow.ModPor = 1; // usuario
-                newPresupuestosRow.Estado = (int)comboBox3.SelectedValue; // probando
+                newPresupuestosRow.Tipo = (int)comboBox4.SelectedValue;
+                newPresupuestosRow.Estado = (int)comboBox3.SelectedValue;
 
                 Obra temp = new Obra(newPresupuestosRow.NumeroObra);
                 Directory.CreateDirectory(Globales.getInstancia().PATH + "\\" + (new Cliente(temp.Cliente.Numero)).Nombre + "\\" + temp.Nombre + "\\" + newPresupuestosRow.Nombre);
 
                 databaseFinalDataSet.Presupuestos.Rows.Add(newPresupuestosRow);
 
-                Presupuesto nuePre = new Presupuesto(newPresupuestosRow.Numero, newPresupuestosRow.Nombre, newPresupuestosRow.Fecha, temp, newPresupuestosRow.ModPor, new Estado(newPresupuestosRow.Estado));
+                Presupuesto nuePre = new Presupuesto(newPresupuestosRow.Numero, newPresupuestosRow.Nombre, newPresupuestosRow.Fecha, temp, newPresupuestosRow.ModPor, new Estado(newPresupuestosRow.Estado), new TipoPresupuesto(newPresupuestosRow.Tipo));
                 nuePre.crearCarpetas();
 
                 try
@@ -141,6 +144,9 @@ namespace SOADCI
                     this.presupuestosTableAdapter.Update(this.databaseFinalDataSet.Presupuestos);
                     MessageBox.Show("El presupuesto ha sido registrado.", "Registrar presupuesto");
                     nuePre.Imprimir();
+                    ConsultarPresupuesto con = new ConsultarPresupuesto();
+                    con.LoadOrders(nuePre);
+                    con.ShowDialog();
                     this.Close();
                 }
                 catch (System.Exception ex)

@@ -29,7 +29,7 @@ namespace SOADCI
             ReportParameter n = new ReportParameter("Nombre",pres.Nombre);
             ReportParameter f = new ReportParameter("Fecha", pres.Fecha.Date.ToString());
             ReportParameter es = new ReportParameter("Estado", pres.Estado.Nombre);
-            ReportParameter t = new ReportParameter("TipoObra", pres.Obra.Tipo.Descripcion);
+            ReportParameter t = new ReportParameter("TipoPre", pres.Tipo.Descripcion);
             ReportParameter c = new ReportParameter("Cliente", pres.Obra.Cliente.Nombre);
             ReportParameter o = new ReportParameter("Obra", pres.Obra.Nombre);
 

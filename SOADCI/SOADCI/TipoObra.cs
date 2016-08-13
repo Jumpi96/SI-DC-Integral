@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SOADCI
 {
-    class TipoObra
+    class TipoPresupuesto
     {
         private int numero;
         private String descripcion;
@@ -14,20 +14,20 @@ namespace SOADCI
         public int Numero { get { return numero; } set { numero = value; } }
         public String Descripcion { get { return descripcion; } set { descripcion = value; } }
 
-        public TipoObra(int numero, String descripcion)
+        public TipoPresupuesto(int numero, String descripcion)
         {
             Numero = numero;
             Descripcion = descripcion;
         }
 
-        public TipoObra(int num)
+        public TipoPresupuesto(int num)
         {
 
             DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
-            DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter customersTableAdapter1;
-            customersTableAdapter1 = new DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
-            customersTableAdapter1.Fill(databaseFinalDataSet.TiposObra);
-            DatabaseFinalDataSet.TiposObraRow tiposObraRow = databaseFinalDataSet.TiposObra.FindByNumero(num);
+            DatabaseFinalDataSetTableAdapters.TiposPresupuestoTableAdapter customersTableAdapter1;
+            customersTableAdapter1 = new DatabaseFinalDataSetTableAdapters.TiposPresupuestoTableAdapter();
+            customersTableAdapter1.Fill(databaseFinalDataSet.TiposPresupuesto);
+            DatabaseFinalDataSet.TiposPresupuestoRow tiposObraRow = databaseFinalDataSet.TiposPresupuesto.FindByNumero(num);
 
             Numero = num;
             Descripcion = tiposObraRow.Descripcion;

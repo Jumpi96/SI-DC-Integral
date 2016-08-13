@@ -286,7 +286,7 @@
     <None Include="DatabaseFinalDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>DatabaseFinalDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseFinalDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="DatabaseFinalDataSet.xss">
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
