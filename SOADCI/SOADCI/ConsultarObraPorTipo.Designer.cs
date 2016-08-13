@@ -42,9 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tiposClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tiposClienteTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -163,26 +159,7 @@
             this.tiposClienteBindingSource.DataMember = "TiposCliente";
             this.tiposClienteBindingSource.DataSource = this.databaseFinalDataSet;
             // 
-            // tiposObraBindingSource
-            // 
-            this.tiposObraBindingSource.DataMember = "TiposObra";
-            this.tiposObraBindingSource.DataSource = this.databaseFinalDataSet;
-            // 
-            // tiposObraTableAdapter
-            // 
-            this.tiposObraTableAdapter.ClearBeforeFill = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DataSource = this.tiposObraBindingSource;
-            this.comboBox2.DisplayMember = "Descripcion";
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(31, 106);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.ValueMember = "Numero";
+
             // 
             // label2
             // 
@@ -228,7 +205,6 @@
             this.ClientSize = new System.Drawing.Size(549, 186);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -246,7 +222,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.obrasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,9 +233,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private DatabaseFinalDataSet databaseFinalDataSet;
-        private System.Windows.Forms.BindingSource tiposObraBindingSource;
-        private DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource tiposClienteBindingSource;
         private DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;

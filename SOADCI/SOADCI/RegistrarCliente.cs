@@ -68,8 +68,6 @@ namespace SOADCI
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposCliente' table. You can move, or remove it, as needed.
             this.tiposClienteTableAdapter.Fill(this.databaseFinalDataSet.TiposCliente);
-            // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
-            this.tiposObraTableAdapter.Fill(this.databaseFinalDataSet.TiposObra);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.Fill(this.databaseFinalDataSet.Clientes);
 

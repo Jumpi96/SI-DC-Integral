@@ -33,8 +33,6 @@ namespace SOADCI
 
         private void RegistrarObra_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
-            this.tiposObraTableAdapter.Fill(this.databaseFinalDataSet.TiposObra);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.Fill(this.databaseFinalDataSet.Clientes);
 
@@ -75,7 +73,6 @@ namespace SOADCI
                 DatabaseFinalDataSet.ObrasRow newObrasRow = databaseFinalDataSet.Obras.NewObrasRow();
 
                 newObrasRow.Nombre = textBox2.Text;
-                newObrasRow.Tipo = (int)comboBox2.SelectedValue;
                 newObrasRow.NumeroCliente = (int)comboBox1.SelectedValue;
                 newObrasRow.ModPor = 1; // Usuario
 

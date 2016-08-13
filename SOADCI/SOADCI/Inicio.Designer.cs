@@ -34,17 +34,20 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroObra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ObraNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presupuestosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.fillEnEsperaToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillEnEsperaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,20 +55,16 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presupuestosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
             this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
             this.presupuestosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             this.fillEnEsperaToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -102,7 +101,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(89, 257);
+            this.button4.Location = new System.Drawing.Point(89, 219);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(140, 23);
             this.button4.TabIndex = 5;
@@ -110,19 +109,9 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(89, 189);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(140, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Consultar obra";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(89, 286);
+            this.button6.Location = new System.Drawing.Point(89, 248);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(140, 23);
             this.button6.TabIndex = 6;
@@ -179,6 +168,20 @@
             this.Numero.ReadOnly = true;
             this.Numero.Visible = false;
             // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // NumeroObra
             // 
             this.NumeroObra.DataPropertyName = "NumeroObra";
@@ -186,6 +189,22 @@
             this.NumeroObra.Name = "NumeroObra";
             this.NumeroObra.ReadOnly = true;
             this.NumeroObra.Visible = false;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            // 
+            // ModPor
+            // 
+            this.ModPor.DataPropertyName = "ModPor";
+            this.ModPor.HeaderText = "ModPor";
+            this.ModPor.Name = "ModPor";
+            this.ModPor.ReadOnly = true;
+            this.ModPor.Visible = false;
             // 
             // ObraNombre
             // 
@@ -201,14 +220,6 @@
             this.ClienteNombre.Name = "ClienteNombre";
             this.ClienteNombre.ReadOnly = true;
             // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Visible = false;
-            // 
             // EstadoNombre
             // 
             this.EstadoNombre.DataPropertyName = "EstadoNombre";
@@ -217,13 +228,15 @@
             this.EstadoNombre.ReadOnly = true;
             this.EstadoNombre.Visible = false;
             // 
-            // ModPor
+            // presupuestosBindingSource2
             // 
-            this.ModPor.DataPropertyName = "ModPor";
-            this.ModPor.HeaderText = "ModPor";
-            this.ModPor.Name = "ModPor";
-            this.ModPor.ReadOnly = true;
-            this.ModPor.Visible = false;
+            this.presupuestosBindingSource2.DataMember = "Presupuestos";
+            this.presupuestosBindingSource2.DataSource = this.databaseFinalDataSet;
+            // 
+            // databaseFinalDataSet
+            // 
+            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
+            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fillEnEsperaToolStrip
             // 
@@ -265,7 +278,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SOADCI.Properties.Resources.linedpaperpencil32;
-            this.pictureBox3.Location = new System.Drawing.Point(51, 229);
+            this.pictureBox3.Location = new System.Drawing.Point(51, 191);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(32, 32);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -291,30 +304,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // presupuestosBindingSource2
-            // 
-            this.presupuestosBindingSource2.DataMember = "Presupuestos";
-            this.presupuestosBindingSource2.DataSource = this.databaseFinalDataSet;
-            // 
-            // databaseFinalDataSet
-            // 
-            this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
-            this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // presupuestosBindingSource
             // 
@@ -342,7 +331,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button3);
@@ -359,13 +347,13 @@
             this.Text = "Sistema de Ordenamiento de Archivos - SOA DC Integral";
             this.Load += new System.EventHandler(this.Inicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             this.fillEnEsperaToolStrip.ResumeLayout(false);
             this.fillEnEsperaToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -382,7 +370,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label2;
         private DatabaseFinalDataSet databaseFinalDataSet;

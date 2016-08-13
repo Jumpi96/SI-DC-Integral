@@ -14,21 +14,18 @@ namespace SOADCI
         private int numero;
         private String nombre;
         private Cliente cliente;
-        private TipoObra tipo;
         private int modPor;
 
         public int Numero { get { return numero; } set { numero = value; } }
         public String Nombre { get { return nombre; } set { nombre = value; } }
         public Cliente Cliente {  get { return cliente; } set { cliente = value; } }
-        public TipoObra Tipo { get { return tipo; } set { tipo = value; } }
         public int ModPor { get { return modPor; } set { modPor = value; } }
 
-        public Obra (int numero, String nombre, Cliente cliente, TipoObra tipo, int modPor)
+        public Obra (int numero, String nombre, Cliente cliente, int modPor)
         {
             Numero = numero;
             Nombre = nombre;
             Cliente = cliente;
-            Tipo = tipo;
             ModPor = modPor;
         }
 
@@ -41,7 +38,6 @@ namespace SOADCI
             Numero = num;
             Nombre = obrasRow.Nombre;
             Cliente = new Cliente(obrasRow.NumeroCliente);
-            Tipo = new TipoObra(obrasRow.Tipo);
             ModPor = modPor;
         }
 

@@ -49,14 +49,11 @@
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.ClientesTableAdapter();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
             this.tiposClienteTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tiposClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -206,14 +203,6 @@
             this.clientesBindingSource1.DataMember = "Clientes";
             this.clientesBindingSource1.DataSource = this.databaseFinalDataSet;
             // 
-            // tiposObraBindingSource
-            // 
-            this.tiposObraBindingSource.DataMember = "TiposObra";
-            this.tiposObraBindingSource.DataSource = this.databaseFinalDataSet;
-            // 
-            // tiposObraTableAdapter
-            // 
-            this.tiposObraTableAdapter.ClearBeforeFill = true;
             // 
             // tiposClienteTableAdapter
             // 
@@ -249,7 +238,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,8 +263,6 @@
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private DatabaseFinalDataSetTableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.BindingSource clientesBindingSource1;
-        private System.Windows.Forms.BindingSource tiposObraBindingSource;
-        private DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
         private System.Windows.Forms.BindingSource tiposClienteBindingSource;
         private DatabaseFinalDataSetTableAdapters.TiposClienteTableAdapter tiposClienteTableAdapter;
     }

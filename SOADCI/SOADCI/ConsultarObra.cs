@@ -46,8 +46,6 @@ namespace SOADCI
         private void ConsultarObra_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
-            this.tiposObraTableAdapter.Fill(this.databaseFinalDataSet.TiposObra);
-            comboBox1.SelectedValue = obra.Tipo.Numero;
             this.obrasTableAdapter.Fill(this.databaseFinalDataSet.Obras);
 
         }
@@ -111,7 +109,6 @@ namespace SOADCI
         {
             DatabaseFinalDataSet.ObrasRow obrasRow = databaseFinalDataSet.Obras.FindByNumero(obra.Numero);
 
-            obrasRow.Tipo = (int)comboBox1.SelectedValue;
             obrasRow.Nombre = textBox3.Text;
 
             try
@@ -124,7 +121,7 @@ namespace SOADCI
                 this.Validate();
                 this.obrasBindingSource.EndEdit();
                 this.obrasTableAdapter.Update(this.databaseFinalDataSet.Obras);
-                obra = new Obra(obra.Numero, obrasRow.Nombre, obra.Cliente, new TipoObra(obrasRow.Tipo), 1);
+                obra = new Obra(obra.Numero, obrasRow.Nombre, obra.Cliente, 1);
                 MessageBox.Show("La obra ha sido editada.");
 
             }

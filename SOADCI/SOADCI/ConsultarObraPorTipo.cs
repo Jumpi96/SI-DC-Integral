@@ -22,7 +22,7 @@ namespace SOADCI
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposCliente' table. You can move, or remove it, as needed.
             this.tiposClienteTableAdapter.Fill(this.databaseFinalDataSet.TiposCliente);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
-            this.tiposObraTableAdapter.Fill(this.databaseFinalDataSet.TiposObra);
+            //this.tiposObraTableAdapter.Fill(this.databaseFinalDataSet.TiposObra);
 
         }
 
@@ -54,7 +54,7 @@ namespace SOADCI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.obrasTableAdapter.FillObrasPorTipoObra(this.databaseFinalDataSet.Obras, (int)comboBox2.SelectedValue);
+            //this.obrasTableAdapter.FillObrasPorTipoObra(this.databaseFinalDataSet.Obras, (int)comboBox2.SelectedValue);
         }
     }
 }

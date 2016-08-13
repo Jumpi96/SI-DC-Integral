@@ -41,26 +41,22 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tiposObraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tiposObraTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.presupuestosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroObraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presupuestosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +65,7 @@
             this.presupuestosBindingSource.DataMember = "Presupuestos";
             this.presupuestosBindingSource.DataSource = this.databaseFinalDataSet;
             // 
-            // databaseLocalDataSet
+            // databaseFinalDataSet
             // 
             this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
             this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
@@ -89,25 +85,26 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
+            this.TipoPre,
             this.numeroDataGridViewTextBoxColumn,
             this.numeroObraDataGridViewTextBoxColumn,
             this.modPorDataGridViewTextBoxColumn,
             this.Estado});
             this.dataGridView1.DataSource = this.presupuestosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(429, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(329, 35);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(254, 233);
+            this.dataGridView1.Size = new System.Drawing.Size(362, 233);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // button6
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(105, 224);
+            this.button6.Location = new System.Drawing.Point(112, 211);
             this.button6.Name = "button6";
             this.button6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button6.Size = new System.Drawing.Size(75, 44);
@@ -118,7 +115,7 @@
             // button5
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(24, 224);
+            this.button5.Location = new System.Drawing.Point(31, 211);
             this.button5.Name = "button5";
             this.button5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button5.Size = new System.Drawing.Size(75, 44);
@@ -130,7 +127,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(426, 16);
+            this.label1.Location = new System.Drawing.Point(344, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 26;
@@ -172,39 +169,9 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Número";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Tipo";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.tiposObraBindingSource;
-            this.comboBox1.DisplayMember = "Descripcion";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 92);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.ValueMember = "Numero";
-            // 
-            // tiposObraBindingSource
-            // 
-            this.tiposObraBindingSource.DataMember = "TiposObra";
-            this.tiposObraBindingSource.DataSource = this.databaseFinalDataSet;
-            // 
-            // tiposObraTableAdapter
-            // 
-            this.tiposObraTableAdapter.ClearBeforeFill = true;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(237, 115);
+            this.button1.Location = new System.Drawing.Point(145, 109);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -214,7 +181,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(318, 115);
+            this.button2.Location = new System.Drawing.Point(226, 109);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -241,13 +208,18 @@
             // button3
             // 
             this.button3.Image = global::SOADCI.Properties.Resources.linedpaperpencil32;
-            this.button3.Location = new System.Drawing.Point(186, 224);
+            this.button3.Location = new System.Drawing.Point(193, 211);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button3.Size = new System.Drawing.Size(75, 44);
             this.button3.TabIndex = 10;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // presupuestosBindingSource1
+            // 
+            this.presupuestosBindingSource1.DataMember = "Presupuestos";
+            this.presupuestosBindingSource1.DataSource = this.databaseFinalDataSet;
             // 
             // fechaDataGridViewTextBoxColumn
             // 
@@ -262,6 +234,13 @@
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // TipoPre
+            // 
+            this.TipoPre.DataPropertyName = "TipoPre";
+            this.TipoPre.HeaderText = "Tipo";
+            this.TipoPre.Name = "TipoPre";
+            this.TipoPre.ReadOnly = true;
             // 
             // numeroDataGridViewTextBoxColumn
             // 
@@ -295,11 +274,6 @@
             this.Estado.ReadOnly = true;
             this.Estado.Visible = false;
             // 
-            // presupuestosBindingSource1
-            // 
-            this.presupuestosBindingSource1.DataMember = "Presupuestos";
-            this.presupuestosBindingSource1.DataSource = this.databaseFinalDataSet;
-            // 
             // ConsultarObra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,8 +284,6 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -331,7 +303,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposObraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -350,21 +321,18 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource tiposObraBindingSource;
-        private DatabaseFinalDataSetTableAdapters.TiposObraTableAdapter tiposObraTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource presupuestosBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoPre;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroObraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modPorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.BindingSource presupuestosBindingSource1;
     }
 }

@@ -40,13 +40,11 @@ namespace SOADCI {
         
         private TiposClienteDataTable tableTiposCliente;
         
-        private TiposObraDataTable tableTiposObra;
+        private TiposPresupuestoDataTable tableTiposPresupuesto;
         
         private UsuariosDataTable tableUsuarios;
         
         private InfPresupuestosDataTable tableInfPresupuestos;
-        
-        private global::System.Data.DataRelation relationFK_Carpetas_TiposObra;
         
         private global::System.Data.DataRelation relationFK_Clientes_ToTiposCliente;
         
@@ -57,8 +55,6 @@ namespace SOADCI {
         private global::System.Data.DataRelation relationFK_Contactos_ToUsuarios;
         
         private global::System.Data.DataRelation relationFK_Obras_ToClientes;
-        
-        private global::System.Data.DataRelation relationFK_Obras_ToTiposObra;
         
         private global::System.Data.DataRelation relationFK_Obras_ToUsuarios;
         
@@ -124,8 +120,8 @@ namespace SOADCI {
                 if ((ds.Tables["TiposCliente"] != null)) {
                     base.Tables.Add(new TiposClienteDataTable(ds.Tables["TiposCliente"]));
                 }
-                if ((ds.Tables["TiposObra"] != null)) {
-                    base.Tables.Add(new TiposObraDataTable(ds.Tables["TiposObra"]));
+                if ((ds.Tables["TiposPresupuesto"] != null)) {
+                    base.Tables.Add(new TiposPresupuestoDataTable(ds.Tables["TiposPresupuesto"]));
                 }
                 if ((ds.Tables["Usuarios"] != null)) {
                     base.Tables.Add(new UsuariosDataTable(ds.Tables["Usuarios"]));
@@ -235,9 +231,9 @@ namespace SOADCI {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TiposObraDataTable TiposObra {
+        public TiposPresupuestoDataTable TiposPresupuesto {
             get {
-                return this.tableTiposObra;
+                return this.tableTiposPresupuesto;
             }
         }
         
@@ -352,8 +348,8 @@ namespace SOADCI {
                 if ((ds.Tables["TiposCliente"] != null)) {
                     base.Tables.Add(new TiposClienteDataTable(ds.Tables["TiposCliente"]));
                 }
-                if ((ds.Tables["TiposObra"] != null)) {
-                    base.Tables.Add(new TiposObraDataTable(ds.Tables["TiposObra"]));
+                if ((ds.Tables["TiposPresupuesto"] != null)) {
+                    base.Tables.Add(new TiposPresupuestoDataTable(ds.Tables["TiposPresupuesto"]));
                 }
                 if ((ds.Tables["Usuarios"] != null)) {
                     base.Tables.Add(new UsuariosDataTable(ds.Tables["Usuarios"]));
@@ -442,10 +438,10 @@ namespace SOADCI {
                     this.tableTiposCliente.InitVars();
                 }
             }
-            this.tableTiposObra = ((TiposObraDataTable)(base.Tables["TiposObra"]));
+            this.tableTiposPresupuesto = ((TiposPresupuestoDataTable)(base.Tables["TiposPresupuesto"]));
             if ((initTable == true)) {
-                if ((this.tableTiposObra != null)) {
-                    this.tableTiposObra.InitVars();
+                if ((this.tableTiposPresupuesto != null)) {
+                    this.tableTiposPresupuesto.InitVars();
                 }
             }
             this.tableUsuarios = ((UsuariosDataTable)(base.Tables["Usuarios"]));
@@ -460,13 +456,11 @@ namespace SOADCI {
                     this.tableInfPresupuestos.InitVars();
                 }
             }
-            this.relationFK_Carpetas_TiposObra = this.Relations["FK_Carpetas_TiposObra"];
             this.relationFK_Clientes_ToTiposCliente = this.Relations["FK_Clientes_ToTiposCliente"];
             this.relationFK_Clientes_ToUsuarios = this.Relations["FK_Clientes_ToUsuarios"];
             this.relationFK_Contactos_ToClientes = this.Relations["FK_Contactos_ToClientes"];
             this.relationFK_Contactos_ToUsuarios = this.Relations["FK_Contactos_ToUsuarios"];
             this.relationFK_Obras_ToClientes = this.Relations["FK_Obras_ToClientes"];
-            this.relationFK_Obras_ToTiposObra = this.Relations["FK_Obras_ToTiposObra"];
             this.relationFK_Obras_ToUsuarios = this.Relations["FK_Obras_ToUsuarios"];
             this.relationFK_Pagos_ToPresupuestos = this.Relations["FK_Pagos_ToPresupuestos"];
             this.relationFK_Pagos_ToUsuarios = this.Relations["FK_Pagos_ToUsuarios"];
@@ -499,16 +493,27 @@ namespace SOADCI {
             base.Tables.Add(this.tablePresupuestos);
             this.tableTiposCliente = new TiposClienteDataTable();
             base.Tables.Add(this.tableTiposCliente);
-            this.tableTiposObra = new TiposObraDataTable();
-            base.Tables.Add(this.tableTiposObra);
+            this.tableTiposPresupuesto = new TiposPresupuestoDataTable();
+            base.Tables.Add(this.tableTiposPresupuesto);
             this.tableUsuarios = new UsuariosDataTable();
             base.Tables.Add(this.tableUsuarios);
             this.tableInfPresupuestos = new InfPresupuestosDataTable();
             base.Tables.Add(this.tableInfPresupuestos);
-            this.relationFK_Carpetas_TiposObra = new global::System.Data.DataRelation("FK_Carpetas_TiposObra", new global::System.Data.DataColumn[] {
-                        this.tableTiposObra.NumeroColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCarpetas.TipoColumn}, false);
-            this.Relations.Add(this.relationFK_Carpetas_TiposObra);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Carpetas_TiposCliente", new global::System.Data.DataColumn[] {
+                        this.tableTiposCliente.NumeroColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCarpetas.TipoColumn});
+            this.tableCarpetas.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_TiposPresupuesto_Presupuestos", new global::System.Data.DataColumn[] {
+                        this.tableTiposPresupuesto.NumeroColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePresupuestos.TipoColumn});
+            this.tablePresupuestos.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_Clientes_ToTiposCliente = new global::System.Data.DataRelation("FK_Clientes_ToTiposCliente", new global::System.Data.DataColumn[] {
                         this.tableTiposCliente.NumeroColumn}, new global::System.Data.DataColumn[] {
                         this.tableClientes.TipoColumn}, false);
@@ -529,10 +534,6 @@ namespace SOADCI {
                         this.tableClientes.NumeroColumn}, new global::System.Data.DataColumn[] {
                         this.tableObras.NumeroClienteColumn}, false);
             this.Relations.Add(this.relationFK_Obras_ToClientes);
-            this.relationFK_Obras_ToTiposObra = new global::System.Data.DataRelation("FK_Obras_ToTiposObra", new global::System.Data.DataColumn[] {
-                        this.tableTiposObra.NumeroColumn}, new global::System.Data.DataColumn[] {
-                        this.tableObras.TipoColumn}, false);
-            this.Relations.Add(this.relationFK_Obras_ToTiposObra);
             this.relationFK_Obras_ToUsuarios = new global::System.Data.DataRelation("FK_Obras_ToUsuarios", new global::System.Data.DataColumn[] {
                         this.tableUsuarios.NumeroColumn}, new global::System.Data.DataColumn[] {
                         this.tableObras.ModPorColumn}, false);
@@ -609,7 +610,7 @@ namespace SOADCI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeTiposObra() {
+        private bool ShouldSerializeTiposPresupuesto() {
             return false;
         }
         
@@ -705,7 +706,7 @@ namespace SOADCI {
         public delegate void TiposClienteRowChangeEventHandler(object sender, TiposClienteRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void TiposObraRowChangeEventHandler(object sender, TiposObraRowChangeEvent e);
+        public delegate void TiposPresupuestoRowChangeEventHandler(object sender, TiposPresupuestoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void UsuariosRowChangeEventHandler(object sender, UsuariosRowChangeEvent e);
@@ -820,15 +821,12 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CarpetasRow AddCarpetasRow(string Nombre, TiposObraRow parentTiposObraRowByFK_Carpetas_TiposObra) {
+            public CarpetasRow AddCarpetasRow(string Nombre, int Tipo) {
                 CarpetasRow rowCarpetasRow = ((CarpetasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nombre,
-                        null};
-                if ((parentTiposObraRowByFK_Carpetas_TiposObra != null)) {
-                    columnValuesArray[2] = parentTiposObraRowByFK_Carpetas_TiposObra[0];
-                }
+                        Tipo};
                 rowCarpetasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCarpetasRow);
                 return rowCarpetasRow;
@@ -2029,8 +2027,6 @@ namespace SOADCI {
             
             private global::System.Data.DataColumn columnNumeroCliente;
             
-            private global::System.Data.DataColumn columnTipo;
-            
             private global::System.Data.DataColumn columnModPor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2092,14 +2088,6 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TipoColumn {
-                get {
-                    return this.columnTipo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn ModPorColumn {
                 get {
                     return this.columnModPor;
@@ -2143,22 +2131,18 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ObrasRow AddObrasRow(string Nombre, ClientesRow parentClientesRowByFK_Obras_ToClientes, TiposObraRow parentTiposObraRowByFK_Obras_ToTiposObra, UsuariosRow parentUsuariosRowByFK_Obras_ToUsuarios) {
+            public ObrasRow AddObrasRow(string Nombre, ClientesRow parentClientesRowByFK_Obras_ToClientes, UsuariosRow parentUsuariosRowByFK_Obras_ToUsuarios) {
                 ObrasRow rowObrasRow = ((ObrasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nombre,
                         null,
-                        null,
                         null};
                 if ((parentClientesRowByFK_Obras_ToClientes != null)) {
                     columnValuesArray[2] = parentClientesRowByFK_Obras_ToClientes[0];
                 }
-                if ((parentTiposObraRowByFK_Obras_ToTiposObra != null)) {
-                    columnValuesArray[3] = parentTiposObraRowByFK_Obras_ToTiposObra[0];
-                }
                 if ((parentUsuariosRowByFK_Obras_ToUsuarios != null)) {
-                    columnValuesArray[4] = parentUsuariosRowByFK_Obras_ToUsuarios[0];
+                    columnValuesArray[3] = parentUsuariosRowByFK_Obras_ToUsuarios[0];
                 }
                 rowObrasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowObrasRow);
@@ -2192,7 +2176,6 @@ namespace SOADCI {
                 this.columnNumero = base.Columns["Numero"];
                 this.columnNombre = base.Columns["Nombre"];
                 this.columnNumeroCliente = base.Columns["NumeroCliente"];
-                this.columnTipo = base.Columns["Tipo"];
                 this.columnModPor = base.Columns["ModPor"];
             }
             
@@ -2205,8 +2188,6 @@ namespace SOADCI {
                 base.Columns.Add(this.columnNombre);
                 this.columnNumeroCliente = new global::System.Data.DataColumn("NumeroCliente", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumeroCliente);
-                this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTipo);
                 this.columnModPor = new global::System.Data.DataColumn("ModPor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModPor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -2220,7 +2201,6 @@ namespace SOADCI {
                 this.columnNombre.AllowDBNull = false;
                 this.columnNombre.MaxLength = 40;
                 this.columnNumeroCliente.AllowDBNull = false;
-                this.columnTipo.AllowDBNull = false;
                 this.columnModPor.AllowDBNull = false;
             }
             
@@ -2365,6 +2345,8 @@ namespace SOADCI {
             
             private global::System.Data.DataColumn columnCreadoPor;
             
+            private global::System.Data.DataColumn columnDetalle;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PagosDataTable() {
@@ -2440,6 +2422,14 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DetalleColumn {
+                get {
+                    return this.columnDetalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2475,14 +2465,15 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PagosRow AddPagosRow(System.DateTime Fecha, PresupuestosRow parentPresupuestosRowByFK_Pagos_ToPresupuestos, decimal Monto, UsuariosRow parentUsuariosRowByFK_Pagos_ToUsuarios) {
+            public PagosRow AddPagosRow(System.DateTime Fecha, PresupuestosRow parentPresupuestosRowByFK_Pagos_ToPresupuestos, decimal Monto, UsuariosRow parentUsuariosRowByFK_Pagos_ToUsuarios, string Detalle) {
                 PagosRow rowPagosRow = ((PagosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fecha,
                         null,
                         Monto,
-                        null};
+                        null,
+                        Detalle};
                 if ((parentPresupuestosRowByFK_Pagos_ToPresupuestos != null)) {
                     columnValuesArray[2] = parentPresupuestosRowByFK_Pagos_ToPresupuestos[0];
                 }
@@ -2523,6 +2514,7 @@ namespace SOADCI {
                 this.columnNumeroPresupuesto = base.Columns["NumeroPresupuesto"];
                 this.columnMonto = base.Columns["Monto"];
                 this.columnCreadoPor = base.Columns["CreadoPor"];
+                this.columnDetalle = base.Columns["Detalle"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2538,6 +2530,8 @@ namespace SOADCI {
                 base.Columns.Add(this.columnMonto);
                 this.columnCreadoPor = new global::System.Data.DataColumn("CreadoPor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreadoPor);
+                this.columnDetalle = new global::System.Data.DataColumn("Detalle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDetalle);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNumero}, true));
                 this.columnNumero.AutoIncrement = true;
@@ -2695,6 +2689,8 @@ namespace SOADCI {
             
             private global::System.Data.DataColumn columnEstado;
             
+            private global::System.Data.DataColumn columnTipo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PresupuestosDataTable() {
@@ -2778,6 +2774,14 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TipoColumn {
+                get {
+                    return this.columnTipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2813,7 +2817,7 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PresupuestosRow AddPresupuestosRow(string Nombre, System.DateTime Fecha, ObrasRow parentObrasRowByFK_Presupuestos_ToObras, UsuariosRow parentUsuariosRowByFK_Presupuestos_ToUsuarios, EstadosRow parentEstadosRowByFK_Presupuestos_ToEstados) {
+            public PresupuestosRow AddPresupuestosRow(string Nombre, System.DateTime Fecha, ObrasRow parentObrasRowByFK_Presupuestos_ToObras, UsuariosRow parentUsuariosRowByFK_Presupuestos_ToUsuarios, EstadosRow parentEstadosRowByFK_Presupuestos_ToEstados, int Tipo) {
                 PresupuestosRow rowPresupuestosRow = ((PresupuestosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2821,7 +2825,8 @@ namespace SOADCI {
                         Fecha,
                         null,
                         null,
-                        null};
+                        null,
+                        Tipo};
                 if ((parentObrasRowByFK_Presupuestos_ToObras != null)) {
                     columnValuesArray[3] = parentObrasRowByFK_Presupuestos_ToObras[0];
                 }
@@ -2866,6 +2871,7 @@ namespace SOADCI {
                 this.columnNumeroObra = base.Columns["NumeroObra"];
                 this.columnModPor = base.Columns["ModPor"];
                 this.columnEstado = base.Columns["Estado"];
+                this.columnTipo = base.Columns["Tipo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2883,6 +2889,8 @@ namespace SOADCI {
                 base.Columns.Add(this.columnModPor);
                 this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado);
+                this.columnTipo = new global::System.Data.DataColumn("Tipo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNumero}, true));
                 this.columnNumero.AutoIncrement = true;
@@ -3305,7 +3313,7 @@ namespace SOADCI {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TiposObraDataTable : global::System.Data.TypedTableBase<TiposObraRow> {
+        public partial class TiposPresupuestoDataTable : global::System.Data.TypedTableBase<TiposPresupuestoRow> {
             
             private global::System.Data.DataColumn columnNumero;
             
@@ -3313,8 +3321,8 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraDataTable() {
-                this.TableName = "TiposObra";
+            public TiposPresupuestoDataTable() {
+                this.TableName = "TiposPresupuesto";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3322,7 +3330,7 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TiposObraDataTable(global::System.Data.DataTable table) {
+            internal TiposPresupuestoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3339,7 +3347,7 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected TiposObraDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TiposPresupuestoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -3371,53 +3379,53 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraRow this[int index] {
+            public TiposPresupuestoRow this[int index] {
                 get {
-                    return ((TiposObraRow)(this.Rows[index]));
+                    return ((TiposPresupuestoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TiposObraRowChangeEventHandler TiposObraRowChanging;
+            public event TiposPresupuestoRowChangeEventHandler TiposPresupuestoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TiposObraRowChangeEventHandler TiposObraRowChanged;
+            public event TiposPresupuestoRowChangeEventHandler TiposPresupuestoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TiposObraRowChangeEventHandler TiposObraRowDeleting;
+            public event TiposPresupuestoRowChangeEventHandler TiposPresupuestoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TiposObraRowChangeEventHandler TiposObraRowDeleted;
+            public event TiposPresupuestoRowChangeEventHandler TiposPresupuestoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddTiposObraRow(TiposObraRow row) {
+            public void AddTiposPresupuestoRow(TiposPresupuestoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraRow AddTiposObraRow(string Descripcion) {
-                TiposObraRow rowTiposObraRow = ((TiposObraRow)(this.NewRow()));
+            public TiposPresupuestoRow AddTiposPresupuestoRow(string Descripcion) {
+                TiposPresupuestoRow rowTiposPresupuestoRow = ((TiposPresupuestoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Descripcion};
-                rowTiposObraRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTiposObraRow);
-                return rowTiposObraRow;
+                rowTiposPresupuestoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTiposPresupuestoRow);
+                return rowTiposPresupuestoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraRow FindByNumero(int Numero) {
-                return ((TiposObraRow)(this.Rows.Find(new object[] {
+            public TiposPresupuestoRow FindByNumero(int Numero) {
+                return ((TiposPresupuestoRow)(this.Rows.Find(new object[] {
                             Numero})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TiposObraDataTable cln = ((TiposObraDataTable)(base.Clone()));
+                TiposPresupuestoDataTable cln = ((TiposPresupuestoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3425,7 +3433,7 @@ namespace SOADCI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TiposObraDataTable();
+                return new TiposPresupuestoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3456,28 +3464,28 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraRow NewTiposObraRow() {
-                return ((TiposObraRow)(this.NewRow()));
+            public TiposPresupuestoRow NewTiposPresupuestoRow() {
+                return ((TiposPresupuestoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TiposObraRow(builder);
+                return new TiposPresupuestoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TiposObraRow);
+                return typeof(TiposPresupuestoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TiposObraRowChanged != null)) {
-                    this.TiposObraRowChanged(this, new TiposObraRowChangeEvent(((TiposObraRow)(e.Row)), e.Action));
+                if ((this.TiposPresupuestoRowChanged != null)) {
+                    this.TiposPresupuestoRowChanged(this, new TiposPresupuestoRowChangeEvent(((TiposPresupuestoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3485,8 +3493,8 @@ namespace SOADCI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TiposObraRowChanging != null)) {
-                    this.TiposObraRowChanging(this, new TiposObraRowChangeEvent(((TiposObraRow)(e.Row)), e.Action));
+                if ((this.TiposPresupuestoRowChanging != null)) {
+                    this.TiposPresupuestoRowChanging(this, new TiposPresupuestoRowChangeEvent(((TiposPresupuestoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3494,8 +3502,8 @@ namespace SOADCI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TiposObraRowDeleted != null)) {
-                    this.TiposObraRowDeleted(this, new TiposObraRowChangeEvent(((TiposObraRow)(e.Row)), e.Action));
+                if ((this.TiposPresupuestoRowDeleted != null)) {
+                    this.TiposPresupuestoRowDeleted(this, new TiposPresupuestoRowChangeEvent(((TiposPresupuestoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3503,14 +3511,14 @@ namespace SOADCI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TiposObraRowDeleting != null)) {
-                    this.TiposObraRowDeleting(this, new TiposObraRowChangeEvent(((TiposObraRow)(e.Row)), e.Action));
+                if ((this.TiposPresupuestoRowDeleting != null)) {
+                    this.TiposPresupuestoRowDeleting(this, new TiposPresupuestoRowChangeEvent(((TiposPresupuestoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveTiposObraRow(TiposObraRow row) {
+            public void RemoveTiposPresupuestoRow(TiposPresupuestoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3537,7 +3545,7 @@ namespace SOADCI {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TiposObraDataTable";
+                attribute2.FixedValue = "TiposPresupuestoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4293,17 +4301,6 @@ namespace SOADCI {
                     this[this.tableCarpetas.TipoColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraRow TiposObraRow {
-                get {
-                    return ((TiposObraRow)(this.GetParentRow(this.Table.ParentRelations["FK_Carpetas_TiposObra"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Carpetas_TiposObra"]);
-                }
-            }
         }
         
         /// <summary>
@@ -4783,17 +4780,6 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Tipo {
-                get {
-                    return ((int)(this[this.tableObras.TipoColumn]));
-                }
-                set {
-                    this[this.tableObras.TipoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ModPor {
                 get {
                     return ((int)(this[this.tableObras.ModPorColumn]));
@@ -4811,17 +4797,6 @@ namespace SOADCI {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Obras_ToClientes"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraRow TiposObraRow {
-                get {
-                    return ((TiposObraRow)(this.GetParentRow(this.Table.ParentRelations["FK_Obras_ToTiposObra"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Obras_ToTiposObra"]);
                 }
             }
             
@@ -4919,6 +4894,22 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Detalle {
+                get {
+                    try {
+                        return ((string)(this[this.tablePagos.DetalleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Detalle\' in table \'Pagos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePagos.DetalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PresupuestosRow PresupuestosRow {
                 get {
                     return ((PresupuestosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Pagos_ToPresupuestos"])));
@@ -4937,6 +4928,18 @@ namespace SOADCI {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Pagos_ToUsuarios"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDetalleNull() {
+                return this.IsNull(this.tablePagos.DetalleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDetalleNull() {
+                this[this.tablePagos.DetalleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5027,6 +5030,22 @@ namespace SOADCI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Tipo {
+                get {
+                    try {
+                        return ((int)(this[this.tablePresupuestos.TipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tipo\' in table \'Presupuestos\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePresupuestos.TipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EstadosRow EstadosRow {
                 get {
                     return ((EstadosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Presupuestos_ToEstados"])));
@@ -5068,6 +5087,18 @@ namespace SOADCI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEstadoNull() {
                 this[this.tablePresupuestos.EstadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTipoNull() {
+                return this.IsNull(this.tablePresupuestos.TipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTipoNull() {
+                this[this.tablePresupuestos.TipoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5133,25 +5164,25 @@ namespace SOADCI {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TiposObraRow : global::System.Data.DataRow {
+        public partial class TiposPresupuestoRow : global::System.Data.DataRow {
             
-            private TiposObraDataTable tableTiposObra;
+            private TiposPresupuestoDataTable tableTiposPresupuesto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TiposObraRow(global::System.Data.DataRowBuilder rb) : 
+            internal TiposPresupuestoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTiposObra = ((TiposObraDataTable)(this.Table));
+                this.tableTiposPresupuesto = ((TiposPresupuestoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Numero {
                 get {
-                    return ((int)(this[this.tableTiposObra.NumeroColumn]));
+                    return ((int)(this[this.tableTiposPresupuesto.NumeroColumn]));
                 }
                 set {
-                    this[this.tableTiposObra.NumeroColumn] = value;
+                    this[this.tableTiposPresupuesto.NumeroColumn] = value;
                 }
             }
             
@@ -5159,32 +5190,10 @@ namespace SOADCI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Descripcion {
                 get {
-                    return ((string)(this[this.tableTiposObra.DescripcionColumn]));
+                    return ((string)(this[this.tableTiposPresupuesto.DescripcionColumn]));
                 }
                 set {
-                    this[this.tableTiposObra.DescripcionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CarpetasRow[] GetCarpetasRows() {
-                if ((this.Table.ChildRelations["FK_Carpetas_TiposObra"] == null)) {
-                    return new CarpetasRow[0];
-                }
-                else {
-                    return ((CarpetasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Carpetas_TiposObra"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ObrasRow[] GetObrasRows() {
-                if ((this.Table.ChildRelations["FK_Obras_ToTiposObra"] == null)) {
-                    return new ObrasRow[0];
-                }
-                else {
-                    return ((ObrasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Obras_ToTiposObra"])));
+                    this[this.tableTiposPresupuesto.DescripcionColumn] = value;
                 }
             }
         }
@@ -5812,22 +5821,22 @@ namespace SOADCI {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class TiposObraRowChangeEvent : global::System.EventArgs {
+        public class TiposPresupuestoRowChangeEvent : global::System.EventArgs {
             
-            private TiposObraRow eventRow;
+            private TiposPresupuestoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraRowChangeEvent(TiposObraRow row, global::System.Data.DataRowAction action) {
+            public TiposPresupuestoRowChangeEvent(TiposPresupuestoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TiposObraRow Row {
+            public TiposPresupuestoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7729,43 +7738,38 @@ SELECT Numero, Nombre, Descripcion, NumeroCliente, Telefono, Correo, ModPor FROM
             tableMapping.ColumnMappings.Add("Numero", "Numero");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
             tableMapping.ColumnMappings.Add("NumeroCliente", "NumeroCliente");
-            tableMapping.ColumnMappings.Add("Tipo", "Tipo");
             tableMapping.ColumnMappings.Add("ModPor", "ModPor");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Obras] WHERE (([Numero] = @Original_Numero) AND ([Nombre] = @O" +
-                "riginal_Nombre) AND ([NumeroCliente] = @Original_NumeroCliente) AND ([Tipo] = @O" +
-                "riginal_Tipo) AND ([ModPor] = @Original_ModPor))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Obras] WHERE (([Numero] = @Original_Numero) AND ([Nombre] = @Origina" +
+                "l_Nombre) AND ([NumeroCliente] = @Original_NumeroCliente) AND ([ModPor] = @Origi" +
+                "nal_ModPor))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Numero", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModPor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Obras] ([Nombre], [NumeroCliente], [Tipo], [ModPor]) VALUES (@" +
-                "Nombre, @NumeroCliente, @Tipo, @ModPor);\r\nSELECT Numero, Nombre, NumeroCliente, " +
-                "Tipo, ModPor FROM Obras WHERE (Numero = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Obras] ([Nombre], [NumeroCliente], [ModPor]) VALUES (@Nombre, @Numer" +
+                "oCliente, @ModPor);\r\nSELECT Numero, Nombre, NumeroCliente, ModPor FROM Obras WHE" +
+                "RE (Numero = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModPor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModPor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Obras] SET [Nombre] = @Nombre, [NumeroCliente] = @NumeroCliente, [Tipo] = @Tipo, [ModPor] = @ModPor WHERE (([Numero] = @Original_Numero) AND ([Nombre] = @Original_Nombre) AND ([NumeroCliente] = @Original_NumeroCliente) AND ([Tipo] = @Original_Tipo) AND ([ModPor] = @Original_ModPor));
-SELECT Numero, Nombre, NumeroCliente, Tipo, ModPor FROM Obras WHERE (Numero = @Numero)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Obras] SET [Nombre] = @Nombre, [NumeroCliente] = @NumeroCliente, [ModPor] = @ModPor WHERE (([Numero] = @Original_Numero) AND ([Nombre] = @Original_Nombre) AND ([NumeroCliente] = @Original_NumeroCliente) AND ([ModPor] = @Original_ModPor));
+SELECT Numero, Nombre, NumeroCliente, ModPor FROM Obras WHERE (Numero = @Numero)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ModPor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModPor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Numero", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nombre", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ModPor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ModPor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -7783,7 +7787,7 @@ SELECT Numero, Nombre, NumeroCliente, Tipo, ModPor FROM Obras WHERE (Numero = @N
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Numero, Nombre, NumeroCliente, Tipo, ModPor FROM dbo.Obras";
+            this._commandCollection[0].CommandText = "SELECT Numero, Nombre, NumeroCliente, ModPor FROM Obras";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -7792,10 +7796,8 @@ SELECT Numero, Nombre, NumeroCliente, Tipo, ModPor FROM Obras WHERE (Numero = @N
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Numero", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        Obras.Numero, Obras.Nombre, Obras.ModPor, TiposObra.Descripcion, Obras.Tipo, Obras.NumeroCliente
-FROM            Obras INNER JOIN
-                         TiposObra ON Obras.Tipo = TiposObra.Numero
-WHERE        (Obras.NumeroCliente = @NumCli)";
+            this._commandCollection[2].CommandText = "SELECT        Numero, Nombre, ModPor, NumeroCliente\r\nFROM            Obras\r\nWHERE" +
+                "        (NumeroCliente = @NumCli)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumCli", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -7916,7 +7918,7 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Numero, string Original_Nombre, int Original_NumeroCliente, int Original_Tipo, int Original_ModPor) {
+        public virtual int Delete(int Original_Numero, string Original_Nombre, int Original_NumeroCliente, int Original_ModPor) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Numero));
             if ((Original_Nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_Nombre");
@@ -7925,8 +7927,7 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nombre));
             }
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_NumeroCliente));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Tipo));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ModPor));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_ModPor));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7947,7 +7948,7 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nombre, int NumeroCliente, int Tipo, int ModPor) {
+        public virtual int Insert(string Nombre, int NumeroCliente, int ModPor) {
             if ((Nombre == null)) {
                 throw new global::System.ArgumentNullException("Nombre");
             }
@@ -7955,8 +7956,7 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nombre));
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(NumeroCliente));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Tipo));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ModPor));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ModPor));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7977,7 +7977,7 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre, int NumeroCliente, int Tipo, int ModPor, int Original_Numero, string Original_Nombre, int Original_NumeroCliente, int Original_Tipo, int Original_ModPor, int Numero) {
+        public virtual int Update(string Nombre, int NumeroCliente, int ModPor, int Original_Numero, string Original_Nombre, int Original_NumeroCliente, int Original_ModPor, int Numero) {
             if ((Nombre == null)) {
                 throw new global::System.ArgumentNullException("Nombre");
             }
@@ -7985,19 +7985,17 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nombre));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(NumeroCliente));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Tipo));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ModPor));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Numero));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ModPor));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Numero));
             if ((Original_Nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_Nombre");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nombre));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Nombre));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_NumeroCliente));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Tipo));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ModPor));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Numero));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_NumeroCliente));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ModPor));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Numero));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8018,8 +8016,8 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nombre, int NumeroCliente, int Tipo, int ModPor, int Original_Numero, string Original_Nombre, int Original_NumeroCliente, int Original_Tipo, int Original_ModPor) {
-            return this.Update(Nombre, NumeroCliente, Tipo, ModPor, Original_Numero, Original_Nombre, Original_NumeroCliente, Original_Tipo, Original_ModPor, Original_Numero);
+        public virtual int Update(string Nombre, int NumeroCliente, int ModPor, int Original_Numero, string Original_Nombre, int Original_NumeroCliente, int Original_ModPor) {
+            return this.Update(Nombre, NumeroCliente, ModPor, Original_Numero, Original_Nombre, Original_NumeroCliente, Original_ModPor, Original_Numero);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8173,6 +8171,7 @@ WHERE        (TiposCliente.Numero = @NumeroTipo)";
             tableMapping.ColumnMappings.Add("NumeroPresupuesto", "NumeroPresupuesto");
             tableMapping.ColumnMappings.Add("Monto", "Monto");
             tableMapping.ColumnMappings.Add("CreadoPor", "CreadoPor");
+            tableMapping.ColumnMappings.Add("Detalle", "Detalle");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -8549,6 +8548,7 @@ SELECT Numero, Fecha, NumeroPresupuesto, Monto, CreadoPor FROM Pagos WHERE (Nume
             tableMapping.ColumnMappings.Add("NumeroObra", "NumeroObra");
             tableMapping.ColumnMappings.Add("ModPor", "ModPor");
             tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("Tipo", "Tipo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -8655,8 +8655,10 @@ WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fec
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fechafinal", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT Fecha, ModPor, Nombre, Numero, NumeroObra, Estado FROM Presupuestos WHERE " +
-                "(NumeroObra = @NumObra)";
+            this._commandCollection[5].CommandText = @"SELECT        P.Fecha, P.ModPor, P.Nombre, P.Numero, P.NumeroObra, P.Estado, T.Descripcion AS TipoPre
+FROM            Presupuestos AS P INNER JOIN
+                         TiposPresupuesto AS T ON P.Tipo = T.Descripcion
+WHERE        (P.NumeroObra = @NumObra)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumObra", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroObra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -9283,7 +9285,7 @@ WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fec
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TiposObraTableAdapter : global::System.ComponentModel.Component {
+    public partial class TiposPresupuestoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -9297,7 +9299,7 @@ WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fec
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public TiposObraTableAdapter() {
+        public TiposPresupuestoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -9394,7 +9396,7 @@ WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fec
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "TiposObra";
+            tableMapping.DataSetTable = "TiposPresupuesto";
             tableMapping.ColumnMappings.Add("Numero", "Numero");
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             this._adapter.TableMappings.Add(tableMapping);
@@ -9444,7 +9446,7 @@ WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DatabaseFinalDataSet.TiposObraDataTable dataTable) {
+        public virtual int Fill(DatabaseFinalDataSet.TiposPresupuestoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9457,9 +9459,9 @@ WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DatabaseFinalDataSet.TiposObraDataTable GetData() {
+        public virtual DatabaseFinalDataSet.TiposPresupuestoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DatabaseFinalDataSet.TiposObraDataTable dataTable = new DatabaseFinalDataSet.TiposObraDataTable();
+            DatabaseFinalDataSet.TiposPresupuestoDataTable dataTable = new DatabaseFinalDataSet.TiposPresupuestoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9467,7 +9469,7 @@ WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fec
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DatabaseFinalDataSet.TiposObraDataTable dataTable) {
+        public virtual int Update(DatabaseFinalDataSet.TiposPresupuestoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -9475,7 +9477,7 @@ WHERE        (@Parestado = 0) AND (@Partipo = 0) AND (Presupuestos.Fecha >= @Fec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DatabaseFinalDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "TiposObra");
+            return this.Adapter.Update(dataSet, "TiposPresupuesto");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9947,7 +9949,7 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
         
         private TiposClienteTableAdapter _tiposClienteTableAdapter;
         
-        private TiposObraTableAdapter _tiposObraTableAdapter;
+        private TiposPresupuestoTableAdapter _tiposPresupuestoTableAdapter;
         
         private UsuariosTableAdapter _usuariosTableAdapter;
         
@@ -10083,12 +10085,12 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public TiposObraTableAdapter TiposObraTableAdapter {
+        public TiposPresupuestoTableAdapter TiposPresupuestoTableAdapter {
             get {
-                return this._tiposObraTableAdapter;
+                return this._tiposPresupuestoTableAdapter;
             }
             set {
-                this._tiposObraTableAdapter = value;
+                this._tiposPresupuestoTableAdapter = value;
             }
         }
         
@@ -10157,9 +10159,9 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                             && (this._tiposClienteTableAdapter.Connection != null))) {
                     return this._tiposClienteTableAdapter.Connection;
                 }
-                if (((this._tiposObraTableAdapter != null) 
-                            && (this._tiposObraTableAdapter.Connection != null))) {
-                    return this._tiposObraTableAdapter.Connection;
+                if (((this._tiposPresupuestoTableAdapter != null) 
+                            && (this._tiposPresupuestoTableAdapter.Connection != null))) {
+                    return this._tiposPresupuestoTableAdapter.Connection;
                 }
                 if (((this._usuariosTableAdapter != null) 
                             && (this._usuariosTableAdapter.Connection != null))) {
@@ -10202,7 +10204,7 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                 if ((this._tiposClienteTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tiposObraTableAdapter != null)) {
+                if ((this._tiposPresupuestoTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._usuariosTableAdapter != null)) {
@@ -10246,15 +10248,6 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tiposObraTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TiposObra.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tiposObraTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._estadosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Estados.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -10270,6 +10263,15 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._obrasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tiposPresupuestoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TiposPresupuesto.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tiposPresupuestoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10343,14 +10345,6 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tiposObraTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TiposObra.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tiposObraTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._estadosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Estados.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -10364,6 +10358,14 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._obrasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tiposPresupuestoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TiposPresupuesto.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tiposPresupuestoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10441,6 +10443,14 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._tiposPresupuestoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TiposPresupuesto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tiposPresupuestoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._obrasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Obras.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -10454,14 +10464,6 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._estadosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tiposObraTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TiposObra.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tiposObraTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -10568,8 +10570,8 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._tiposObraTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tiposObraTableAdapter.Connection) == false))) {
+            if (((this._tiposPresupuestoTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tiposPresupuestoTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -10682,13 +10684,13 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tiposClienteTableAdapter.Adapter);
                     }
                 }
-                if ((this._tiposObraTableAdapter != null)) {
-                    revertConnections.Add(this._tiposObraTableAdapter, this._tiposObraTableAdapter.Connection);
-                    this._tiposObraTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tiposObraTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tiposObraTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tiposObraTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tiposObraTableAdapter.Adapter);
+                if ((this._tiposPresupuestoTableAdapter != null)) {
+                    revertConnections.Add(this._tiposPresupuestoTableAdapter, this._tiposPresupuestoTableAdapter.Connection);
+                    this._tiposPresupuestoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tiposPresupuestoTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tiposPresupuestoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tiposPresupuestoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tiposPresupuestoTableAdapter.Adapter);
                     }
                 }
                 if ((this._usuariosTableAdapter != null)) {
@@ -10790,9 +10792,9 @@ SELECT Numero, Descripcion, Admin FROM Usuarios WHERE (Numero = @Numero)";
                     this._tiposClienteTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tiposClienteTableAdapter]));
                     this._tiposClienteTableAdapter.Transaction = null;
                 }
-                if ((this._tiposObraTableAdapter != null)) {
-                    this._tiposObraTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tiposObraTableAdapter]));
-                    this._tiposObraTableAdapter.Transaction = null;
+                if ((this._tiposPresupuestoTableAdapter != null)) {
+                    this._tiposPresupuestoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tiposPresupuestoTableAdapter]));
+                    this._tiposPresupuestoTableAdapter.Transaction = null;
                 }
                 if ((this._usuariosTableAdapter != null)) {
                     this._usuariosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usuariosTableAdapter]));
