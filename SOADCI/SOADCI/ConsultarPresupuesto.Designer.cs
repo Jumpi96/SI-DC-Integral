@@ -56,6 +56,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tiposPresupuestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tiposPresupuestoTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.TiposPresupuestoTableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estadosBindingSource)).BeginInit();
@@ -65,7 +66,7 @@
             // button7
             // 
             this.button7.Image = global::SOADCI.Properties.Resources.moneyreceipt32;
-            this.button7.Location = new System.Drawing.Point(357, 81);
+            this.button7.Location = new System.Drawing.Point(310, 81);
             this.button7.Name = "button7";
             this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button7.Size = new System.Drawing.Size(75, 44);
@@ -76,7 +77,7 @@
             // button6
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(357, 131);
+            this.button6.Location = new System.Drawing.Point(310, 131);
             this.button6.Name = "button6";
             this.button6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button6.Size = new System.Drawing.Size(75, 44);
@@ -273,11 +274,23 @@
             // 
             this.tiposPresupuestoTableAdapter.ClearBeforeFill = true;
             // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(276, 31);
+            this.button3.Name = "button3";
+            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button3.Size = new System.Drawing.Size(75, 44);
+            this.button3.TabIndex = 51;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ConsultarPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 246);
+            this.ClientSize = new System.Drawing.Size(444, 251);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
@@ -341,5 +354,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.BindingSource tiposPresupuestoBindingSource;
         private DatabaseFinalDataSetTableAdapters.TiposPresupuestoTableAdapter tiposPresupuestoTableAdapter;
+        private System.Windows.Forms.Button button3;
     }
 }

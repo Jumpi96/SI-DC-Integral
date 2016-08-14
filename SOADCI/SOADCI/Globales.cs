@@ -12,10 +12,12 @@ namespace SOADCI
     {
         private String path;
         private String pass;
+        private String archivos;
         private static Globales instancia;
 
         public String PATH { get { return getInstancia().path; } }
         public String PASS { get { return getInstancia().pass; } }
+        public String ARCHIVOS { get { return getInstancia().archivos; } }
 
         public static Globales getInstancia()
         {
@@ -28,6 +30,7 @@ namespace SOADCI
         {
             path = ConfigurationManager.AppSettings["path"];
             pass = ConfigurationManager.AppSettings["pass"];
+            archivos = ConfigurationManager.AppSettings["archivos"];
         }
 
 

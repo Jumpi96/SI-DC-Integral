@@ -44,6 +44,7 @@ namespace SOADCI
             toolTip.SetToolTip(button5, "Directorio");
             toolTip.SetToolTip(button6, "Eliminar");
             toolTip.SetToolTip(button7, "Pagos");
+            toolTip.SetToolTip(button3, "Archivos modelo");
         }
 
         private void ConsultarPresupuesto_Load(object sender, EventArgs e)
@@ -119,6 +120,11 @@ namespace SOADCI
             ConsultarPagos pagos = new ConsultarPagos();
             pagos.LoadOrders(presupuesto);
             pagos.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", Globales.getInstancia().ARCHIVOS);
         }
     }
 }

@@ -51,6 +51,7 @@ namespace SOADCI
                 PagosRow.Monto = Convert.ToDecimal(textBox2.Text);
                 PagosRow.NumeroPresupuesto = presupuesto.Numero;
                 PagosRow.CreadoPor = 1; // Usuario
+                PagosRow.Detalle = textBox1.Text;
 
 
                 databaseFinalDataSet.Pagos.Rows.Add(PagosRow);

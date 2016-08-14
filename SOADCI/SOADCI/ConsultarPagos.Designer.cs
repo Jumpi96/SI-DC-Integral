@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pagosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PagosTableAdapter();
             this.button5 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
             this.SuspendLayout();
@@ -57,13 +59,6 @@
             this.listBox1.TabIndex = 1;
             this.listBox1.ValueMember = "Numero";
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // textBox2
-            // 
-            this.textBox2.AllowSpace = false;
-            this.textBox2.Location = new System.Drawing.Point(365, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(110, 20);
-            this.textBox2.TabIndex = 2;
             // 
             // pagosBindingSource
             // 
@@ -109,7 +104,7 @@
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(457, 124);
+            this.button3.Location = new System.Drawing.Point(468, 159);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
@@ -119,7 +114,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(365, 72);
+            this.textBox1.Location = new System.Drawing.Point(365, 35);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(110, 20);
@@ -130,7 +125,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(295, 75);
+            this.label1.Location = new System.Drawing.Point(295, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 11;
@@ -139,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(295, 101);
+            this.label2.Location = new System.Drawing.Point(295, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 13;
@@ -159,15 +154,34 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(365, 94);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(178, 59);
+            this.textBox3.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(295, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Detalle";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // ConsultarPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 236);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
@@ -202,5 +216,7 @@
         private System.Windows.Forms.BindingSource pagosBindingSource;
         private DatabaseFinalDataSetTableAdapters.PagosTableAdapter pagosTableAdapter;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
     }
 }

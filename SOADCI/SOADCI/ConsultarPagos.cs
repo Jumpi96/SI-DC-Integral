@@ -48,11 +48,13 @@ namespace SOADCI
                 DateTime fecha = (DateTime)(listBox1.SelectedItem as DataRowView)["Fecha"];
                 float monto = (float)Convert.ToDecimal((listBox1.SelectedItem as DataRowView)["Monto"]);
                 int modPor = (int)(listBox1.SelectedItem as DataRowView)["CreadoPor"];
+                String detalle = (String)(listBox1.SelectedItem as DataRowView)["Detalle"];
 
-                pago = new Pago(numero,fecha,monto,presupuesto,modPor);
+                pago = new Pago(numero,fecha,monto,presupuesto,modPor,detalle);
 
                 textBox1.Text = pago.Fecha.Day+"/"+pago.Fecha.Month+"/"+pago.Fecha.Year;
                 textBox2.Text = pago.Monto.ToString();
+                textBox3.Text = pago.Detalle;
             }
 
             button3.Enabled = true;
@@ -66,6 +68,7 @@ namespace SOADCI
             DatabaseFinalDataSet.PagosRow pagosRow = databaseFinalDataSet.Pagos.FindByNumero(pago.Numero);
 
             pagosRow.Monto = Convert.ToDecimal(textBox2.Text); // controlar esto
+            pagosRow.Detalle = textBox3.Text;
 
             try
             {
@@ -73,6 +76,7 @@ namespace SOADCI
                 this.pagosBindingSource.EndEdit();
                 this.pagosTableAdapter.Update(this.databaseFinalDataSet.Pagos);
                 pago.Monto = (float)pagosRow.Monto;
+                pago.Detalle = pagosRow.Detalle;
                 MessageBox.Show("El pago ha sido editado.", "Modificar pago");
                 this.pagosTableAdapter.FillByPresupuesto(this.databaseFinalDataSet.Pagos, presupuesto.Numero);
 
@@ -119,6 +123,11 @@ namespace SOADCI
             emi.LoadOrders(presupuesto);
             emi.ShowDialog();
             
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

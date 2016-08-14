@@ -75,14 +75,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SOADCI.exe" size="7493600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SOADCI.exe" size="7495136">
       <assemblyIdentity name="SOADCI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>U1uMUblHDblIYF2eUl2mp7znJY3tyBzh/V4iW2F6DZU=</dsig:DigestValue>
+        <dsig:DigestValue>/plGq9RRj122ehOUyqaqGGHYsuLoGYmK/1CrT7dwYlk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -92,7 +92,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cd5+9eBXDSQ+vFZhyeEoLmZbVS/FYxZJPXHHpf/+pA0=</dsig:DigestValue>
+      <dsig:DigestValue>O1/suiuJhb0PFmilobvwb0/uibBy5v3jMhmYK9G0Nys=</dsig:DigestValue>
     </hash>
   </file>
   <file name="DatabaseLocal_log.ldf" size="786432" writeableType="applicationData">
@@ -101,7 +101,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>KvTpop3awWllf47OLBdOBNTm8PnJaiPwXp2r1xOWyws=</dsig:DigestValue>
+      <dsig:DigestValue>3iaSE1Qo3sl+tYR/nNkCSWX/IB1bshT9Zn8cJjbvRmQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Logo.ico" size="370070">
@@ -113,13 +113,13 @@
       <dsig:DigestValue>F99Bvzc3mIhzIBp5LLsZ3+K28FpF3QDSrnvUlDfzOVQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SOADCI.exe.config" size="1012">
+  <file name="SOADCI.exe.config" size="1066">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>invR3V/GrtAbQ7HlRbs7klPGhZz2Hj5P0m8LoWohjqE=</dsig:DigestValue>
+      <dsig:DigestValue>XKR/sOCQLtiiKuFEydBn/1hraQeMR9T2QjYTEWFYfa0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
