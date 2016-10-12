@@ -4,25 +4,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SOADCIntegral
+namespace SOADCI
 {
     class Contacto
     {
-        private String Nombre { get; set; }
-        private String Descripcion { get; set; }
-        private String TelCel { get; set; }
-        private String Correo { get; set; }
-        private int CreadoPor { get; set; }
-        private int ModPor { get; set; }
 
-        public Contacto (String nombre, String descripcion, String telCel, String correo, int creadoPor, int modPor)
+        DatabaseFinalDataSet databaseFinalDataSet = new DatabaseFinalDataSet();
+        DatabaseFinalDataSetTableAdapters.ContactosTableAdapter contactosTableAdapter;
+
+        private int numero;
+        private String nombre;
+        private String descripcion;
+        private Cliente cliente;
+        private String telefono;
+        private String correo;
+        private int modPor;
+
+        public int Numero { get { return numero; } set { numero = value; } }
+        public String Nombre { get { return nombre; } set { nombre = value; } }
+        public String Descripcion { get { return descripcion; } set { descripcion = value; } }
+        public Cliente Cliente { get { return cliente; } set { cliente = value; } }
+        public String Telefono { get { return telefono; } set { telefono = value; } }
+        public String Correo { get { return correo; } set { correo=value; } }
+        public int ModPor { get { return ModPor; } set { modPor = value; } }
+
+        public Contacto (int numero, String nombre, String descripcion, Cliente cliente, String telCel, String correo, int modPor)
         {
+            Numero = numero;
             Nombre = nombre;
             Descripcion = descripcion;
-            TelCel = telCel;
+            Cliente = cliente;
+            Telefono = telCel;
             Correo = correo;
-            CreadoPor = creadoPor;
             ModPor = modPor;
+        }
+
+        public Contacto(int num) {
+            databaseFinalDataSet = new DatabaseFinalDataSet(); 
+            contactosTableAdapter = new DatabaseFinalDataSetTableAdapters.ContactosTableAdapter();
+            contactosTableAdapter.Fill(databaseFinalDataSet.Contactos);
+            DatabaseFinalDataSet.ContactosRow contactosRow = databaseFinalDataSet.Contactos.FindByNumero(num);
+
+            Numero = num;
+            Nombre = contactosRow.Nombre;
+            Descripcion = contactosRow.Descripcion;
+            Cliente = new Cliente(contactosRow.NumeroCliente);
+            Telefono = contactosRow.Telefono;
+            Correo = contactosRow.Correo;
+            ModPor = contactosRow.ModPor;
+
+        }
+
+        public void Borrar()
+        {
+            contactosTableAdapter.DeleteByNumero(numero);
         }
     }
 }

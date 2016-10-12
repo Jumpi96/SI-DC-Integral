@@ -35,7 +35,7 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SOADCI.PresupuestoCreado.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SOADCI.Informes.ReportePresupuesto.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(70, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(644, 561);

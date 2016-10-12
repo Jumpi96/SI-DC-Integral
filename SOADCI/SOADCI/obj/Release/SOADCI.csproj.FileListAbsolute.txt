@@ -1,5 +1,3 @@
-D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\DatabaseLocal.mdf
-D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\DatabaseLocal_log.ldf
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\SOADCI.exe.config
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\SOADCI.exe.manifest
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\SOADCI.application
@@ -44,3 +42,5 @@ D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.appl
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.exe
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.pdb
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Release\SOADCI.csprojResolveAssemblyReference.cache
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\BaseDatos\DatabaseLocal.mdf
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Release\BaseDatos\DatabaseLocal_log.ldf

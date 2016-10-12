@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Logo.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>0BE351570D9AC673E393BB459CB8D88548F2DC32</ManifestCertificateThumbprint>
@@ -82,48 +82,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Configuracion.cs">
+    <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Formularios\Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configuracion.Designer.cs">
+    <Compile Include="Formularios\Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarContactos.cs">
+    <Compile Include="Formularios\ConsultarContactos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarContactos.Designer.cs">
+    <Compile Include="Formularios\ConsultarContactos.Designer.cs">
       <DependentUpon>ConsultarContactos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarObra.cs">
+    <Compile Include="Formularios\ConsultarObra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarObra.Designer.cs">
+    <Compile Include="Formularios\ConsultarObra.Designer.cs">
       <DependentUpon>ConsultarObra.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarObraPorTipo.cs">
+    <Compile Include="Formularios\ConsultarObraPorTipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarObraPorTipo.Designer.cs">
+    <Compile Include="Formularios\ConsultarObraPorTipo.Designer.cs">
       <DependentUpon>ConsultarObraPorTipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarPagos.cs">
+    <Compile Include="Formularios\ConsultarPagos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarPagos.Designer.cs">
+    <Compile Include="Formularios\ConsultarPagos.Designer.cs">
       <DependentUpon>ConsultarPagos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarPresupuesto.cs">
+    <Compile Include="Formularios\ConsultarPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarPresupuesto.Designer.cs">
+    <Compile Include="Formularios\ConsultarPresupuesto.Designer.cs">
       <DependentUpon>ConsultarPresupuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Contacto.cs" />
-    <Compile Include="ControlarContraseña.cs">
+    <Compile Include="Clases\Contacto.cs" />
+    <Compile Include="Formularios\ControlarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlarContraseña.Designer.cs">
+    <Compile Include="Formularios\ControlarContraseña.Designer.cs">
       <DependentUpon>ControlarContraseña.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseFinalDataSet.cs">
@@ -134,127 +134,127 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarCliente.cs">
+    <Compile Include="Formularios\ConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarCliente.Designer.cs">
+    <Compile Include="Formularios\ConsultarCliente.Designer.cs">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmitirReportePagos.cs">
+    <Compile Include="Formularios\EmitirReportePagos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmitirReportePagos.Designer.cs">
+    <Compile Include="Formularios\EmitirReportePagos.Designer.cs">
       <DependentUpon>EmitirReportePagos.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmitirReportePresupuesto.cs">
+    <Compile Include="Formularios\EmitirReportePresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmitirReportePresupuesto.Designer.cs">
+    <Compile Include="Formularios\EmitirReportePresupuesto.Designer.cs">
       <DependentUpon>EmitirReportePresupuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEmitirInforme.cs">
+    <Compile Include="Formularios\FormularioEmitirInformePre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEmitirInforme.Designer.cs">
-      <DependentUpon>FormEmitirInforme.cs</DependentUpon>
+    <Compile Include="Formularios\FormularioEmitirInformePre.Designer.cs">
+      <DependentUpon>FormularioEmitirInformePre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Globales.cs" />
-    <Compile Include="InformePresupuestos.cs">
+    <Compile Include="Clases\Globales.cs" />
+    <Compile Include="Formularios\EmitirInformePresupuestos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InformePresupuestos.Designer.cs">
-      <DependentUpon>InformePresupuestos.cs</DependentUpon>
+    <Compile Include="Formularios\EmitirInformePresupuestos.Designer.cs">
+      <DependentUpon>EmitirInformePresupuestos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inicio.cs">
+    <Compile Include="Formularios\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
+    <Compile Include="Formularios\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="NumericTextBox.cs">
+    <Compile Include="Resources\NumericTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Obra.cs" />
-    <Compile Include="Pago.cs" />
-    <Compile Include="Presupuesto.cs" />
+    <Compile Include="Clases\Obra.cs" />
+    <Compile Include="Clases\Pago.cs" />
+    <Compile Include="Clases\Presupuesto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrarCliente.cs">
+    <Compile Include="Formularios\RegistrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarCliente.Designer.cs">
+    <Compile Include="Formularios\RegistrarCliente.Designer.cs">
       <DependentUpon>RegistrarCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarContacto.cs">
+    <Compile Include="Formularios\RegistrarContacto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarContacto.Designer.cs">
+    <Compile Include="Formularios\RegistrarContacto.Designer.cs">
       <DependentUpon>RegistrarContacto.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarObra.cs">
+    <Compile Include="Formularios\RegistrarObra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarObra.Designer.cs">
+    <Compile Include="Formularios\RegistrarObra.Designer.cs">
       <DependentUpon>RegistrarObra.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarPago.cs">
+    <Compile Include="Formularios\RegistrarPago.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarPago.Designer.cs">
+    <Compile Include="Formularios\RegistrarPago.Designer.cs">
       <DependentUpon>RegistrarPago.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistrarPresupuesto.cs">
+    <Compile Include="Formularios\RegistrarPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistrarPresupuesto.Designer.cs">
+    <Compile Include="Formularios\RegistrarPresupuesto.Designer.cs">
       <DependentUpon>RegistrarPresupuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="TipoCliente.cs" />
-    <Compile Include="Estado.cs" />
-    <Compile Include="TipoPresupuesto.cs" />
-    <Compile Include="Usuario.cs" />
-    <EmbeddedResource Include="Configuracion.resx">
+    <Compile Include="Clases\TipoCliente.cs" />
+    <Compile Include="Clases\Estado.cs" />
+    <Compile Include="Clases\TipoPresupuesto.cs" />
+    <Compile Include="Clases\Usuario.cs" />
+    <EmbeddedResource Include="Formularios\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarCliente.resx">
+    <EmbeddedResource Include="Formularios\ConsultarCliente.resx">
       <DependentUpon>ConsultarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarContactos.resx">
+    <EmbeddedResource Include="Formularios\ConsultarContactos.resx">
       <DependentUpon>ConsultarContactos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarObra.resx">
+    <EmbeddedResource Include="Formularios\ConsultarObra.resx">
       <DependentUpon>ConsultarObra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarObraPorTipo.resx">
+    <EmbeddedResource Include="Formularios\ConsultarObraPorTipo.resx">
       <DependentUpon>ConsultarObraPorTipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarPagos.resx">
+    <EmbeddedResource Include="Formularios\ConsultarPagos.resx">
       <DependentUpon>ConsultarPagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarPresupuesto.resx">
+    <EmbeddedResource Include="Formularios\ConsultarPresupuesto.resx">
       <DependentUpon>ConsultarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlarContraseña.resx">
+    <EmbeddedResource Include="Formularios\ControlarContraseña.resx">
       <DependentUpon>ControlarContraseña.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmitirReportePagos.resx">
+    <EmbeddedResource Include="Formularios\EmitirReportePagos.resx">
       <DependentUpon>EmitirReportePagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmitirReportePresupuesto.resx">
+    <EmbeddedResource Include="Formularios\EmitirReportePresupuesto.resx">
       <DependentUpon>EmitirReportePresupuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEmitirInforme.resx">
-      <DependentUpon>FormEmitirInforme.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FormularioEmitirInformePre.resx">
+      <DependentUpon>FormularioEmitirInformePre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InformePagos.rdlc" />
-    <EmbeddedResource Include="InformePresupuestos.resx">
-      <DependentUpon>InformePresupuestos.cs</DependentUpon>
+    <EmbeddedResource Include="Informes\InformePagos.rdlc" />
+    <EmbeddedResource Include="Formularios\EmitirInformePresupuestos.resx">
+      <DependentUpon>EmitirInformePresupuestos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InfPresupuestos.rdlc" />
-    <EmbeddedResource Include="Inicio.resx">
+    <EmbeddedResource Include="Informes\InformePresupuestos.rdlc" />
+    <EmbeddedResource Include="Formularios\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PresupuestoCreado.rdlc" />
+    <EmbeddedResource Include="Informes\ReportePresupuesto.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -265,19 +265,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RegistrarCliente.resx">
+    <EmbeddedResource Include="Formularios\RegistrarCliente.resx">
       <DependentUpon>RegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarContacto.resx">
+    <EmbeddedResource Include="Formularios\RegistrarContacto.resx">
       <DependentUpon>RegistrarContacto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarObra.resx">
+    <EmbeddedResource Include="Formularios\RegistrarObra.resx">
       <DependentUpon>RegistrarObra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarPago.resx">
+    <EmbeddedResource Include="Formularios\RegistrarPago.resx">
       <DependentUpon>RegistrarPago.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarPresupuesto.resx">
+    <EmbeddedResource Include="Formularios\RegistrarPresupuesto.resx">
       <DependentUpon>RegistrarPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DatabaseFinalDataSet.xsc">
@@ -305,18 +305,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Clases\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DatabaseLocal.mdf">
+    <Content Include="BaseDatos\DatabaseLocal.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DatabaseLocal_log.ldf">
+    <Content Include="BaseDatos\DatabaseLocal_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DatabaseLocal.mdf</DependentUpon>
     </Content>
-    <Content Include="Logo.ico" />
+    <Content Include="Resources\Logo.ico" />
     <None Include="Resources\128 x 128.png" />
     <None Include="Resources\LogoGrande.png" />
     <None Include="Resources\Logo.png" />

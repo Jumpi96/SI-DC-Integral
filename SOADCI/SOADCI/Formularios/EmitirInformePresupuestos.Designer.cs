@@ -48,7 +48,7 @@
             reportDataSource1.Name = "DataSetInfPre";
             reportDataSource1.Value = this.informePresupuestosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SOADCI.InfPresupuestos.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SOADCI.Informes.InformePresupuestos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(70, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(644, 561);

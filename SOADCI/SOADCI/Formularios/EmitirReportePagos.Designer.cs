@@ -45,7 +45,7 @@
             reportDataSource1.Name = "DataSetPagos";
             reportDataSource1.Value = this.PagosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SOADCI.InformePagos.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SOADCI.Informes.InformePagos.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(100, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(584, 561);

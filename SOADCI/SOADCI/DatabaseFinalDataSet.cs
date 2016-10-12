@@ -28,6 +28,7 @@ namespace SOADCI.DatabaseFinalDataSetTableAdapters
     {
     }
 
-    public partial class PresupuestosTableAdapter {
+    public partial class PresupuestosTableAdapter
+    {
     }
 }
