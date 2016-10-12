@@ -1,6 +1,0 @@
-﻿CREATE TABLE [dbo].[TiposObra] (
-    [Numero]      INT           IDENTITY (1, 1) NOT NULL,
-    [Descripcion] NVARCHAR (25) NOT NULL,
-    PRIMARY KEY CLUSTERED ([Numero] ASC)
-);
-

@@ -19,8 +19,8 @@ namespace SOADCI
             base.OnKeyPress(e);
 
             NumberFormatInfo numberFormatInfo = System.Globalization.CultureInfo.CurrentCulture.NumberFormat;
-            string decimalSeparator = numberFormatInfo.NumberDecimalSeparator;
-            string groupSeparator = numberFormatInfo.NumberGroupSeparator;
+            string decimalSeparator = ","; //trying
+            string groupSeparator = ",";
             string negativeSign = numberFormatInfo.NegativeSign;
 
             // Workaround for groupSeparator equal to non-breaking space 

@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Desarrollo-Programación\SI DC Integral\v1.11\</PublishUrl>
+    <PublishUrl>D:\Desarrollo-Programación\SI DC Integral\v1.22\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -129,7 +129,7 @@
     <Compile Include="DatabaseFinalDataSet.cs">
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseFinalDataSet1.Designer.cs">
+    <Compile Include="DatabaseFinalDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseFinalDataSet.xsd</DependentUpon>
@@ -211,7 +211,7 @@
     </Compile>
     <Compile Include="TipoCliente.cs" />
     <Compile Include="Estado.cs" />
-    <Compile Include="TipoObra.cs" />
+    <Compile Include="TipoPresupuesto.cs" />
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>

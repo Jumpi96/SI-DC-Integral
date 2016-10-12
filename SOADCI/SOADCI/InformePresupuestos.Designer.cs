@@ -31,15 +31,29 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformePresupuestos));
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DatabaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.InfPresupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
+            this.informePresupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.informePresupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.InformePresupuestosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseFinalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InfPresupuestosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informePresupuestosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSetInfPre";
+            reportDataSource1.Value = this.informePresupuestosBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SOADCI.InfPresupuestos.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(70, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(644, 561);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // presupuestosBindingSource
             // 
@@ -51,27 +65,18 @@
             this.DatabaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
             this.DatabaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetInfPre";
-            reportDataSource1.Value = this.presupuestosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "SOADCI.InfPresupuestos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(70, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(644, 561);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // InfPresupuestosBindingSource
-            // 
-            this.InfPresupuestosBindingSource.DataMember = "InfPresupuestos";
-            this.InfPresupuestosBindingSource.DataSource = this.DatabaseFinalDataSet;
-            // 
             // presupuestosTableAdapter
             // 
             this.presupuestosTableAdapter.ClearBeforeFill = true;
+            // 
+            // informePresupuestosBindingSource
+            // 
+            this.informePresupuestosBindingSource.DataMember = "InformePresupuestos";
+            this.informePresupuestosBindingSource.DataSource = this.DatabaseFinalDataSet;
+            // 
+            // informePresupuestosTableAdapter
+            // 
+            this.informePresupuestosTableAdapter.ClearBeforeFill = true;
             // 
             // InformePresupuestos
             // 
@@ -86,7 +91,7 @@
             this.Load += new System.EventHandler(this.InformePresupuestos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseFinalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InfPresupuestosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informePresupuestosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,9 +99,10 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource InfPresupuestosBindingSource;
         private DatabaseFinalDataSet DatabaseFinalDataSet;
         private System.Windows.Forms.BindingSource presupuestosBindingSource;
         private DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
+        private System.Windows.Forms.BindingSource informePresupuestosBindingSource;
+        private DatabaseFinalDataSetTableAdapters.InformePresupuestosTableAdapter informePresupuestosTableAdapter;
     }
 }

@@ -26,8 +26,9 @@ namespace SOADCI
 
         private void EmitirReportePresupuesto_Load(object sender, EventArgs e)
         {
+            String fe = pres.Fecha.Date.Day + "/" + pres.Fecha.Date.Month + "/" + pres.Fecha.Date.Year;
             ReportParameter n = new ReportParameter("Nombre",pres.Nombre);
-            ReportParameter f = new ReportParameter("Fecha", pres.Fecha.Date.ToString());
+            ReportParameter f = new ReportParameter("Fecha", fe);
             ReportParameter es = new ReportParameter("Estado", pres.Estado.Nombre);
             ReportParameter t = new ReportParameter("TipoPre", pres.Tipo.Descripcion);
             ReportParameter c = new ReportParameter("Cliente", pres.Obra.Cliente.Nombre);

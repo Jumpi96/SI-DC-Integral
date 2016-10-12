@@ -25,7 +25,7 @@ namespace SOADCI
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                DateTime fecha = (Convert.ToDateTime(row.Cells[2].Value));
+                DateTime fecha = (Convert.ToDateTime(row.Cells[7].Value));
                 TimeSpan periodo = DateTime.Today - fecha; 
                 int dias = periodo.Days;
 
@@ -36,6 +36,8 @@ namespace SOADCI
                 else
                     if (dias >= 14)
                         row.DefaultCellStyle.BackColor = Color.Yellow;
+
+                dataGridView1.Rows[0].Selected = false;
             }
         }
 
@@ -55,12 +57,19 @@ namespace SOADCI
         {
             ConsultarCliente con = new ConsultarCliente();
             con.ShowDialog();
+            this.presupuestosTableAdapter.FillByEnEspera(this.databaseFinalDataSet.Presupuestos);
+            this.Inicio_Load(new object(), new EventArgs());
         }
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseFinalDataSet.Presupuestos' table. You can move, or remove it, as needed.
             pintarFilas();
-          
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -79,6 +88,9 @@ namespace SOADCI
         {
             RegistrarPresupuesto regP = new RegistrarPresupuesto();
             regP.ShowDialog();
+            this.presupuestosTableAdapter.FillByEnEspera(this.databaseFinalDataSet.Presupuestos);
+            this.Inicio_Load(new object(), new EventArgs());
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -111,9 +123,8 @@ namespace SOADCI
         {
             if (dataGridView1.SelectedRows.Count != 0)
             {
-                DataGridViewRow row = this.dataGridView1.SelectedRows[0];
 
-                int numero = (int)row.Cells[0].Value;
+                int numero = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
 
                 Presupuesto presu = new Presupuesto(numero);
 

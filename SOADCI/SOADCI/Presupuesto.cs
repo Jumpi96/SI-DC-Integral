@@ -81,7 +81,7 @@ namespace SOADCI
         {
             DatabaseFinalDataSetTableAdapters.CarpetasTableAdapter carpetasTableAdapter;
             carpetasTableAdapter = new DatabaseFinalDataSetTableAdapters.CarpetasTableAdapter();
-            carpetasTableAdapter.FillByTipo(databaseFinalDataSet.Carpetas, Tipo.Numero);
+            carpetasTableAdapter.FillByTipo(databaseFinalDataSet.Carpetas, this.Obra.Cliente.Tipo.Numero);
 
             String cadena= Globales.getInstancia().PATH + "\\" + Obra.Cliente.Nombre + "\\" + Obra.Nombre + "\\" + this.Nombre;
 

@@ -53,6 +53,9 @@ namespace SOADCI
         {
             // TODO: This line of code loads data into the 'databaseFinalDataSet.TiposPresupuesto' table. You can move, or remove it, as needed.
             this.tiposPresupuestoTableAdapter.Fill(this.databaseFinalDataSet.TiposPresupuesto);
+            this.databaseFinalDataSet.TiposPresupuesto.AddTiposPresupuestoRow("Todos");
+            comboBox1.SelectedIndex = comboBox1.FindString("Todos");
+
             // TODO: This line of code loads data into the 'databaseFinalDataSet.Estados' table. You can move, or remove it, as needed.
 
             this.estadosTableAdapter.Fill(this.databaseFinalDataSet.Estados);

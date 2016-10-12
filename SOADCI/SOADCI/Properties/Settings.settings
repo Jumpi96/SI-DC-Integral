@@ -18,5 +18,14 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DatabaseComp.mdf;Integrated Security=True;Connect Timeout=30</Value>
     </Setting>
+    <Setting Name="Path" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\SOADCI</Value>
+    </Setting>
+    <Setting Name="Archivos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Archivos</Value>
+    </Setting>
+    <Setting Name="Pass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">jero</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

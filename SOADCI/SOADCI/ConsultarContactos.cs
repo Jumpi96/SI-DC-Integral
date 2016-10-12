@@ -124,10 +124,15 @@ namespace SOADCI
         {
             DatabaseFinalDataSet.ContactosRow contactosRow = databaseFinalDataSet.Contactos.FindByNumero(contacto.Numero);
 
-            contactosRow.Nombre = textBox1.Text;
-            contactosRow.Descripcion = textBox2.Text;
-            contactosRow.Telefono = textBox3.Text;
-            contactosRow.Correo = textBox4.Text;
+            String nom = textBox1.Text;
+            String des = textBox2.Text;
+            String tel = textBox3.Text;
+            String cor = textBox4.Text;
+
+            contactosRow.Nombre = nom;
+            contactosRow.Descripcion = des;
+            contactosRow.Telefono = tel;
+            contactosRow.Correo = cor;
 
             try
             {

@@ -31,8 +31,9 @@ namespace SOADCI
             this.PagosTableAdapter.FillByPresupuesto(this.DatabaseFinalDataSet.Pagos,pres.Numero);
             ReportParameter o = new ReportParameter("Obra", pres.Obra.Nombre);
             ReportParameter n = new ReportParameter("Nombre", pres.Nombre);
+            ReportParameter s = new ReportParameter("Cliente", pres.Obra.Cliente.Nombre);
 
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { n, o });
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { n, o, s });
 
 
             this.reportViewer1.RefreshReport();

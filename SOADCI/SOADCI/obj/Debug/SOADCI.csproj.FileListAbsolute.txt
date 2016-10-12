@@ -33,3 +33,14 @@ D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.applic
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.exe
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.pdb
 D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\obj\Debug\SOADCI.csprojResolveAssemblyReference.cache
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\Desarrollo-Programación\SI DC Integral\SOADCI\SOADCI\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll

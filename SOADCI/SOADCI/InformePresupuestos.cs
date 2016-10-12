@@ -32,6 +32,7 @@ namespace SOADCI
 
         private void InformePresupuestos_Load(object sender, EventArgs e)
         {
+
             ReportParameter fi = new ReportParameter("FechaInicio", fechainicio.ToShortDateString());
             ReportParameter ff = new ReportParameter("FechaFinal", fechafinal.ToShortDateString());
 
@@ -51,8 +52,7 @@ namespace SOADCI
             reportViewer1.LocalReport.SetParameters(new ReportParameter[] { fi, ff, r });
 
             // TODO: This line of code loads data into the 'DatabaseFinalDataSet.Presupuestos' table. You can move, or remove it, as needed.
-            this.presupuestosTableAdapter.FillByInfPre(this.DatabaseFinalDataSet.Presupuestos,estado,tipoPre, fechainicio.ToString(),fechafinal.ToString());
-
+            this.informePresupuestosTableAdapter.Fill(this.DatabaseFinalDataSet.InformePresupuestos, estado, tipoPre, fechainicio.ToString(), fechafinal.ToString());
             this.reportViewer1.RefreshReport();
         }
 

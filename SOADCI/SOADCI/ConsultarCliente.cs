@@ -249,13 +249,14 @@ namespace SOADCI
                 Cliente cliente = new Cliente((int)(row.Cells[2].Value));
                 int num = (int)row.Cells[0].Value;
                 String nom = (String)row.Cells[1].Value;
-                int modPor = (int)row.Cells[5].Value;
+                int modPor = 1; // control de usuario
 
                 Obra obra = new Obra(num, nom, cliente,  modPor);
 
                 ConsultarObra cons = new ConsultarObra();
                 cons.LoadOrders(obra);
                 cons.ShowDialog();
+                this.obrasTableAdapter.FillObrasPorCliente(this.databaseFinalDataSet.Obras, cliente.Numero);
             }
         }
 

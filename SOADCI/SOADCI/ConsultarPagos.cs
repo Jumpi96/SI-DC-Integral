@@ -18,7 +18,8 @@ namespace SOADCI
         public ConsultarPagos()
         {
             InitializeComponent();
-            textBox2.ReadOnly = true;
+            maskedTextBox1.ReadOnly = true;
+            textBox3.ReadOnly = true;
             
         }
 
@@ -44,31 +45,41 @@ namespace SOADCI
         {
             if (listBox1.SelectedItem != null)
             {
+                String detalle;
                 int numero = (int)(listBox1.SelectedItem as DataRowView)["Numero"];
                 DateTime fecha = (DateTime)(listBox1.SelectedItem as DataRowView)["Fecha"];
                 float monto = (float)Convert.ToDecimal((listBox1.SelectedItem as DataRowView)["Monto"]);
                 int modPor = (int)(listBox1.SelectedItem as DataRowView)["CreadoPor"];
-                String detalle = (String)(listBox1.SelectedItem as DataRowView)["Detalle"];
+                try
+                {
+                    detalle = (String)(listBox1.SelectedItem as DataRowView)["Detalle"];
+                }
+                catch {
+                    detalle = " ";
+                }
+                
 
                 pago = new Pago(numero,fecha,monto,presupuesto,modPor,detalle);
 
                 textBox1.Text = pago.Fecha.Day+"/"+pago.Fecha.Month+"/"+pago.Fecha.Year;
-                textBox2.Text = pago.Monto.ToString();
+                maskedTextBox1.Text = pago.Monto.ToString();
                 textBox3.Text = pago.Detalle;
             }
 
             button3.Enabled = true;
             button4.Enabled = true;
-            textBox2.ReadOnly = false;
-
+            maskedTextBox1.ReadOnly = false;
+            textBox3.ReadOnly = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             DatabaseFinalDataSet.PagosRow pagosRow = databaseFinalDataSet.Pagos.FindByNumero(pago.Numero);
+            String detalle = textBox3.Text;
+            decimal mont = Convert.ToDecimal(maskedTextBox1.Text);
 
-            pagosRow.Monto = Convert.ToDecimal(textBox2.Text); // controlar esto
-            pagosRow.Detalle = textBox3.Text;
+            pagosRow.Monto = mont;
+            pagosRow.Detalle = detalle;
 
             try
             {
@@ -109,9 +120,10 @@ namespace SOADCI
                 pago.Borrar();
                 MessageBox.Show("El pago ha sido eliminado.","Eliminar pago");
                 this.pagosTableAdapter.FillByPresupuesto(this.databaseFinalDataSet.Pagos, presupuesto.Numero);
-                textBox2.Text = "";
-                textBox2.ReadOnly = true;
+                maskedTextBox1.Text = "";
+                maskedTextBox1.ReadOnly = true;
                 textBox1.Text = "";
+                textBox3.Text = "";
                 button3.Enabled = false;
                 button4.Enabled = false;
             }

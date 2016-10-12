@@ -1,8 +1,0 @@
-﻿CREATE TABLE [dbo].[Carpetas] (
-    [Numero] INT           IDENTITY (1, 1) NOT NULL,
-    [Nombre] NVARCHAR (30) NOT NULL,
-    [Tipo]   INT           NOT NULL,
-    PRIMARY KEY CLUSTERED ([Numero] ASC),
-    CONSTRAINT [FK_Carpetas_TiposObra] FOREIGN KEY ([Tipo]) REFERENCES [dbo].[TiposObra] ([Numero])
-);
-

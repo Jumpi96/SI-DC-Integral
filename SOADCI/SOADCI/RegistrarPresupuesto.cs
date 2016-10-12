@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SOADCI
-{
+{   
     public partial class RegistrarPresupuesto : Form
     {
         private Obra obra;
@@ -37,12 +37,17 @@ namespace SOADCI
         internal void LoadOrders(Obra ob)
         {
             obra = ob;
-            comboBox1.Text = obra.Cliente.Nombre; // Estaba SelectedText, probando
+            this.clientesTableAdapter.Fill(this.databaseFinalDataSet.Clientes);
+            comboBox1.SelectedText = obra.Cliente.Nombre; // Estaba SelectedText, probando
+            comboBox1.SelectedValue = obra.Cliente.Numero;
+            comboBox1.Enabled = false;
             clienteCorrecto = true;
             comboBox2.Enabled = true;
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Obras' table. You can move, or remove it, as needed.
             this.obrasTableAdapter.FillObrasPorCliente(this.databaseFinalDataSet.Obras, obra.Cliente.Numero);
-            comboBox2.Text = obra.Nombre;
+            comboBox2.SelectedText = obra.Nombre;
+            comboBox2.SelectedValue = obra.Numero;
+            comboBox2.Enabled = false;
             obraCorrecta = true;
             this.ActiveControl = textBox1;
 
@@ -57,10 +62,11 @@ namespace SOADCI
         private void RegistrarPresupuesto_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseFinalDataSet.TiposPresupuesto' table. You can move, or remove it, as needed.
-            this.tiposPresupuestoTableAdapter.Fill(this.databaseFinalDataSet.TiposPresupuesto);
+            this.tiposPresupuestoTableAdapter.FillBy(this.databaseFinalDataSet.TiposPresupuesto);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.Estados' table. You can move, or remove it, as needed.
             this.estadosTableAdapter.Fill(this.databaseFinalDataSet.Estados);
-            this.clientesTableAdapter.Fill(this.databaseFinalDataSet.Clientes);
+            if(obra==null)
+                this.clientesTableAdapter.Fill(this.databaseFinalDataSet.Clientes);
 
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -145,9 +151,12 @@ namespace SOADCI
                     MessageBox.Show("El presupuesto ha sido registrado.", "Registrar presupuesto");
                     nuePre.Imprimir();
                     ConsultarPresupuesto con = new ConsultarPresupuesto();
+                    nuePre.Numero=(int)presupuestosTableAdapter.GetUltimoNumero();
+
                     con.LoadOrders(nuePre);
-                    con.ShowDialog();
                     this.Close();
+                    con.ShowDialog();
+                    
                 }
                 catch (System.Exception ex)
                 {

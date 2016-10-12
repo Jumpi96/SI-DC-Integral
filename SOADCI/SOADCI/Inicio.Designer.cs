@@ -38,35 +38,36 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroObra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModPor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ObraNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presupuestosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroObraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modPorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseFinalDataSet = new SOADCI.DatabaseFinalDataSet();
-            this.fillEnEsperaToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillEnEsperaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.presupuestosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.presupuestosTableAdapter = new SOADCI.DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter();
-            this.presupuestosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).BeginInit();
-            this.fillEnEsperaToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -123,11 +124,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(620, 436);
+            this.label2.Location = new System.Drawing.Point(627, 436);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 16);
             this.label2.TabIndex = 10;
-            this.label2.Text = "SOA DC Integral - v. 1.11";
+            this.label2.Text = "SOA DC Integral - v. 1.22";
             // 
             // dataGridView1
             // 
@@ -139,15 +140,23 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,
-            this.nombreDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
+            this.Nombre,
             this.NumeroObra,
             this.Estado,
             this.ModPor,
             this.ObraNombre,
             this.ClienteNombre,
-            this.EstadoNombre});
-            this.dataGridView1.DataSource = this.presupuestosBindingSource2;
+            this.Fecha,
+            this.EstadoNombre,
+            this.Tipo,
+            this.numeroDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.numeroObraDataGridViewTextBoxColumn,
+            this.modPorDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.presupuestosBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(289, 82);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -168,19 +177,12 @@
             this.Numero.ReadOnly = true;
             this.Numero.Visible = false;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // Nombre
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // NumeroObra
             // 
@@ -220,6 +222,13 @@
             this.ClienteNombre.Name = "ClienteNombre";
             this.ClienteNombre.ReadOnly = true;
             // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
             // EstadoNombre
             // 
             this.EstadoNombre.DataPropertyName = "EstadoNombre";
@@ -228,31 +237,79 @@
             this.EstadoNombre.ReadOnly = true;
             this.EstadoNombre.Visible = false;
             // 
-            // presupuestosBindingSource2
+            // Tipo
             // 
-            this.presupuestosBindingSource2.DataMember = "Presupuestos";
-            this.presupuestosBindingSource2.DataSource = this.databaseFinalDataSet;
+            this.Tipo.DataPropertyName = "Tipo";
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Visible = false;
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // numeroObraDataGridViewTextBoxColumn
+            // 
+            this.numeroObraDataGridViewTextBoxColumn.DataPropertyName = "NumeroObra";
+            this.numeroObraDataGridViewTextBoxColumn.HeaderText = "NumeroObra";
+            this.numeroObraDataGridViewTextBoxColumn.Name = "numeroObraDataGridViewTextBoxColumn";
+            this.numeroObraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroObraDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // modPorDataGridViewTextBoxColumn
+            // 
+            this.modPorDataGridViewTextBoxColumn.DataPropertyName = "ModPor";
+            this.modPorDataGridViewTextBoxColumn.HeaderText = "ModPor";
+            this.modPorDataGridViewTextBoxColumn.Name = "modPorDataGridViewTextBoxColumn";
+            this.modPorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modPorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // presupuestosBindingSource
+            // 
+            this.presupuestosBindingSource.DataMember = "Presupuestos";
+            this.presupuestosBindingSource.DataSource = this.databaseFinalDataSet;
             // 
             // databaseFinalDataSet
             // 
             this.databaseFinalDataSet.DataSetName = "DatabaseFinalDataSet";
             this.databaseFinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fillEnEsperaToolStrip
-            // 
-            this.fillEnEsperaToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillEnEsperaToolStripButton});
-            this.fillEnEsperaToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillEnEsperaToolStrip.Name = "fillEnEsperaToolStrip";
-            this.fillEnEsperaToolStrip.Size = new System.Drawing.Size(784, 25);
-            this.fillEnEsperaToolStrip.TabIndex = 12;
-            this.fillEnEsperaToolStrip.Text = "fillEnEsperaToolStrip";
-            this.fillEnEsperaToolStrip.Visible = false;
-            // 
-            // fillEnEsperaToolStripButton
-            // 
-            this.fillEnEsperaToolStripButton.Name = "fillEnEsperaToolStripButton";
-            this.fillEnEsperaToolStripButton.Size = new System.Drawing.Size(23, 22);
             // 
             // label1
             // 
@@ -260,9 +317,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(289, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 13);
+            this.label1.Size = new System.Drawing.Size(164, 13);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Presupuestos a revisar";
+            this.label1.Text = "Presupuestos en espera a revisar";
             // 
             // button7
             // 
@@ -272,7 +329,6 @@
             this.button7.Size = new System.Drawing.Size(43, 40);
             this.button7.TabIndex = 14;
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox3
@@ -305,19 +361,9 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // presupuestosBindingSource
-            // 
-            this.presupuestosBindingSource.DataMember = "Presupuestos";
-            this.presupuestosBindingSource.DataSource = this.databaseFinalDataSet;
-            // 
             // presupuestosTableAdapter
             // 
             this.presupuestosTableAdapter.ClearBeforeFill = true;
-            // 
-            // presupuestosBindingSource1
-            // 
-            this.presupuestosBindingSource1.DataMember = "Presupuestos";
-            this.presupuestosBindingSource1.DataSource = this.databaseFinalDataSet;
             // 
             // Inicio
             // 
@@ -327,7 +373,6 @@
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.fillEnEsperaToolStrip);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button6);
@@ -347,15 +392,11 @@
             this.Text = "Sistema de Ordenamiento de Archivos - SOA DC Integral";
             this.Load += new System.EventHandler(this.Inicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseFinalDataSet)).EndInit();
-            this.fillEnEsperaToolStrip.ResumeLayout(false);
-            this.fillEnEsperaToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.presupuestosBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,24 +414,28 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label2;
         private DatabaseFinalDataSet databaseFinalDataSet;
-        private System.Windows.Forms.BindingSource presupuestosBindingSource;
-        private DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
-        private System.Windows.Forms.BindingSource presupuestosBindingSource1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource presupuestosBindingSource2;
-        private System.Windows.Forms.ToolStrip fillEnEsperaToolStrip;
-        private System.Windows.Forms.ToolStripButton fillEnEsperaToolStripButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroObra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ObraNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ModPor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.BindingSource presupuestosBindingSource;
+        private DatabaseFinalDataSetTableAdapters.PresupuestosTableAdapter presupuestosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroObra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ModPor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ObraNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroObraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modPorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
     }
 }
 

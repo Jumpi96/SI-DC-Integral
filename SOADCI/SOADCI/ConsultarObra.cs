@@ -45,6 +45,8 @@ namespace SOADCI
 
         private void ConsultarObra_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseFinalDataSet.Presupuestos' table. You can move, or remove it, as needed.
+            // this.presupuestosTableAdapter.Fill(this.databaseFinalDataSet.Presupuestos);
             // TODO: This line of code loads data into the 'databaseLocalDataSet.TiposObra' table. You can move, or remove it, as needed.
             this.obrasTableAdapter.Fill(this.databaseFinalDataSet.Obras);
 
@@ -55,7 +57,7 @@ namespace SOADCI
 
             obra = ob;
             this.Text = "Consultar obra - " + obra.Nombre;
-            this.presupuestosTableAdapter.FillByObra(this.databaseFinalDataSet.Presupuestos,obra.Numero);
+            this.presupuestosTableAdapter.FillByObra(this.databaseFinalDataSet.Presupuestos, obra.Numero);
             cadena = Globales.getInstancia().PATH + "\\" + obra.Cliente.Nombre + "\\" + obra.Nombre;
             textBox2.Text = obra.Numero.ToString();
             textBox1.Text = obra.Cliente.Nombre;
@@ -146,21 +148,22 @@ namespace SOADCI
         {
             if (dataGridView1.SelectedRows.Count != 0)
             {
-                DataGridViewRow row = this.dataGridView1.SelectedRows[0];
+                DataGridViewRow row = dataGridView1.SelectedRows[0]; 
 
-                int numero= (int)row.Cells[2].Value;
+                int numero= (int)row.Cells[0].Value;
                 String nombre= (String)row.Cells[1].Value;
-                DateTime fecha=(DateTime)row.Cells[0].Value;
+                DateTime fecha=(DateTime)row.Cells[2].Value;
                 int modPor= (int)row.Cells[4].Value;
-                Estado estado = new Estado((int)row.Cells[3].Value);
-                TipoPresupuesto tipo = new TipoPresupuesto((int)row.Cells[5].Value); //Debugear orden de celdas
-
+                Estado estado = new Estado((int)row.Cells[5].Value);
+                TipoPresupuesto tipo = new TipoPresupuesto((int)row.Cells[6].Value);
+                
                 Presupuesto presu = new Presupuesto(numero,nombre,fecha,obra,modPor,estado,tipo);
-
+                
                 ConsultarPresupuesto cons = new ConsultarPresupuesto();
                 cons.LoadOrders(presu);
                 cons.ShowDialog();
                 this.presupuestosTableAdapter.FillByObra(this.databaseFinalDataSet.Presupuestos, obra.Numero);
+                
             }
         }
     }

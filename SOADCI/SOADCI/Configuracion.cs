@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace SOADCI
         {
             InitializeComponent();
 
-            this.textBox1.Text = Globales.getInstancia().PATH;
+            this.txtRaiz.Text = Globales.getInstancia().PATH;
+            this.txtModelo.Text = Globales.getInstancia().ARCHIVOS;
 
         }
 
@@ -29,25 +31,39 @@ namespace SOADCI
         {
             String pass = Globales.getInstancia().PASS;
 
-            if (textBox2.Text=="" && textBox3.Text=="")
+            if (txtActual.Text=="" && txtNueva.Text=="")
             {
-                ControlarContraseña cons = new ControlarContraseña();
-                cons.ShowDialog();
-                if (cons.DialogResult == DialogResult.OK)
+                if (MessageBox.Show("La carpeta no moverá los archivos que contiene. ¿Está seguro de querer cambiarlo?", "Mover carpeta de archivos",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //Globales.getInstancia().PATH = textBox1.Text;
-                    this.Close();
+                    ControlarContraseña cons = new ControlarContraseña();
+                    cons.ShowDialog();
+                    if (cons.DialogResult == DialogResult.OK)
+                    {
+                        if (txtRaiz.Text != Globales.getInstancia().PATH)
+                        {
+                            Globales.getInstancia().PATH = txtRaiz.Text;
+
+                        }
+                        Globales.getInstancia().ARCHIVOS = txtModelo.Text;
+                        this.Close();
+                    }
                 }
             }
             else
-                if(textBox2.Text.Equals(pass))
+                if(txtActual.Text.Equals(pass))
                 {
-                    //Globales.getInstancia().PASS = textBox3.Text;
-                    //Globales.getInstancia().PATH = textBox1.Text;
+                    Globales.getInstancia().PASS = txtNueva.Text;
+                    if (txtRaiz.Text != Globales.getInstancia().PATH)
+                    {
+                        Directory.Move(Globales.getInstancia().PATH, txtRaiz.Text);
+                        Globales.getInstancia().PATH = txtRaiz.Text;
+                    }
+                    Globales.getInstancia().ARCHIVOS = txtModelo.Text;
                     this.Close();
             }
                 else
-                    MessageBox.Show("Las contraseña no son correctas", "Configuracion");
+                    MessageBox.Show("Las contraseñas no son correctas", "Configuracion");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -58,7 +74,23 @@ namespace SOADCI
         private void button3_Click(object sender, EventArgs e)
         {
             this.folderBrowserDialog1.ShowDialog();
-            textBox1.Text = folderBrowserDialog1.SelectedPath;
+            txtRaiz.Text = folderBrowserDialog1.SelectedPath;
+        }
+
+        private void Configuración_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.folderBrowserDialog1.ShowDialog();
+            txtModelo.Text = folderBrowserDialog1.SelectedPath;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
